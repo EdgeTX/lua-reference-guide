@@ -31,5 +31,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawGauge-example.png)
+![](../../.gitbook/assets/drawGauge-example%20%281%29.png)
 

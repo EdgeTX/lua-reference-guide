@@ -39,5 +39,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawTimer-example.png)
+![](../../.gitbook/assets/drawTimer-example%20%281%29.png)
 

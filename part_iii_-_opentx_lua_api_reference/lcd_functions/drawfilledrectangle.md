@@ -30,5 +30,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawFilledRectangle-example.png)
+![](../../.gitbook/assets/drawFilledRectangle-example%20%281%29.png)
 

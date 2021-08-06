@@ -33,7 +33,7 @@ This example consists of three scripts
     * suggested switch SA\(down\)
   * screen image:
 
-    ![count-up.lua function script](../.gitbook/assets/count-up.png)
+    ![count-up.lua function script](../.gitbook/assets/count-up%20%281%29.png)
 * shocount.lua
   * copy to /SCRIPTS/TELEMETRY
   * configure on the transmitter TELEMETRY page

@@ -31,5 +31,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawPixmap-example.png)
+![](../../.gitbook/assets/drawPixmap-example%20%281%29.png)
 

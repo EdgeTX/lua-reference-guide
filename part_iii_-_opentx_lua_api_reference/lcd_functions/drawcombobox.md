@@ -107,5 +107,5 @@ end
 return{run=run, init=init}
 ```
 
-![](../../.gitbook/assets/drawCombobox-example.png)
+![](../../.gitbook/assets/drawCombobox-example%20%281%29.png)
 

@@ -30,5 +30,5 @@ function foo(bar)
 end
 ```
 
-![](../../.gitbook/assets/setGlobalVariable-example.png)
+![](../../.gitbook/assets/setGlobalVariable-example%20%281%29.png)
 

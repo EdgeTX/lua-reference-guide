@@ -56,5 +56,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawLine-example.png)
+![](../../.gitbook/assets/drawLine-example%20%281%29.png)
 

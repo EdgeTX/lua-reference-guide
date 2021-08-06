@@ -10,5 +10,5 @@ If you intend to use mixer scripts, when updating the firmware on your transmitt
 
 Also note that the SD Structure path should contain a valid path to a copy of your transmitter's SD card contents, although that's not specific to Lua.
 
-![Edit Settings dialog from OpenTX Companion](../.gitbook/assets/companion-settings.png)
+![Edit Settings dialog from OpenTX Companion](../.gitbook/assets/companion-settings%20%281%29.png)
 
