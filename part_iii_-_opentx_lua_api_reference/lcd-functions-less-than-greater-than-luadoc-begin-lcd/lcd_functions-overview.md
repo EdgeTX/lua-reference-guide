@@ -22,6 +22,7 @@ Many of the lcd functions accept parameters named _flags_ and _patterns_. The na
 | MIDSIZE | mid sized font |  |  |
 | SMLSIZE | small font |  |  |
 | BOLD | bold font |  | Only color displays |
+| SHADOWED | shadow font |  | Only color displays |
 | INVERS | inverted display |  |  |
 | BLINK | blinking text |  |  |
 | LEFT | left justify | 2.0.6 | Default for most functions not related to bitmaps |
@@ -31,7 +32,7 @@ Many of the lcd functions accept parameters named _flags_ and _patterns_. The na
 | PREC1 | single decimal place |  |  |
 | PREC2 | two decimal places |  |  |
 | GREY\_DEFAULT | grey fill |  |  |
-| TIMEHOUR | dislay hours |  | Only for drawTimer |
+| TIMEHOUR | display hours |  | Only for drawTimer |
 
 ## Color constants
 
