@@ -2,9 +2,11 @@
 
 ## General description
 
-Widgets are small scripts that show some info in a 'zone' in one of the model specific user defined \(telemetry\) screens. You can define those screens within the telemetry menu on the HORUS.
+Widgets are only available on radios with color displays. Most of the time, they show some info in a 'zone' either in the _top bar_ or in one of the model specific user defined _main views_, and they cannot receive direct input from the user via key events like e.g. Telemetry scripts.
 
-Each model can have up to five custom screens, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own custom settings.
+But widgets on the _main views_ can also be shown in _full screen mode_, where they take over the entire screen area, and then they can receive user input via key events, and for radios with touch screen, also touch events.
+
+Each model can have up to five _main views_, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own custom settings.
 
 ## File Location
 
@@ -12,28 +14,27 @@ Widgets are located on the SD card, each in their specific folder /WIDGETS/&lt;_
 
 ## Lifetime of widgets
 
-Widgets need to be registered through the telemetry setup menu.
+All widget scripts on the SD card are loaded into memory when the radio is powered on. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any script on the SD card will consume part of the radio's memory - even if it is not being used. Therefore, it is important to either keep widget scripts small, or to use Lua's loadScript\(\) function to load code dynamically.
 
-* widget create function is called
-* widget update function is called upon registration and at change of settings in the telemetry setup menu.
-* widget background function is periodically called when custom telemetry screen is **not visible**. _Notice_:
-  * This is different from the way telemetry scripts are handled
-* widget refresh function is periodically called when custom telemetry screen is **visible**
-* widget is stopped and disabled if it misbehaves \(too long runtime, error in code, low memory\)
-* all widgets are stopped while one-time script is running \(see Lua One-time scripts\)
+They can be added to the _top bar_ or a _main view_  through the telemetry setup menu. When  a widget has been added to a screen, then the widget functions are called as follows:
 
-Once registered, widgets are started when the model is loaded.
+* `create` function is called one time when the script is loaded
+* `update` function is called upon registration and at change of settings in the telemetry setup menu.
+* `background` function is periodically called when custom telemetry screen is _not visible_. **Note:** this is different from the way telemetry scripts are handled.
+* `refresh` function is periodically called when custom telemetry screen is _visible_.
+
+A widget script is stopped and disabled if it misbehaves \(e.g. too long runtime, run-time error, or low memory\), and all widgets are stopped while one-time script is running \(see One-Time scripts\).
 
 ## Script interface definition
 
 Every widget must include a return statement at the end, that defines its interface to the rest of OpenTX code. This statement defines:
 
-* widget **name** \(_name_ must be a string of 10 characters or less\)
-* widget **options** array \(maximum five options are allowed, 10 character names max, no spaces!\)
-* widget **create** function
-* widget **update** function
-* script **background** function
-* script **refresh** function
+* **name** \(_name_ must be a string of 10 characters or less\)
+* **options** array \(maximum five options are allowed, 10 character names max, no spaces!\)
+* **create** function
+* **update** function
+* **background** function \(optional\)
+* **refresh** function
 
 ### Example \(draws a moving counter that counts only when not visible\):
 
