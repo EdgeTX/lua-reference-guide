@@ -1,8 +1,6 @@
 # Telemetry Scripts
 
-## Telemetry Scripts
-
-## General description
+## Description
 
 Telemetry scripts are used for building customized screens. Each model can have up to three active scripts as configured on the model's telemetry configuration page. The same script can be assigned to multiple models.
 

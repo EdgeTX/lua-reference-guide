@@ -18,7 +18,7 @@ end
 
 * **Input parameters:**
 
-  zero or more input values, their names are arbitrary, their meaning and order is defined by the input table. \(see [Input Table Syntax]()\)
+  zero or more input values, their names are arbitrary, their meaning and order is defined by the input table. \(see [Input Table Syntax](input_table_syntax.md)\)
 
 * **Return values:**
   * none - if output table is empty \(i.e. script has no output\)
@@ -27,7 +27,7 @@ end
 
     * or -
 
-  * comma separated list of output values, their order and meaning is defined by the output table. \(see [Output Table Syntax]()\)
+  * comma separated list of output values, their order and meaning is defined by the output table. \(see [Output Table Syntax](output_table_syntax.md)\)
 
 ## Run Function for Telemetry Scripts
 
