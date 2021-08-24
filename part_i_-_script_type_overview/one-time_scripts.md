@@ -29,7 +29,7 @@ Every script must include a `return` statement at the end, defining its interfac
 * `init` function \(optional\)
 * `run` function
 
-### Example:
+### Example
 
 ```lua
 local function init()
