@@ -1,4 +1,4 @@
-# lcd.drawNumber\(x, y, value \[, flags \[, inversFlag\]\]\)
+# lcd.drawNumber\(x, y, value \[, flags \[, inversColor\]\]\)
 
 Display a number at \(x,y\)
 
