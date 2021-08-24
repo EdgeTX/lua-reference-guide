@@ -1,10 +1,8 @@
 # popupConfirmation\(title, message, event\)
 
-@function popupConfirmation\(title, message, event\)
-
 Raises a pop-up on screen that asks for confirmation
 
-@status current Introduced in 2.2.0, changed to \(title, message, event\) in 2.3.8
+@status current Introduced in 2.2.0, changed from \(title, event\) to \(title, message, event\) in 2.3.8
 
 ## Parameters
 
