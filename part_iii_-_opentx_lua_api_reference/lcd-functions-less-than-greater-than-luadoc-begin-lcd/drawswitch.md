@@ -16,7 +16,7 @@ Draw a text representation of switch at (x,y)
 * `switch` (number) number of switch to display, negative number
 displays negated switch
 
-* `flags` (optional) please see [Lcd functions overview](../lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.html), only SMLSIZE, BLINK and INVERS.
+* `flags` (unsigned number) drawing flags, only SMLSIZE, BLINK and INVERS.
 
 
 

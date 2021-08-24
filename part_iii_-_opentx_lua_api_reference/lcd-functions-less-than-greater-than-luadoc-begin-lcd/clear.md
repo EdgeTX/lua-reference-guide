@@ -19,3 +19,7 @@ Clear the LCD screen
 
 none
 
+##### Notice
+This function only works in stand-alone and telemetry scripts.
+
+

@@ -15,7 +15,7 @@ Displays the name of the corresponding input as defined by the source at (x,y)
 
 * `source` (number) source index
 
-* `flags` (optional) please see [Lcd functions overview](../lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.html)
+* `flags` (unsigned number) drawing flags
 
 
 

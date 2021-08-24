@@ -21,7 +21,7 @@ Draw a simple gauge that is filled based upon fill value
 
 * `maxfill` (number) total value of fill
 
-* `flags` (optional) please see [Lcd functions overview](../lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.html)
+* `flags` (unsigned number) drawing flags
 
 
 

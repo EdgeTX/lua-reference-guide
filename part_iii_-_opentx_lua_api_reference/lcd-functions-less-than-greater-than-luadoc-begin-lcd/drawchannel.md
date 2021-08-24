@@ -16,7 +16,7 @@ Display a telemetry value at (x,y)
 * `source` can be a source identifier (number) or a source name (string).
 See getValue()
 
-* `flags` (optional) please see [Lcd functions overview](../lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.html)
+* `flags` (unsigned number) drawing flags
 
 
 
