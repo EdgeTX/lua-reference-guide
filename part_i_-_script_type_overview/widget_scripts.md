@@ -1,110 +1,110 @@
 # Widget Scripts
 
-## General description
+## Overview
 
-Widgets are small scripts that show some info in a 'zone' in one of the model specific user defined \(telemetry\) screens. You can define those screens within the telemetry menu on the HORUS.
+Widgets are only available on radios with color displays. Most of the time, they show some info in a 'zone' either in the _top bar_ or in one of the user defined _main views_, and they cannot receive direct input from the user via key events like e.g. Telemetry scripts.
 
-Each model can have up to five custom screens, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own custom settings.
+But widgets on the _main views_ can also be shown in _full screen mode_, where they take over the entire screen area, and then they can receive user input via key events, and for radios with touch screen, also touch events.
 
-## File Location
+Each model can have up to five _main views_, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own custom settings.
 
-Widgets are located on the SD card, each in their specific folder /WIDGETS/&lt;_name_&gt;/main.lua \(_name_ must be in 8 characters or less\).
+**Please note:** Widget scripts are only available on radios with color screens, such as e.g. FrSky Horus models, Radiomaster TX16 and and Jumper T16.
 
 ## Lifetime of widgets
 
-Widgets need to be registered through the telemetry setup menu.
+All widget scripts on the SD card are loaded into memory when the model is selected; even widgets that are not added to the screen anywhere. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any script on the SD card will consume part of the radio's memory - even if it is not being used. Therefore, it is important to either keep widget scripts small, or to use Lua's loadScript\(\) function to load code dynamically.
 
-* widget create function is called
-* widget update function is called upon registration and at change of settings in the telemetry setup menu.
-* widget background function is periodically called when custom telemetry screen is **not visible**. _Notice_:
-  * This is different from the way telemetry scripts are handled
-* widget refresh function is periodically called when custom telemetry screen is **visible**
-* widget is stopped and disabled if it misbehaves \(too long runtime, error in code, low memory\)
-* all widgets are stopped while one-time script is running \(see Lua One-time scripts\)
+They can be added to the _top bar_ or a _main view_  through the telemetry setup menu. When  a widget has been added to a screen, then the widget functions are called as follows:
 
-Once registered, widgets are started when the model is loaded.
+* `create` function is called one time when the widget instance is registered on the screen.
+* `update` function is called upon registration and at change of settings in the telemetry setup menu.
+* `background` function is called periodically when custom telemetry screen is _not visible_. **Note:** this is different from the way telemetry scripts are handled.
+* `refresh` function is periodically called when custom telemetry screen is _visible_.
+* A widget script is stopped and disabled if it misbehaves \(e.g. too long runtime, run-time error, or low memory\)
+* All widgets are stopped while one-time script is running \(see [One-Time scripts](one-time_scripts.md)\).
 
-## Script interface definition
+## File Location
 
-Every widget must include a return statement at the end, that defines its interface to the rest of OpenTX code. This statement defines:
+Widgets are located on the SD card, each in their specific folder /WIDGETS/&lt;_name_&gt;/main.lua \(&lt;_name_&gt; must be in 8 characters or less\).
 
-* widget **name** \(_name_ must be a string of 10 characters or less\)
-* widget **options** array \(maximum five options are allowed, 10 character names max, no spaces!\)
-* widget **create** function
-* widget **update** function
-* script **background** function
-* script **refresh** function
+## Interface
+
+Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+
+* `name` string
+* `options` table
+* `create` function
+* `update` function
+* `background` function \(optional\)
+* `refresh` function
 
 ### Example \(draws a moving counter that counts only when not visible\):
 
 ```lua
-local defaultOptions = {
-  { "ControlX", SOURCE, 1 },
-  { "ScrollZ", BOOL, 1 }, -- BOOL is actually not a boolean, but toggles between 0 and 1
-  { "StepZ", VALUE, 1, 0, 10},
-  { "COLOR", COLOR, RED },
+local name = "WidgetName"
+
+-- Create a table with default options
+-- Options can be changed from the Widget Settings menu
+-- Notice that each line is a table inside { }
+local options = {
+  { "Source", SOURCE, 1 },
+  -- BOOL is actually not a boolean, but toggles between 0 and 1
+  { "Boolean", BOOL, 1 },
+  { "Value", VALUE, 1, 0, 10},
+  { "Color", COLOR, ORANGE },
 }
 
-local function createWidget(zone, options)
-  lcd.setColor( CUSTOM_COLOR, options.COLOR )
-  --  the CUSTOM_COLOR is foreseen to have one color that is not radio template related, but it can be used by other widgets as well!
-  local someVariable = 0
-  local anotherVariable = {xWidget=0, yWidget = 0}
-  return { zone=zone, options=options , someVariable = someVariable, anotherVariable=anotherVariable }
+local function create(zone, options)
+  -- Runs one time when widget instance is registered
+  -- Store zone and options in the widget table for later
+  local widget = {
+    zone = zone,
+    options = options
+  }
+  -- Add local variables to the widget table,
+  -- unless you want to share with other instances!
+  widget.someVariable = 3
+  return widget
 end
 
-local function updateWidget(widgetToUpdate, newOptions)
-  widgetToUpdate.options = newOptions
-  lcd.setColor( CUSTOM_COLOR, widgetToUpdate.options.COLOR )
-  --  the CUSTOM_COLOR is foreseen to have one color that is not radio template related, but it can be used by other widgets as well!
+local function update(widget, options)
+  -- Runs if options are changed from the Widget Settings menu
+  widget.options = options
 end
 
-local function backgroundProcessWidget(widgetToProcessInBackground)
-  local function process(...)
-          return ... + 1
-        end
-  widgetToProcessInBackground.someVariable = process (widgetToProcessInBackground.someVariable)
+local function background(widget)
+  -- Runs periodically only when widget is not visible
 end
 
-local function refreshWidget(widgetToRefresh)
-  local counterLength = 50
-  local counterHeight = 30
-
-  --backgroundProcessWidget(widgetToRefresh) 
-  --background is not called automatically in display mode, so do it here if you need it.
-
-  local function anotherProcess(parameter,step,maxParameter)
-          return (parameter + step) % maxParameter
-        end
-
-  widgetToRefresh.anotherVariable.xWidget 
-    = anotherProcess ( widgetToRefresh.anotherVariable.xWidget
-      ,getValue(widgetToRefresh.options.ControlX)/10.24/20 
-      ,widgetToRefresh.zone.w-counterLength)
-
-  widgetToRefresh.anotherVariable.yWidget 
-    = anotherProcess ( widgetToRefresh.anotherVariable.yWidget
-      ,(widgetToRefresh.options.ScrollZ==1) and widgetToRefresh.options.StepZ or 0
-      ,widgetToRefresh.zone.h-counterHeight)
-
-  lcd.drawNumber(widgetToRefresh.anotherVariable.xWidget + widgetToRefresh.zone.x
-    , widgetToRefresh.anotherVariable.yWidget + widgetToRefresh.zone.y
-    , widgetToRefresh.someVariable
-    , LEFT + DBLSIZE + CUSTOM_COLOR);
+local function refresh(widget, event, touchState)
+  -- Runs periodically only when widget is visible
+  -- If fullscreen, then event is 0 or event value
+  -- If not fullscreen, then event is nil
 end
 
-return { name="MovingCntr", options=defaultOptions, create=createWidget, update=updateWidget
-  , refresh=refreshWidget, background=backgroundProcessWidget }
+return {
+  name = name,
+  options = options,
+  create = create,
+  update = update,
+  refresh = refresh,
+  background = background
+}
 ```
 
 ## Notes:
 
-* _options_ are only passed through to OpenTX to be used on widget creation. Don't change them during operation, this has no effect.
-* _create\(\)_ function is called once when widget is loaded and begins execution.
-* _update\(\)_ function is called once when widget is loaded and begins execution.
-* _background\(\)_ is called periodically when custom telemetry screen containing widget is not visible.
-* _refresh\(\)_ function is called periodically when custom telemetry screen containing wodget is visible.
-* in the example given, you can see that no global variables or functions are needed to operate the widget.
-* variables that are used throughout the widget, can best be declared _inside_ the create function as local variables
-* those local variablkes can then be passed through to the other functions as an element of the widget array that is returned
+* The `name` must be max. 10 characters long.
+* `Options` is only passed to `create` to be used during widget creation. Don't change them in Lua code, as this has no effect. But the options can be changed by the user in the Widget Settings menu, and then `update` will be called.
+* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces.
+* If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget.
+* Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function.
+* When the widget is in fullscreen mode, then `event` is either 0, a [key event value](../part_iii_-_opentx_lua_api_reference/constants/key_events.md), or a [touch event value](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md).
+* If `event` is a [touch event value](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md), then `touchState` is a table. Otherwise, it is `nil`.
+* When the widget is not in fullscreen mode, then both `event` and `touchState` are `nil`.
+* The size of the widget's screen area is as follows:
+  * Fullscreen mode: `LCD_W` by `LCD_H`
+  * Not fullscreen mode: `zone.w` by `zone.h` 
+
+
 

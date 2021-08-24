@@ -1,14 +1,12 @@
 # Telemetry Scripts
 
-## Description
+## Overview
 
 Telemetry scripts are used for building customized screens. Each model can have up to three active scripts as configured on the model's telemetry configuration page. The same script can be assigned to multiple models.
 
-## File Location
+**Please note:** Telemetry scripts are only available on radios with telemetry screens, such as e.g. FrSky Taranis models \(including Xlite\), Radiomaster TX12 and and Jumper T12.
 
-Scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/&lt;_name_&gt;.lua. File name length \(without extension\) **must be 6 characters or less** \(this limit was 8 characters in OpenTX 2.1\).
-
-## Lifetime of telemetry script
+## Lifetime
 
 * Telemetry scripts are loaded when the model is selected.
 * `init` function is called one time when the script is loaded
@@ -17,9 +15,13 @@ Scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/&lt;_name_&g
 * script is stopped and disabled if it misbehaves \(e.g. run-time error or low memory\)
 * all telemetry scripts are stopped if a one-time script is running \(see One-time scripts\)
 
-## Script interface definition
+## File Location
 
-Every script must include a return statement at the end, that defines its interface to the rest of OpenTX code. This statement defines:
+Scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/&lt;_name_&gt;.lua. File name length \(without extension\) **must be 6 characters or less** \(this limit was 8 characters in OpenTX 2.1\).
+
+## Interface
+
+Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
 * `init` function \(optional\)
 * `background` function \(optional\)

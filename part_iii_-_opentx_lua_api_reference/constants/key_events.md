@@ -1,6 +1,11 @@
-# Key Event Constants
+---
+description: >-
+  This page describes the value that is passed to scripts in the event
+  parameter. It is used in Telemetry and One-Time scripts, as well as widget
+  scripts in full screen mode.
+---
 
-This page describes the value that is passed to scripts in the `event` parameter. It is used in [Telemetry](../../part_i_-_script_type_overview/telemetry.md) and [One-Time](https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/one-time_scripts.md) scripts.
+# Key Event Constants
 
 ## The key event mechanism
 
