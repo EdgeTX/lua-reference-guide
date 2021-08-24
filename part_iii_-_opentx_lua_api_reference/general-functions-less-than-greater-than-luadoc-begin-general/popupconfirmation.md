@@ -3,8 +3,6 @@
 ## popupConfirmation(title, event) deprecated, please replace by
 @function popupConfirmation(title, message, event)
 
-
-
 Raises a pop-up on screen that asks for confirmation
 
 @status current Introduced in 2.2.0, changed to (title, message, event) in 2.3.8
@@ -19,15 +17,9 @@ Raises a pop-up on screen that asks for confirmation
 * `event` (number) the event variable that is passed in from the
 Run function (key pressed)
 
-
-
 #### Return value
 
 * `"CANCEL"` user pushed EXIT key
 
-
-
 ##### Notice
 Use only from stand-alone and telemetry scripts.
-
-
