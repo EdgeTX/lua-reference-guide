@@ -11,7 +11,6 @@
   * [Wizard Script](part_i_-_script_type_overview/wizard.md)
   * [Function Scripts](part_i_-_script_type_overview/function_scripts.md)
   * [Widget Scripts](part_i_-_script_type_overview/widget_scripts.md)
-  * [Theme Scripts](part_i_-_script_type_overview/theme_scripts.md)
 * [Part II - EdgeTX Lua API Programming Guide](part_ii_-_opentx_lua_api_programming_guide/README.md)
   * [Run Function Syntax](part_ii_-_opentx_lua_api_programming_guide/run_function_syntax.md)
   * [Return Statement Syntax](part_ii_-_opentx_lua_api_programming_guide/return_statement_syntax.md)
