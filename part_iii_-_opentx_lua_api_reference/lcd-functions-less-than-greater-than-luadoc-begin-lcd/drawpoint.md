@@ -8,7 +8,7 @@ Draw a single pixel at \(x,y\) position
 
 * `x` \(positive number\) x position
 * `y` \(positive number\) y position
-* `flags` \(optional\) please see [Lcd functions overview](https://github.com/EdgeTX/lua-reference-guide/tree/2c4596e02006c8ac7d351fcd785fdfc7a93ce548/part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.html)
+* `flags` \(optional\) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
 ## Return value
 
