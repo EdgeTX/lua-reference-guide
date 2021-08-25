@@ -9,7 +9,7 @@ Draw a straight line on LCD
 * `x1,y1` \(positive numbers\) starting coordinate
 * `x2,y2` \(positive numbers\) end coordinate
 * `pattern` SOLID or DOTTED
-* `flags` \(optional\) lcdflags
+* `flags` \(optional\) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
 ## Return value
 

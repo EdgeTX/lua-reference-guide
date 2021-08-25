@@ -27,7 +27,7 @@ Every script must include a `return` statement at the end, defining its interfac
 * `background` function \(optional\)
 * `run` function
 
-### Example:
+### Example
 
 ```lua
 local function init()
@@ -42,7 +42,7 @@ local function run(event)
   -- run is called periodically only when screen is visible
 end
 
-return { run=run, background=background, init=init }
+return { run = run, background = background, init = init }
 ```
 
 ### Notes:

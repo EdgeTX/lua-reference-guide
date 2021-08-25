@@ -29,7 +29,7 @@ Every script must include a `return` statement at the end, defining its interfac
 * `init` function \(optional\)
 * `run` function
 
-### Example:
+### Example
 
 ```lua
 local function init()
@@ -38,6 +38,8 @@ end
 
 local function run(event)
   -- run is called periodically only when screen is visible
+  -- A non-zero return value will halt the script
+  return x
 end
 
 return { run=run, init=init }
@@ -46,4 +48,5 @@ return { run=run, init=init }
 ### Notes:
 
 * The `event` parameter indicates which transmitter key has been pressed \(see [Key Events](../part_iii_-_opentx_lua_api_reference/constants/key_events.md)\). 
+* A non-zero return value from `run` will halt the script.
 
