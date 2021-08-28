@@ -12,7 +12,7 @@ Each model can have up to five main views, with up to 8 widgets per screen, depe
 
 ## Lifetime
 
-All widget scripts on the SD card are loaded into memory when the model is selected; even widgets that are used. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any script on the SD card will consume part of the radio's memory - even if it is not being used. Therefore, it is important to either keep widget scripts small, or to use Lua's loadScript\(\) function to load code dynamically.
+All widget scripts on the SD card are loaded into memory when the model is selected; even widgets that are not used. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any script on the SD card will consume part of the radio's memory - even if it is not being used. Therefore, it is important to either keep widget scripts small, or to use Lua's loadScript\(\) function to load code dynamically.
 
 They can be added to the top bar or a main view  through the telemetry setup menu. When  a widget has been added to a screen, then the widget functions are called as follows:
 
