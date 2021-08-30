@@ -36,7 +36,7 @@ Yes indeed, because a script is really an anonymous function that returns a list
 
 Another important concept that goes with first-class functions, is _closures_. This is the environment of the function with the variable names that the function can see. Please consider the following function `counter` that returns another function:
 
-```text
+```lua
 local function counter(start, step)
   local x = start
   
