@@ -14,6 +14,22 @@ In addition to the provided libraries, Lua has a very elegant mechanism for load
 
 ## First Class Functions with Closures
 
+Computer science pioneer Christopher Strachey introduced the concept of functions as _first-class objects_ in his paper F[undamental Concepts in Programming Languages](https://web.archive.org/web/20100216060948/http://www.cs.cmu.edu/~crary/819-f09/Strachey67.pdf) from 1967. What it means is simply that functions can be treated as other variables: as arguments passed in function calls, as results returned from function calls, and a function identifier can be re-assigned to another block of function code.
+
+In Lua, this means that a function declaration is really "syntactic sugar" for assigning a variable to the chunk of code that is called when the function is invoked, i.e.
+
+`local function f(x) return x + 1 end`
+
+is the same as 
+
+`local f = function(x) return x + 1 end`
+
+You can even add functions to Lua tables, i.e. 
+
+`t = { f = f }`
+
+will add the above function to the table `t`, as a field that is also called `f`. Does that look familiar to the return statement that is required at the end of a Lua script? This is because a script is a chunk of code that is the body of an anonymous function, which is called and then returns a list of functions to EdgeTX, which can be called periodically to run the script.
+
 
 
 ## References
