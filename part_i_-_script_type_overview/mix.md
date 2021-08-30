@@ -26,7 +26,7 @@ Each model can have several custom scripts associated with it, and these scripts
 ## Lifetime
 
 * Custom scripts are loaded from SD card when model is selected
-* `init` __function is called first
+* `init` \_\_function is called first
 * `run` function is called periodically \(about 30 times per second\)
 * the script is killed \(stopped and disabled\) if it misbehaves \(e.g. run-time error or low memory\)
 * all Custom scripts are stopped while a One-Time script is running \(see Lua One-time scripts\)
@@ -63,7 +63,7 @@ local input =
     { "Strength", SOURCE},           -- user selects source (typically slider or knob)
     { "Interval", VALUE, 0, 100, 0 } -- interval value, default = 0.
   }
-    
+
 local output { "Val1", "Val2" }
 
 local function init()
@@ -83,14 +83,14 @@ return { input=input, output=output, run=run, init=init }
 
 The input table defines what values are available as input\(s\) to custom scripts. There are two forms of input table entries.
 
-```
+```text
 { "<name>", SOURCE }
 ```
 
 SOURCE inputs provide the current value of a selected OpenTX variable. The source must be selected by the user when the script is configured. Source can be any value that EdgeTX knows about \(inputs, channels, telemetry values, switches, custom functions etc.\).  
 **Note:** the typical input range is -1024 thru +1024. Simply divide the input value by 10.24 to convert to a percentage from -100% to +100%.
 
-```
+```text
 { "<name>", VALUE, <min>, <max>, <default> }
 ```
 

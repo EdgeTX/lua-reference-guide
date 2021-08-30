@@ -10,10 +10,10 @@ The following touch events are passed in the `event` argument to the widget scri
 
 | Touch Event Name | Description |
 | :---: | :---: |
-| EVT\_TOUCH_\__FIRST | When the finger touches down on the screen |
-| EVT\_TOUCH_\__TAP | If the finger leaves the screen after a quick tap |
-| EVT\_TOUCH_\__BREAK | If the finger leaves the screen without tap or slide |
-| EVT\_TOUCH_\__SLIDE | Repeats while the finger is sliding on the screen |
+| EVT\_TOUCH\_\_\_FIRST | When the finger touches down on the screen |
+| EVT\_TOUCH\_\_\_TAP | If the finger leaves the screen after a quick tap |
+| EVT\_TOUCH\_\_\_BREAK | If the finger leaves the screen without tap or slide |
+| EVT\_TOUCH\_\_\_SLIDE | Repeats while the finger is sliding on the screen |
 
 In addition to the above touch events a `touchState` table is passed to `refresh` with the following addional data fields:
 
@@ -24,7 +24,7 @@ In addition to the above touch events a `touchState` table is passed to `refresh
 | slideX, SlideY | Movement since previous SLIDE event \(or start of slide\) |
 | swipeUp / swipeDown / swipeLeft / swipeRight | The field is present and equal to `true` if a swipe event occurred in that direction |
 
-### Notes:
+## Notes:
 
 * `touchState` is `nil` if `event` is not a touch event. This can be used to test if we have a touch event or a key event. 
   * Since Lua evaluates a `nil` value to `false` and everything else to `true`:

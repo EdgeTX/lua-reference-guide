@@ -1,6 +1,6 @@
 # One-Time Scripts
 
-_**WARNING -**_ **Running a One-Time script will suspend execution of all other currently loaded Lua scripts \(Custom,  Telemetry, and Functions\)**
+_**WARNING -**_ **Running a One-Time script will suspend execution of all other currently loaded Lua scripts \(Custom, Telemetry, and Functions\)**
 
 ## Overview
 

@@ -33,5 +33,5 @@ local z = f2(5)
 -- z = 5 + 3
 ```
 
-So here we put together what we learned in the previous section. The body of the script is an anonymous function returned by `loadScript` and stored in the variable `chunk`.  It returns the function `f` when it is called. The local variable `c` in the script is assigned to the first _vararg_ passed to the call.  Since a new closure is created every time we call `chunk`, `f1` and `f2` have different closures with different values of `c`.
+So here we put together what we learned in the previous section. The body of the script is an anonymous function returned by `loadScript` and stored in the variable `chunk`. It returns the function `f` when it is called. The local variable `c` in the script is assigned to the first _vararg_ passed to the call. Since a new closure is created every time we call `chunk`, `f1` and `f2` have different closures with different values of `c`.
 

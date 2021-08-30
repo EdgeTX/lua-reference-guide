@@ -20,15 +20,15 @@ In Lua, a function declaration is really "syntactic sugar" for assigning a varia
 
 `local function f(x) return x + 1 end`
 
-is the same as 
+is the same as
 
 `local f = function(x) return x + 1 end`
 
-You can even add functions to Lua tables, i.e. 
+You can even add functions to Lua tables, i.e.
 
 `t = { f = f }`
 
-will add the above function to the table `t`, as a field that is also called `f`. Does that look familiar to the return statement required at the end of a Lua script? 
+will add the above function to the table `t`, as a field that is also called `f`. Does that look familiar to the return statement required at the end of a Lua script?
 
 Yes indeed, because a script is really an anonymous function that returns a list of functions to the system. The function declarations assign variables to chunks of function code, these variables are added to the list returned at the end of the script, and the system then calls the functions periodically to run the script. So the script itself is run one time initially, and subsequently the functions returned by the last statement are called periodically.
 
@@ -39,7 +39,7 @@ Another important concept that goes with first-class functions, is _closures_. T
 ```lua
 local function counter(start, step)
   local x = start
-  
+
   return function()
     local y = x
     x = x + step
@@ -69,15 +69,15 @@ local function match(x, ...)
 end
 ```
 
-It takes an argument `x` and a [vararg](https://www.lua.org/manual/5.2/manual.html#3.4.10) list `...` A vararg list is just like a list of arguments separated by commas, and you can call the function with any number of arguments greater than 1. Inside the function, you can also treat `...` like a comma separated list of variables, e.g. in the above function, `...` is converted to a table by `{...}`  just like you could construct a table by e.g. `{a, b, c}`. The table is iterated with the `ipairs` function to look for an element matching the first argument `x`. So e.g. the following statement 
+It takes an argument `x` and a [vararg](https://www.lua.org/manual/5.2/manual.html#3.4.10) list `...` A vararg list is just like a list of arguments separated by commas, and you can call the function with any number of arguments greater than 1. Inside the function, you can also treat `...` like a comma separated list of variables, e.g. in the above function, `...` is converted to a table by `{...}` just like you could construct a table by e.g. `{a, b, c}`. The table is iterated with the `ipairs` function to look for an element matching the first argument `x`. So e.g. the following statement
 
 `if event == EVT_VIRTUAL_ENTER or event == EVT_VIRTUAL_EXIT then`
 
-can be replaced by 
+can be replaced by
 
 `if match(event, EVT_VIRTUAL_ENTER, EVT_VIRTUAL_EXIT) then`
 
-You can also use `...` directly as a comma separated list of values, e.g.  `local a, b, c = ...` will assign the three variables to the three first arguments following `x`, or `nil` if none are given.
+You can also use `...` directly as a comma separated list of values, e.g. `local a, b, c = ...` will assign the three variables to the three first arguments following `x`, or `nil` if none are given.
 
 ## References
 
