@@ -134,6 +134,7 @@
     * [lcd.drawSource\(x, y, source \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawsource.md)
     * [lcd.drawSwitch\(x, y, switch, flags\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawswitch.md)
     * [lcd.drawText\(x, y, text \[, flags \[, inversColor\]\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawtext.md)
+    * [lcd.drawTextLines\(x, y, w, h, text \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd.drawtextlines-x-y-w-h-text-flags.md)
     * [lcd.drawTimer\(x, y, value \[, flags \[, inversColor\]\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawtimer.md)
     * [lcd.drawTriangle\(x1, y1, x2, y2, x3, y3 \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawtriangle.md)
     * [lcd.getColor\(flags\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/getcolor.md)
