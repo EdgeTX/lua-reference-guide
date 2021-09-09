@@ -9,7 +9,7 @@ Returns a drawing flag with RGB color code
 * `r` \(integer\) a number between 0 and 255 that expresses the amount of red in the color
 * `g` \(integer\) a number between 0 and 255 that expresses the amount of green in the color
 * `b` \(integer\) a number between 0 and 255 that expresses the amount of blue in the color
-* `rgb` \(integer\) a number between 0 and 0xFFFFFF that expresses the RGB value \(0xFF000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE\)
+* `rgb` \(integer\) a number between 0 and 0xFFFFFF that expresses the RGB value \(0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE\)
 
 ## Return value
 
