@@ -1,4 +1,4 @@
-# lcd.RGB\(r, g, b\)
+# lcd.RGB\(r, g, b \| rgb\)
 
 Returns a drawing flag with RGB color code
 
@@ -6,9 +6,10 @@ Returns a drawing flag with RGB color code
 
 ## Parameters
 
-* `r` \(integer\) a number between 0 and 255 that expresses te amount of red in the color
-* `g` \(integer\) a number between 0 and 255 that expresses te amount of green in the color
-* `b` \(integer\) a number between 0 and 255 that expresses te amount of blue in the color
+* `r` \(integer\) a number between 0 and 255 that expresses the amount of red in the color
+* `g` \(integer\) a number between 0 and 255 that expresses the amount of green in the color
+* `b` \(integer\) a number between 0 and 255 that expresses the amount of blue in the color
+* `rgb` \(integer\) a number between 0 and 0xFFFFFF that expresses the RGB value \(0xFF000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE\)
 
 ## Return value
 
@@ -16,5 +17,5 @@ Returns a drawing flag with RGB color code
 
 ### Notice
 
-Only available on radios with color display
+Only available on radios with color display. Use _either_ lcd.RGB\(r,g,b\) _or_ lcd.RGB\(rgb\).
 

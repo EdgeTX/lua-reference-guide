@@ -110,7 +110,7 @@
     * [model.setTimer\(timer, value\)](part_iii_-_opentx_lua_api_reference/model-functions-less-than-greater-than-luadoc-begin-model/settimer.md)
   * [Lcd Functions](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/README.md)
     * [Lcd Functions Overview](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd_functions-overview.md)
-    * [lcd.RGB\(r, g, b\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/rgb.md)
+    * [lcd.RGB\(r, g, b \| rgb\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/rgb.md)
     * [lcd.clear\(\[color\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/clear.md)
     * [lcd.drawAnnulus\(x, y, r1, r2, start, end \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawannulus.md)
     * [lcd.drawArc\(x, y, r, start, end \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawarc.md)
