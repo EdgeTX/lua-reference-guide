@@ -98,9 +98,9 @@ function shared.run(event)
 end
 ```
 
-The table `shared` contains data that is shared between the main script and the loadable screens. Notice that the functions `shared.changeScreen` and `shared.run` are also shared this way.
+The table `shared` contains data that is shared between the main telemetry script and the loadable screens. Notice that the functions `shared.changeScreen` and `shared.run` are also shared this way.
 
-Code is loaded by `shared.changeScreen` with the `loadScript` function, which returns the loadable script as a chunk of code. The code is executed with `shared` as the argument, and the loadable script adds a new `run` function to the shared table. `shared.run` is called by `run` in the main script.
+Code is loaded by `shared.changeScreen` with the `loadScript` function, which returns the loadable script as a chunk of code. The code is executed with `shared` as the argument, and the loadable script adds a new `run` function to the `shared` table. `shared.run` is called by `run` in the main script.
 
 ## Widget Script Radios
 
