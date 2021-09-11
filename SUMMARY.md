@@ -137,6 +137,7 @@
     * [lcd.drawTextLines\(x, y, w, h, text \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd.drawtextlines-x-y-w-h-text-flags.md)
     * [lcd.drawTimer\(x, y, value \[, flags \[, inversColor\]\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawtimer.md)
     * [lcd.drawTriangle\(x1, y1, x2, y2, x3, y3 \[, flags\]\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/drawtriangle.md)
+    * [lcd.exitFullScreen\(\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/lcd.exitfullscreen.md)
     * [lcd.getColor\(flags\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/getcolor.md)
     * [lcd.getLastLeftPos\(\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/getlastleftpos.md)
     * [lcd.getLastPos\(\)](part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/getlastpos.md)
