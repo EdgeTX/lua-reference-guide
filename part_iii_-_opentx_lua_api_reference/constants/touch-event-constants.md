@@ -10,10 +10,10 @@ The following touch events are passed in the `event` argument to the widget scri
 
 | Touch Event Name | Description |
 | :---: | :---: |
-| EVT\_TOUCH\_FIRST | When the finger touches down on the screen |
-| EVT\_TOUCH\_TAP | If the finger leaves the screen after a quick tap |
-| EVT\_TOUCH\_BREAK | If the finger leaves the screen without tap or slide |
-| EVT\_TOUCH\_SLIDE | Repeats while the finger is sliding on the screen |
+| EVT\_TOUCH\_\_\_FIRST | When the finger touches down on the screen |
+| EVT\_TOUCH\_\_\_TAP | If the finger leaves the screen after a quick tap |
+| EVT\_TOUCH\_\_\_BREAK | If the finger leaves the screen without tap or slide |
+| EVT\_TOUCH\_\_\_SLIDE | Repeats while the finger is sliding on the screen |
 
 In addition to the above touch events a `touchState` table is passed to `refresh` with the following addional data fields:
 
@@ -23,7 +23,6 @@ In addition to the above touch events a `touchState` table is passed to `refresh
 | startX, startY | Point where slide started |
 | slideX, SlideY | Movement since previous SLIDE event \(or start of slide\) |
 | swipeUp / swipeDown / swipeLeft / swipeRight | The field is present and equal to `true` if a swipe event occurred in that direction |
-| tapCount | Counts the number of consecutive taps |
 
 ## Notes:
 
@@ -33,5 +32,4 @@ In addition to the above touch events a `touchState` table is passed to `refresh
 * `x, y` are present for all touch events.
 * `startX, startY, slideX, slideY` are only present with `EVT_TOUCH_SLIDE`.
 * `swipeUp` / `swipeDown` / `swipeLeft` / `swipeRight` _may_ be present only with`EVT_TOUCH_SLIDE`.
-* `tapCount` is zero for anything but `EVT_TOUCH_TAP`.
 
