@@ -167,7 +167,7 @@ end
 return widget
 ```
 
-`zone` and `options` are stored in the [`closure`](https://app.gitbook.com/@edgetx/s/lua-reference-guide/~/drafts/-MjQo2Z9fc78NHs9G6aV/part_ii_-_opentx_lua_api_programming_guide/lua-basics#closures) of `loadable.lua`, therefore they do not need to be added to the `widget` table, as is commonly done.
+`zone` and `options` are stored in the [closure](https://app.gitbook.com/@edgetx/s/lua-reference-guide/~/drafts/-MjQo2Z9fc78NHs9G6aV/part_ii_-_opentx_lua_api_programming_guide/lua-basics#closures) of `loadable.lua`, therefore they do not need to be added to the `widget` table, as is commonly done.
 
 Obviously, the bulk of the widget's code goes in `loadable.lua`, and is only loaded if the widgets is in fact being used. Therefore, if the widget is not used, only the small amount of code in `main.lua` is loaded into the radio's memory.
 
