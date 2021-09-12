@@ -171,3 +171,5 @@ return widget
 
 Obviously, the bulk of the widget's code goes in `loadable.lua`, and is only loaded if the widgets is in fact being used. Therefore, if the widget is not used, only the small amount of code in `main.lua` is loaded into the radio's memory.
 
+For an example of a widget that uses the above design pattern, please have a look at the **EventDemo** widget that is included on the SD card with EdgeTX for color screen radios.
+
