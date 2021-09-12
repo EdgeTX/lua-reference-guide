@@ -4,7 +4,7 @@
 
 Most of the time, widget scripts show some info in a _zone_ either in the _top bar_ or in one of the user defined _main views_, and they cannot receive direct input from the user via key events like e.g. Telemetry scripts.
 
-But widgets on the main views can also be shown in _full screen mode_, where they take over the entire screen area. And here they receive user input via key events, and for radios with touch screen, also touch events. Full screen mode can be entered by selecting the widget, pressing ENTER and selecting **Full screen** on the widget menu, or by double tapping the widget on radios with a touch screen. Full screen mode can be exited by long pressing the RETURN button, or by calling the Lua function `lcd.exitFullScreen()`.
+But widgets on the main views can also be shown in _full screen mode_, where they take over the entire screen area. And here they receive user input via key events, and for radios with touch screen, also touch events.
 
 Each model can have up to five main views, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own _options_ table.
 
@@ -79,7 +79,7 @@ end
 
 local function refresh(widget, event, touchState)
   -- Runs periodically only when widget instance is visible
-  -- If full screen, then event is 0 or event value, otherwise nil
+  -- If fullscreen, then event is 0 or event value, otherwise nil
 end
 
 return {
@@ -100,10 +100,10 @@ return {
 * Maximum five `options` are allowed, with names of max. 10 characters, and no spaces.
 * If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget.
 * Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
-* When the widget is in full screen mode, then `event` is either 0, a [key event value](../part_iii_-_opentx_lua_api_reference/constants/key_events.md), or a [touch event value](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md).
+* When the widget is in fullscreen mode, then `event` is either 0, a [key event value](../part_iii_-_opentx_lua_api_reference/constants/key_events.md), or a [touch event value](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md).
 * If `event` is a [touch event value](../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md), then `touchState` is a table. Otherwise, it is `nil`.
-* When the widget is not in full screen mode, then both `event` and `touchState` are `nil`.
+* When the widget is not in fullscreen mode, then both `event` and `touchState` are `nil`.
 * The size of the widget's screen area is as follows:
-  * Full screen mode: `LCD_W` by `LCD_H`
-  * Not full screen mode: `zone.w` by `zone.h` 
+  * Fullscreen mode: `LCD_W` by `LCD_H`
+  * Not fullscreen mode: `zone.w` by `zone.h` 
 
