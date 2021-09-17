@@ -55,9 +55,9 @@ return{run=run, background=background}
 
 ## clear-example.lua running under OpenTX 2.1
 
-![](../../.gitbook/assets/clear-example1.png)
+![](../../.gitbook/assets/clear-example1%20%281%29%20%281%29%20%281%29%20%281%29.png)
 
 ## clear-example.lua running under OpenTX 2.0
 
-![](../../.gitbook/assets/clear-example2.png)
+![](../../.gitbook/assets/clear-example2%20%281%29%20%281%29%20%281%29.png)
 

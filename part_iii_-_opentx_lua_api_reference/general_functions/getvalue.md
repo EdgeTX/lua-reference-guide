@@ -73,5 +73,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/getValue-example.png)
+![](../../.gitbook/assets/getValue-example%20%281%29%20%281%29.png)
 

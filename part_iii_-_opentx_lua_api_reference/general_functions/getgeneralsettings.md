@@ -42,5 +42,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/getGeneralSettings-example%20%281%29.png)
+![](../../.gitbook/assets/getGeneralSettings-example%20%281%29%20%281%29.png)
 

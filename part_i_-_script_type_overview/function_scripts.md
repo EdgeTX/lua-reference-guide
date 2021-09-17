@@ -4,9 +4,9 @@
 
 Function scripts are invoked via the **'Lua Script'** option of Special Functions configuration page.
 
-![Companion Special Functions Window](../.gitbook/assets/CompanionSpecialFunctions.png)
+![Companion Special Functions Window](../.gitbook/assets/CompanionSpecialFunctions%20%281%29.png)
 
-![Taranis Special Functions Display](../.gitbook/assets/RadioSpecialFunctions.png)
+![Taranis Special Functions Display](../.gitbook/assets/RadioSpecialFunctions%20%281%29.png)
 
 ## Typical uses
 

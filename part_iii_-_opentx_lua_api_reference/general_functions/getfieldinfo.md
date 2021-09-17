@@ -49,5 +49,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/getFieldInfo-example.png)
+![](../../.gitbook/assets/getFieldInfo-example%20%281%29%20%281%29%20%281%29.png)
 

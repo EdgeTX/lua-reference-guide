@@ -36,5 +36,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/getDateTime-example.png)
+![](../../.gitbook/assets/getDateTime-example%20%281%29.png)
 

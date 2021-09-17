@@ -26,14 +26,14 @@ This example consists of three scripts
     * suggested sw\_high = 0
   * screen image:
 
-    ![count-dn.lua mix script](../.gitbook/assets/count-dn.png)
+    ![count-dn.lua mix script](../.gitbook/assets/count-dn%20%281%29.png)
 * count-up.lua
   * copy to /SCRIPTS/FUNCTIONS
   * configure on the transmitter SPECIAL FUNCTIONS page
     * suggested switch SA\(down\)
   * screen image:
 
-    ![count-up.lua function script](../.gitbook/assets/count-up%20%281%29.png)
+    ![count-up.lua function script](../.gitbook/assets/count-up%20%281%29%20%281%29.png)
 * shocount.lua
   * copy to /SCRIPTS/TELEMETRY
   * configure on the transmitter TELEMETRY page

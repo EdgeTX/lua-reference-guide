@@ -32,5 +32,5 @@ end
 return{run=run}
 ```
 
-![](../../.gitbook/assets/drawScreenTitle-example%20%281%29.png)
+![](../../.gitbook/assets/drawScreenTitle-example%20%281%29%20%281%29.png)
 
