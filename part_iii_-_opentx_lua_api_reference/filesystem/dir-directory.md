@@ -14,7 +14,7 @@ none
 
 #### Example
 
-```text
+```lua
     local var y = 40
     for fname in dir("/SCRIPTS") do
         lcd.drawText(5,y, fname, TEXT_COLOR)
