@@ -42,7 +42,7 @@ local function RGB(r, g, b)
   if not rgb then
     rgb = bit32.lshift(bit32.rshift(bit32.band(r, 0xFF), 3), 11)
     rgb = rgb + bit32.lshift(bit32.rshift(bit32.band(g, 0xFF), 2), 5)
-    rgb = rgb + bit32.rshift(bit32.band(r, 0xFF), 3)
+    rgb = rgb + bit32.rshift(bit32.band(b, 0xFF), 3)
   end
   
   return rgb
