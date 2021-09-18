@@ -78,7 +78,9 @@ This is a table of colors used for drawing the GUI elements. The following color
 | :--- | :--- | :--- |
 | text | COLOR\_THEME\_PRIMARY3 | Text on labels, menus etc. |
 | focusText | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited. |
-| focusBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
+| buttonBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
+| editBackground | COLOR_THEME_EDIT | Background when a value is being edited. |
+| screenBackground | `nil` | The color of the screen background. Set to `nil` to show theme background image. |
 | active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
 
 ### libGUI Functions
