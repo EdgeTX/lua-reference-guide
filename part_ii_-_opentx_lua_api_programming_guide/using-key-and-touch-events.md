@@ -56,7 +56,9 @@ end
 
 This is a widget that comes with a global library. Since all widgets are loaded whether or not they are being used, global functions declared in the body of a widget script will always be available. It is not necessary to setup the widget to use the library, and the only purpose of the widget is to show how `LibGUI` can be used to create apps.
 
-The global function `loadGUI()` returns a new `libGUI` object. This object can be used to create new `GUI`, which are used to create screens with elements like buttons, menus, labels, numbers that can be edited, and timers. 
+The library is implemented in the [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/libgui.lua.** The widget that demonstrates how to use the library is implemented in [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/loadable.lua**. **/WIDGETS/LibGUI/main.lua** contains a global function that loads the library and the standard function needed for a widget.
+
+The global function `loadGUI()` returns a new `libGUI` object. This object can be used to create new `GUI`objects, which are used to create screens with elements like buttons, menus, labels, numbers that can be edited, and timers.
 
 ### libGUI Properties
 
