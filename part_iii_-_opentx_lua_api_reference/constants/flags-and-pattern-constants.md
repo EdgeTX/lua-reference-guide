@@ -15,7 +15,7 @@ description: >-
 | DBLSIZE | double size font |  |  |
 | MIDSIZE | mid sized font |  |  |
 | SMLSIZE | small font |  |  |
-| BOLD | bold font |  | Only color displays |
+| BOLD | bold font |  | Only color displays. This is a font size on its own - cannot be combined with other font size flags. |
 | SHADOWED | shadow font |  | Only color displays |
 | INVERS | inverted display |  |  |
 | BLINK | blinking text |  |  |

@@ -56,7 +56,7 @@ end
 
 This is a widget that comes with a global library. Since all widgets are loaded whether or not they are being used, global functions declared in the body of a widget script will always be available. It is not necessary to setup the widget to use the library, and the only purpose of the widget is to show how `LibGUI` can be used to create apps.
 
-The library is implemented in the [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/libgui.lua.** The widget that demonstrates how to use the library is implemented in [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/loadable.lua**. **/WIDGETS/LibGUI/main.lua** contains a global function that loads the library and the standard function needed for a widget.
+The library is implemented in the [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/libgui.lua.** The widget that demonstrates how to use the library is implemented in the [loadable file](saving-memory.md#widget-script-radios) **/WIDGETS/LibGUI/loadable.lua**. The file **/WIDGETS/LibGUI/main.lua** contains a global function that loads the library and the standard functions needed for a widget.
 
 The global function `loadGUI()` returns a new `libGUI` object. This object can be used to create new `GUI`objects, which are used to create screens with elements like buttons, menus, labels, numbers that can be edited, and timers.
 
@@ -79,13 +79,11 @@ This is a table of colors used for drawing the GUI elements. The following color
 | text | COLOR\_THEME\_PRIMARY3 | Text on labels, menus etc. |
 | focusText | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited. |
 | buttonBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
-| editBackground | COLOR_THEME_EDIT | Background when a value is being edited. |
+| editBackground | COLOR\_THEME\_EDIT | Background when a value is being edited. |
 | screenBackground | `nil` | The color of the screen background. Set to `nil` to show theme background image. |
 | active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
 
 ### libGUI Functions
-
-`libGUI` provides the following functions.
 
 #### libGUI.match\(x, ...\)
 
@@ -93,100 +91,93 @@ This is a small utility function that returns `true` if the first argument `x` m
 
 #### libGUI.newGUI\(\)
 
-Creates a new `GUI` object. If an application has different screens, then a `GUI` for each screen can be created. `GUI` objects have the following properties.
+This is the main function that creates a new `GUI` object. If an application has different screens, then a `GUI` object is created for each screen.
 
-| Property | Description |
-| :--- | :--- |
-| widgetRefresh | A function to refresh in widget mode. |
-| fullScreenRefresh | A function to draw the screen background in full screen mode. GUI elements are drawn afterwards on top. |
+### GUI Object Properties
 
-`GUI` objects have the following functions.
+#### GUI.widgetRefresh
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Function</th>
-      <th style="text-align:left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">GUI.run(event, touchState)</td>
-      <td style="text-align:left">Redraws the screen and processes key and touch events.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.SetEventHandler(event, f)</td>
-      <td style="text-align:left">Sets a function to handle event. If no GUI element is being edited, then
-        this can trap events before they are passed to the GUI, e.g. to press EXIT
-        to leave the screen. If <code>f = nil</code>, then the event handler is
-        removed.</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.button (x, y, w, h, title, callBack, flags)</td>
-      <td style="text-align:left">
-        <p>Add a button to the GUI. The button has the following properties that
-          can be changed:</p>
-        <ul>
-          <li>title</li>
-          <li>noFocus (set to <code>false</code> to prevent it from receiving focus)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.toggleButton(x, y, w, h, title, value, callBack, flags)</td>
-      <td style="text-align:left">
-        <p>Add a toggle button to the GUI. The toggleButton has the following properties
-          that can be changed:</p>
-        <ul>
-          <li>value (true/false)</li>
-          <li>title</li>
-          <li>noFocus (set to <code>false</code> to prevent it from receiving focus)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.number(x, y, w, h, value, callBack, flags)</td>
-      <td style="text-align:left">
-        <p>Add a number that can be edited to the GUI. The number has the following
-          properties that can be changed:</p>
-        <ul>
-          <li>value (can also be text, e.g. to show &quot;-&quot; if disabled)</li>
-          <li>noFocus (set to <code>false</code> to prevent it from receiving focus)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.label(x, y, w, h, title, flags)</td>
-      <td style="text-align:left">
-        <p>Add a text label to the GUI. The label has the following property that
-          can be changed:</p>
-        <ul>
-          <li>title</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.timer(x, y, w, h, tmr, callBack, flags)</td>
-      <td style="text-align:left">
-        <p>Add a timer to the GUI. The timer has the following properties that can
-          be changed:</p>
-        <ul>
-          <li>value. If nil, then the value of the timer tmr is shown. Otherwise, it
-            shows value, which can be either a number (seconds) or text.</li>
-          <li>noFocus (set to <code>false</code> to prevent it from receiving focus)</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">GUI.menu(x, y, visibleCount, items, callBack, flags)</td>
-      <td style="text-align:left">
-        <p>Add a menu to the GUI.</p>
-        <ul>
-          <li>visibleCount is the number of visible menu items.</li>
-          <li>items is a table with the menu items.</li>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
+A function `f()` to draw the zone of the screen in widget mode. It takes no arguments.
+
+#### GUI.fullScreenRefresh
+
+A function `f(event, touchState)` to draw the screen background in full screen mode. The GUI elements are drawn afterwards on top.
+
+#### GUI.prompt
+
+A `GUI` \(or another table with a function `run(event, touchState)`. When this is set, the `GUI` will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
+
+### GUI Object Functions
+
+#### GUI.run\(event, touchState\)
+
+Redraws the screen and processes key and touch events. It can directly replace a widget's `refresh` function, or it can be called by `refresh`.
+
+#### GUI.SetEventHandler\(event, f\)
+
+Sets a function `f(event, touchState)` to handle an event. If no GUI element is being edited, then this can trap events before they are passed to the GUI, e.g. to press EXIT to go back to the previous screen. If `f` is `nil`, then the event handler is removed.
+
+### GUI Screen Elements
+
+The screen elements are drawn in the order that they are added to the GUI, and touch events are sent to the first element that covers the touched point of the screen. GUI elements therefore should never overlap.
+
+There are some common properties that can be set for all or most of the GUI elements.
+
+* `element.disabled = true` prevents the element from receiving events, and disabled buttons are greyed out.
+* `element.hidden = true` - in addition to the above, the element is not drawn.
+* `element.title` can be changed for elements with a title.
+* `element.value` can be changed for elements with a value.
+* `element.flags` defaults to `GUI.flags`.
+* `elements.blink` will make non-button elements blink
+* `elements.invers` will make non-button elements draw in inversed colors.
+
+The various screen elements are added to the GUI with the functions described below. The functions all add the element to the GUI and returns a reference so the element subsequently can be accessed by the client.
+
+#### GUI.button \(x, y, w, h, title\[, callBack\] \[, flags\]\)
+
+Add a button to the GUI. 
+
+When tapped, it calls `callBack(self)` so a call back function can tell which button activated it.
+
+#### GUI.toggleButton\(x, y, w, h, title, value\[, callBack\] \[, flags\]\)
+
+Add a toggle button to the GUI. 
+
+The `value` is either `true` or `false`. 
+
+When tapped, it calls `callBack(self)` so a call back function can tell which toggle button activated it, and what the `value` is.
+
+#### GUI.number\(x, y, w, h, value\[, callBack\] \[, flags\]\)
+
+Add a number that can be edited to the GUI.
+
+The `value` is either a number or text. By setting the value to a text, it can be shown that the number is not present e.g. by "- -" or similar.
+
+When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)`. Thereby, the call back function can use events to edit the number, e.g. sliding a finger up and down can increase and decrease the value. You can look in the LibGUI widget's loadable file for an example of this.
+
+#### 
+
+#### GUI.timer\(x, y, w, h, tmr\[, callBack\] \[, flags\]\)
+
+Add a timer to the GUI.
+
+If no `value` is present, then the model timer `tmr` will be shown. If `value` is a number, then it indicates the time in seconds, and it will be shown as **MM:SS**. The `value` can also be text, e.g. "- - : - -" to show that the timer is disabled.
+
+When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)` as described above for number.
+
+#### GUI.label\(x, y, w, h, title\[, flags\]\)
+
+Add a text label to the GUI. The label does not respond to any events.
+
+#### GUI.menu\(x, y, visibleCount, items\[, callBack\] \[, flags\]\)
+
+Add a menu to the GUI. The menu can scroll up and down. This function returns a table with each of the menu's line elements.
+
+`visibleCount` is the number of visible menu items.
+
+`items` is a table with the menu item texts.
+
+When a menu item is tapped, it calls `callBack(self)`. Each menu element has a field `self.idx` giving the index in the menu, and this can be used by `callBack` to see which menu item was selected.
+
+
 
