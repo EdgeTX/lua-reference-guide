@@ -6,20 +6,28 @@ description: >-
 
 # Using Key and Touch Events
 
-The two Lua widgets **EventDemo** and **LibGUI** are provided on the SD card content for color screen radios. EventDemo is just a small widget showing off how key and especially touch events can be used. LibGUI contains a globally available library, and a widget showing how the library can be used by other widgets. This section will discuss these two widgets for color screen radios, but generally, what is stated about key events here also applies to the `run` function in Telemetry and One-Time scripts.
+The two Lua widgets **EventDemo** and **LibGUI** are provided on the SD card content for color screen radios. EventDemo is just a small widget showing off how key, and especially touch events, can be used. LibGUI contains a globally available library, and a widget showing how the library can be used by other widgets. This section will discuss these two widgets for color screen radios, but generally, what is stated about key events here also applies to the `run` function in Telemetry and One-Time scripts.
 
 ## EventDemo Widget
 
-This widget uses the design pattern discussed in the [previous section,](saving-memory.md#widget-script-radios) so all of the action takes place in the file **loadable.lua**. The following code listing is an outline of the `refresh` function with comments explaining what is going on.
+This widget uses the design pattern for saving memory by loadable files discussed in the [previous section,](saving-memory.md#widget-script-radios) so all of the action takes place in the file **loadable.lua**. The following code listing is an outline of the `refresh` function with comments explaining what is going on.
 
 ```lua
+-- This code chunk is loaded on demand by the widget's main script 
+-- when the create(...) function is run. Hence, the body of this 
+-- file is executed by the widget's create(...) function.
+
+-- zone and options were passed as arguments to chunk(...)
+local zone, options = ...
+-- The widget table will be returned to the main script
+local widget = { }
+
 function widget.refresh(event, touchState)
   if event == nil then -- Widget mode
-    -- Draw in non-fullscreen mode. The size equals zone.w by zone.h
+    -- Draw in widget mode. The size equals zone.w by zone.h
   else -- Full screen mode
-    -- Draw in fullscreen mode. The size equals LCD_W by LCD_H
-    -- Process touch and key events
-    if event ~= 0 then -- We got a new event
+    -- Draw in full screen mode. The size equals LCD_W by LCD_H
+    if event ~= 0 then -- Do we have an event?
       if touchState then -- Only touch events come with a touchState
         if event == EVT_TOUCH_FIRST then
           -- When the finger first hits the screen
@@ -62,11 +70,11 @@ The global function `loadGUI()` returns a new `libGUI` object. This object can b
 
 ### libGUI Properties
 
-`libGUI` has the following properties controlling global settings.
+`libGUI` has the following properties controlling general settings for the library.
 
 #### libGUI.flags
 
-These are default drawing flags to be applied, unless other flags are given.
+These are default drawing flags to be applied if no flags are given at creation of screen elements.
 
 **Note:** these flags should not contain color values, as colors are added by the following.
 
@@ -82,6 +90,8 @@ This is a table of colors used for drawing the GUI elements. The following color
 | editBackground | COLOR\_THEME\_EDIT | Background when a value is being edited. |
 | screenBackground | `nil` | The color of the screen background. Set to `nil` to show theme background image. |
 | active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
+
+Notice that all of the default colors are theme colors. This will make the GUI screens use the contemporary color theme.
 
 ### libGUI Functions
 
@@ -105,7 +115,7 @@ A function `f(event, touchState)` to draw the screen background in full screen m
 
 #### GUI.prompt
 
-A `GUI` \(or another table with a function `run(event, touchState)`. When this is set, the `GUI` will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
+A GUI \(or another table with a function `run(event, touchState`\). When this is set, the GUI will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
 
 ### GUI Object Functions
 
@@ -123,11 +133,11 @@ The screen elements are drawn in the order that they are added to the GUI, and t
 
 There are some common properties that can be set for all or most of the GUI elements.
 
-* `element.disabled = true` prevents the element from receiving events, and disabled buttons are greyed out.
-* `element.hidden = true` - in addition to the above, the element is not drawn.
+* `element.disabled = true` prevents the element from taking focus and receiving events, and disabled buttons are greyed out.
+* `element.hidden = true`  in addition to the above, the element is not drawn.
 * `element.title` can be changed for elements with a title.
 * `element.value` can be changed for elements with a value.
-* `element.flags` defaults to `GUI.flags`.
+* `element.flags` drawing flags for the element's text. If no flags were given at element creation, it defaults to `GUI.flags`.
 * `elements.blink` will make non-button elements blink
 * `elements.invers` will make non-button elements draw in inversed colors.
 
@@ -145,13 +155,13 @@ Add a toggle button to the GUI.
 
 The `value` is either `true` or `false`. 
 
-When tapped, it calls `callBack(self)` so a call back function can tell which toggle button activated it, and what the `value` is.
+When tapped, it calls `callBack(self)` so a call back function can tell which toggle button activated it, and what `self.value` is.
 
 #### GUI.number\(x, y, w, h, value\[, callBack\] \[, flags\]\)
 
-Add a number that can be edited to the GUI.
+Add an editable number to the GUI.
 
-The `value` is either a number or text. By setting the value to a text, it can be shown that the number is not present e.g. by "- -" or similar.
+The `value` can be either a number or text. By setting the value to a text, it can be shown that the number is not present e.g. by "- -" or similar.
 
 When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)`. Thereby, the call back function can use events to edit the number, e.g. sliding a finger up and down can increase and decrease the value. You can look in the LibGUI widget's loadable file for an example of this.
 
@@ -163,21 +173,25 @@ Add a timer to the GUI.
 
 If no `value` is present, then the model timer `tmr` will be shown. If `value` is a number, then it indicates the time in seconds, and it will be shown as **MM:SS**. The `value` can also be text, e.g. "- - : - -" to show that the timer is disabled.
 
-When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)` as described above for number.
+When tapped, the timer will go to edit mode, as described above for number.
 
 #### GUI.label\(x, y, w, h, title\[, flags\]\)
 
-Add a text label to the GUI. The label does not respond to any events.
+Add a text label to the GUI.
+
+The label does not respond to any events, but its `title` and `flags` can be changed.
 
 #### GUI.menu\(x, y, visibleCount, items\[, callBack\] \[, flags\]\)
 
-Add a menu to the GUI. The menu can scroll up and down. This function returns a table with each of the menu's line elements.
+Add a scrollable menu to the GUI. This function returns a table with each of the menu's line elements.
 
 `visibleCount` is the number of visible menu items.
 
 `items` is a table with the menu item texts.
 
 When a menu item is tapped, it calls `callBack(self)`. Each menu element has a field `self.idx` giving the index in the menu, and this can be used by `callBack` to see which menu item was selected.
+
+Notice that the menu's width is decided by the item texts and the font flags, and the height is decided by `visibleCount` and the font flags.
 
 
 
