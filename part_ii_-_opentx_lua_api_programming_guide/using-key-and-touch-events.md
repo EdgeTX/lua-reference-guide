@@ -88,7 +88,6 @@ This is a table of colors used for drawing the GUI elements. The following color
 | focusText | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited. |
 | buttonBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
 | editBackground | COLOR\_THEME\_EDIT | Background when a value is being edited. |
-| screenBackground | `nil` | The color of the screen background. Set to `nil` to show theme background image. |
 | active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
 
 Notice that all of the default colors are theme colors. This will make the GUI screens use the contemporary color theme.
