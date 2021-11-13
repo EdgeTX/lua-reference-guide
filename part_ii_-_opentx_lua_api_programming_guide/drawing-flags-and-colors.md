@@ -25,7 +25,7 @@ You should not change RGB\_FLAG explicitly; this is handled automatically by the
 * [`lcd.getColor` ](../part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/getcolor.md)always returns a RGB color. This can be used to "save" an indexed color before you change it.
 * [`lcd.RGB`](../part_iii_-_opentx_lua_api_reference/lcd-functions-less-than-greater-than-luadoc-begin-lcd/rgb.md) obviously returns a RGB color.
 
-### Colors in EdgetTX versus OpenTX
+### Colors in EdgeTX versus OpenTX
 
 OpenTX only supports indexed colors in drawing functions, so you must first call `lcd.setColor` to change e.g. CUSTOM\_COLOR, and then call the LCD drawing function with that indexed color. In EdgeTX, you can use either type of color for drawing functions, so you are no longer forced to constantly call `lcd.setColor`. You can also store any color in local variables, and then use these when drawing, thus effectively creating your own color theme.
 
