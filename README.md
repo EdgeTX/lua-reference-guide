@@ -14,8 +14,5 @@ Part II is a programming guide that introduces the types of EdgeTX Lua scripts a
 
 Part III is the EdgeTX Lua API Reference
 
-Part IV addresses common issues in converting Lua scripts that were originally written for OpenTX 2.0
+Part IV covers advanced topics with examples
 
-Part V addresses common issues in converting Lua scripts that were originally written for OpenTX 2.1
-
-Part VI covers advanced topics with examples
