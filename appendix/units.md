@@ -1,37 +1,38 @@
-# OpenTx 2.3 Units reference
+# Units
 
-| Index  | Unit            | Defined as             |
-| --- | ---                |---                     |
-| 0   | Raw unit (no unit) | UNIT_RAW               |
-| 1   | Volts              | UNIT_VOLTS             |
-| 2   | Amps               | UNIT_AMPS              |
-| 3   | Milliamps          | UNIT_MILLIAMPS         |
-| 4   | Knots              | UNIT_KTS               |
-| 5   | Meters per Second  | UNIT_METERS_PER_SECOND |
-| 6   | Feet per Second    | UNIT_FEET_PER_SECOND   |
-| 7   | Kilometers per Hour| UNIT_KMH               |
-| 8   | Miles per Hour     | UNIT_MPH               |
-| 9   | Meters             | UNIT_METERS            |
-| 10  | Feet               | UNIT_FEET              |
-| 11  | Degrees Celsius    | UNIT_CELSIUS           |
-| 12  | Degrees Fahrenheit | UNIT_FAHRENHEIT        |
-| 13  | Percent            | UNIT_PERCENT           |
-| 14  | Milliamp Hour      | UNIT_MAH               |
-| 15  | Watts              | UNIT_WATTS             |
-| 16  | Milliwatts         | UNIT_MILLIWATTS        |
-| 17  | dB                 | UNIT_DB                |
-| 18  | RPM                | UNIT_RPMS              |
-| 19  | G                  | UNIT_G                 |
-| 20  | Degrees            | UNIT_DEGREE            |
-| 21  | Radians            | UNIT_RADIANS           |
-| 22  | Milliliters        | UNIT_MILLILITERS       |
-| 23  | Fluid Ounces       | UNIT_FLOZ              |
-| 24  | Ml per minute      | UNIT_MILLILITERS_PER_MINUTE |
-| 35  | Hours              | UNIT_HOURS             |
-| 36  | Minutes            | UNIT_MINUTES           |
-| 37  | Seconds            | UNIT_SECONDS           |
-| 38  | Virtual unit       | UNIT_CELLS             |
-| 39  | Virtual unit       | UNIT_DATETIME          |
-| 40  | Virtual unit       | UNIT_GPS               |
-| 41  | Virtual unit       | UNIT_BITFIELD          |
-| 42  | Virtual unit       | UNIT_TEXT              |
+| Index | Unit | Defined as |
+| :--- | :--- | :--- |
+| 0 | Raw unit \(no unit\) | UNIT\_RAW |
+| 1 | Volts | UNIT\_VOLTS |
+| 2 | Amps | UNIT\_AMPS |
+| 3 | Milliamps | UNIT\_MILLIAMPS |
+| 4 | Knots | UNIT\_KTS |
+| 5 | Meters per Second | UNIT\_METERS\_PER\_SECOND |
+| 6 | Feet per Second | UNIT\_FEET\_PER\_SECOND |
+| 7 | Kilometers per Hour | UNIT\_KMH |
+| 8 | Miles per Hour | UNIT\_MPH |
+| 9 | Meters | UNIT\_METERS |
+| 10 | Feet | UNIT\_FEET |
+| 11 | Degrees Celsius | UNIT\_CELSIUS |
+| 12 | Degrees Fahrenheit | UNIT\_FAHRENHEIT |
+| 13 | Percent | UNIT\_PERCENT |
+| 14 | Milliamp Hour | UNIT\_MAH |
+| 15 | Watts | UNIT\_WATTS |
+| 16 | Milliwatts | UNIT\_MILLIWATTS |
+| 17 | dB | UNIT\_DB |
+| 18 | RPM | UNIT\_RPMS |
+| 19 | G | UNIT\_G |
+| 20 | Degrees | UNIT\_DEGREE |
+| 21 | Radians | UNIT\_RADIANS |
+| 22 | Milliliters | UNIT\_MILLILITERS |
+| 23 | Fluid Ounces | UNIT\_FLOZ |
+| 24 | Ml per minute | UNIT\_MILLILITERS\_PER\_MINUTE |
+| 35 | Hours | UNIT\_HOURS |
+| 36 | Minutes | UNIT\_MINUTES |
+| 37 | Seconds | UNIT\_SECONDS |
+| 38 | Virtual unit | UNIT\_CELLS |
+| 39 | Virtual unit | UNIT\_DATETIME |
+| 40 | Virtual unit | UNIT\_GPS |
+| 41 | Virtual unit | UNIT\_BITFIELD |
+| 42 | Virtual unit | UNIT\_TEXT |
+
