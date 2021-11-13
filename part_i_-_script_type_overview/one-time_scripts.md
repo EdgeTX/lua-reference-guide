@@ -1,6 +1,6 @@
 # One-Time Scripts
 
-_**WARNING -**_ **Running a One-Time script will suspend execution of all other currently loaded Lua scripts \(Custom,  Telemetry, and Functions\)**
+_**WARNING - **_**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom,  Telemetry, and Functions)**
 
 ## Overview
 
@@ -14,9 +14,9 @@ Script executes until:
 
 * it returns value different from 0
 * is forcefully closed by user by long press of EXIT key
-* is forcefully closed by system if if it misbehaves \(e.g. run-time error or low
+*   is forcefully closed by system if if it misbehaves (e.g. run-time error or low
 
-  memory\)
+    memory)
 
 ## File Location
 
@@ -26,7 +26,7 @@ Place them anywhere on SD card, the folder /SCRIPTS/ is recommended. The only ex
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `init` function \(optional\)
+* `init` function (optional)
 * `run` function
 
 ### Example
@@ -47,6 +47,5 @@ return { run=run, init=init }
 
 ### Notes:
 
-* The `event` parameter indicates which transmitter key has been pressed \(see [Key Events](../part_iii_-_opentx_lua_api_reference/constants/key_events.md)\). 
+* The `event` parameter indicates which transmitter key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).&#x20;
 * A non-zero return value from `run` will halt the script.
-

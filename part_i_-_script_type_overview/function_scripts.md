@@ -16,21 +16,21 @@ Please be aware that:
 
 ## Lifetime
 
-* `init` function is called once when the model is selected
-* depending on the switch associated with the Special Function, either the `run` function \(switch = on\) or the `background` function \(switch = off\) is called periodically
-* the script is stopped and disabled if it misbehaves \(e.g. run-time error or low memory\)
+* `init `function is called once when the model is selected
+* depending on the switch associated with the Special Function, either the `run` function (switch = on) or the `background` function (switch = off) is called periodically
+* the script is stopped and disabled if it misbehaves (e.g. run-time error or low memory)
 
 ## File Location
 
-Scripts are located on the SD card in the folder /SCRIPTS/FUNCTIONS/&lt;_name_&gt;.lua. File name length \(without extension\) **must be 6 characters or less** \(this limit was 8 characters in OpenTX 2.1\).
+Scripts are located on the SD card in the folder /SCRIPTS/FUNCTIONS/<_name_>.lua. File name length (without extension) **must be 6 characters or less** (this limit was 8 characters in OpenTX 2.1).
 
 ## Interface
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `init` function \(optional\)
-* `run` function
-* `background` function \(optional\)
+* `init `function (optional)
+* `run `function
+* `background` function (optional)
 
 ### Example
 
@@ -49,4 +49,3 @@ end
 
 return { run=run, background=background, init=init }
 ```
-
