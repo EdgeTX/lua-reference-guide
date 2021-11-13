@@ -10,7 +10,7 @@ The two Lua widgets **EventDemo** and **LibGUI** are provided on the SD card con
 
 ## EventDemo Widget
 
-This widget uses the design pattern for saving memory by loadable files discussed in the [previous section,](saving-memory.md#widget-script-radios) so all of the action takes place in the file **loadable.lua**. The following code listing is an outline of the `refresh` function with comments explaining what is going on.
+This widget uses the design pattern for saving memory by loadable files discussed in the [previous section,](saving-memory.md#widget-script-radios) so all of the action takes place in the file **loadable.lua**. The following code listing is an outline of the `refresh `function with comments explaining what is going on.
 
 ```lua
 -- This code chunk is loaded on demand by the widget's main script 
@@ -82,23 +82,23 @@ These are default drawing flags to be applied if no flags are given at creation 
 
 This is a table of colors used for drawing the GUI elements. The following colors are available:
 
-| Color | Default value | Used for |
-| :--- | :--- | :--- |
-| text | COLOR\_THEME\_PRIMARY3 | Text on labels, menus etc. |
-| focusText | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited. |
-| buttonBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
-| editBackground | COLOR\_THEME\_EDIT | Background when a value is being edited. |
-| active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
+| Color            | Default value          | Used for                                                                     |
+| ---------------- | ---------------------- | ---------------------------------------------------------------------------- |
+| text             | COLOR\_THEME\_PRIMARY3 | Text on labels, menus etc.                                                   |
+| focusText        | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited.                             |
+| buttonBackground | COLOR\_THEME\_FOCUS    | Background on buttons and numbers/timers being edited.                       |
+| editBackground   | COLOR\_THEME\_EDIT     | Background when a value is being edited.                                     |
+| active           | COLOR\_THEME\_ACTIVE   | Background on active toggle buttons and the border around selected elements. |
 
 Notice that all of the default colors are theme colors. This will make the GUI screens use the contemporary color theme.
 
 ### libGUI Functions
 
-#### libGUI.match\(x, ...\)
+#### libGUI.match(x, ...)
 
 This is a small utility function that returns `true` if the first argument `x` matches any of the following arguments. It is useful for comparing values of `event`, e.g. if we want to test if the user pressed either of the following buttons, we can use:`libGUI.match(event, EVT_VIRTUAL_ENTER, EVT_VIRTUAL_EXIT, EVT_VIRTUAL_MENU)`
 
-#### libGUI.newGUI\(\)
+#### libGUI.newGUI()
 
 This is the main function that creates a new `GUI` object. If an application has different screens, then a `GUI` object is created for each screen.
 
@@ -114,15 +114,15 @@ A function `f(event, touchState)` to draw the screen background in full screen m
 
 #### GUI.prompt
 
-A GUI \(or another table with a function `run(event, touchState`\). When this is set, the GUI will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
+A GUI (or another table with a function `run(event, touchState`). When this is set, the GUI will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
 
 ### GUI Object Functions
 
-#### GUI.run\(event, touchState\)
+#### GUI.run(event, touchState)&#xD;
 
 Redraws the screen and processes key and touch events. It can directly replace a widget's `refresh` function, or it can be called by `refresh`.
 
-#### GUI.SetEventHandler\(event, f\)
+#### GUI.SetEventHandler(event, f)&#xD;
 
 Sets a function `f(event, touchState)` to handle an event. If no GUI element is being edited, then this can trap events before they are passed to the GUI, e.g. to press EXIT to go back to the previous screen. If `f` is `nil`, then the event handler is removed.
 
@@ -142,21 +142,21 @@ There are some common properties that can be set for all or most of the GUI elem
 
 The various screen elements are added to the GUI with the functions described below. The functions all add the element to the GUI and returns a reference so the element subsequently can be accessed by the client.
 
-#### GUI.button \(x, y, w, h, title\[, callBack\] \[, flags\]\)
+#### GUI.button (x, y, w, h, title\[, callBack] \[, flags])&#xD;
 
-Add a button to the GUI. 
+Add a button to the GUI.&#x20;
 
 When tapped, it calls `callBack(self)` so a call back function can tell which button activated it.
 
-#### GUI.toggleButton\(x, y, w, h, title, value\[, callBack\] \[, flags\]\)
+#### GUI.toggleButton(x, y, w, h, title, value\[, callBack] \[, flags])&#xD;
 
-Add a toggle button to the GUI. 
+Add a toggle button to the GUI.&#x20;
 
-The `value` is either `true` or `false`. 
+The `value` is either `true` or `false`.&#x20;
 
 When tapped, it calls `callBack(self)` so a call back function can tell which toggle button activated it, and what `self.value` is.
 
-#### GUI.number\(x, y, w, h, value\[, callBack\] \[, flags\]\)
+#### GUI.number(x, y, w, h, value\[, callBack] \[, flags])&#xD;
 
 Add an editable number to the GUI.
 
@@ -164,9 +164,9 @@ The `value` can be either a number or text. By setting the value to a text, it c
 
 When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)`. Thereby, the call back function can use events to edit the number, e.g. sliding a finger up and down can increase and decrease the value. You can look in the LibGUI widget's loadable file for an example of this.
 
-#### 
+#### &#xD;
 
-#### GUI.timer\(x, y, w, h, tmr\[, callBack\] \[, flags\]\)
+#### GUI.timer(x, y, w, h, tmr\[, callBack] \[, flags])&#xD;
 
 Add a timer to the GUI.
 
@@ -174,13 +174,13 @@ If no `value` is present, then the model timer `tmr` will be shown. If `value` i
 
 When tapped, the timer will go to edit mode, as described above for number.
 
-#### GUI.label\(x, y, w, h, title\[, flags\]\)
+#### GUI.label(x, y, w, h, title\[, flags])
 
 Add a text label to the GUI.
 
 The label does not respond to any events, but its `title` and `flags` can be changed.
 
-#### GUI.menu\(x, y, visibleCount, items\[, callBack\] \[, flags\]\)
+#### GUI.menu(x, y, visibleCount, items\[, callBack] \[, flags])&#xD;
 
 Add a scrollable menu to the GUI. This function returns a table with each of the menu's line elements.
 
@@ -191,6 +191,4 @@ Add a scrollable menu to the GUI. This function returns a table with each of the
 When a menu item is tapped, it calls `callBack(self)`. Each menu element has a field `self.idx` giving the index in the menu, and this can be used by `callBack` to see which menu item was selected.
 
 Notice that the menu's width is decided by the item texts and the font flags, and the height is decided by `visibleCount` and the font flags.
-
-
 
