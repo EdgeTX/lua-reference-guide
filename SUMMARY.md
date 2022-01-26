@@ -1,6 +1,6 @@
 # Table of contents
 
-* [EdgeTX 2.6 Lua Reference Guide](README.md)
+* [EdgeTX 2.7 Lua Reference Guide](README.md)
 * [Introduction](introduction/README.md)
   * [Acknowledgments](introduction/acknowledgments.md)
   * [Getting Started](introduction/getting\_started.md)
