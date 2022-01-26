@@ -1,4 +1,4 @@
-# model.setCustomFunction\(function, value\)
+# model.setCustomFunction(function, value)
 
 Set Custom Function parameters
 
@@ -6,8 +6,8 @@ Set Custom Function parameters
 
 ## Parameters
 
-* `function` \(unsigned number\) custom function number \(use 0 for CF1\)
-* `value` \(table\) custom function parameters, see model.getCustomFunction\(\) for table format
+* `function` (unsigned number) custom function number, see [Special Function Constants](../constants/special-function-constants.md).
+* `value` (table) custom function parameters, see model.getCustomFunction() for table format
 
 ## Return value
 
@@ -16,4 +16,3 @@ none
 ### Notice
 
 If a parameter is missing from the value, then that parameter remains unchanged.
-

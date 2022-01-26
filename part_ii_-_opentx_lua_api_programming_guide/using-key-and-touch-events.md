@@ -80,33 +80,32 @@ These are default drawing flags to be applied if no flags are given at creation 
 
 #### libGUI.colors
 
-This is a table of colors used for drawing the GUI elements. The following colors are available:
+This is a table of the colors used for drawing the GUI elements. These are all theme colors by default, but they can be changed for the `libGUI` instance without changing the theme colors anywhere else.
 
-| Color | Default value | Used for |
-| :--- | :--- | :--- |
-| text | COLOR\_THEME\_PRIMARY3 | Text on labels, menus etc. |
-| focusText | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited. |
-| buttonBackground | COLOR\_THEME\_FOCUS | Background on buttons and numbers/timers being edited. |
-| editBackground | COLOR\_THEME\_EDIT | Background when a value is being edited. |
-| active | COLOR\_THEME\_ACTIVE | Background on active toggle buttons and the border around selected elements. |
+| Color    | Default value          | Used for                                                                     |
+| -------- | ---------------------- | ---------------------------------------------------------------------------- |
+| primary1 | COLOR\_THEME\_PRIMARY1 | Text on dropDown menu                                                        |
+| primary2 | COLOR\_THEME\_PRIMARY2 | Text on buttons and numbers/timers being edited                              |
+| primary3 | COLOR\_THEME\_PRIMARY3 | Text on labels, menus, and numbers/timers                                    |
+| focus    | COLOR\_THEME\_FOCUS    | Background on buttons and numbers/timers being edited.                       |
+| edit     | COLOR\_THEME\_EDIT     | Background when a value is being edited.                                     |
+| active   | COLOR\_THEME\_ACTIVE   | Background on active toggle buttons and the border around selected elements. |
 
-Notice that all of the default colors are theme colors. This will make the GUI screens use the contemporary color theme.
+#### libGUI.widgetRefresh
+
+A function `f()` to draw the zone of the screen in widget mode. It takes no arguments.
 
 ### libGUI Functions
 
-#### libGUI.match\(x, ...\)
+#### libGUI.match(x, ...)
 
 This is a small utility function that returns `true` if the first argument `x` matches any of the following arguments. It is useful for comparing values of `event`, e.g. if we want to test if the user pressed either of the following buttons, we can use:`libGUI.match(event, EVT_VIRTUAL_ENTER, EVT_VIRTUAL_EXIT, EVT_VIRTUAL_MENU)`
 
-#### libGUI.newGUI\(\)
+#### libGUI.newGUI()
 
 This is the main function that creates a new `GUI` object. If an application has different screens, then a `GUI` object is created for each screen.
 
 ### GUI Object Properties
-
-#### GUI.widgetRefresh
-
-A function `f()` to draw the zone of the screen in widget mode. It takes no arguments.
 
 #### GUI.fullScreenRefresh
 
@@ -114,15 +113,15 @@ A function `f(event, touchState)` to draw the screen background in full screen m
 
 #### GUI.prompt
 
-A GUI \(or another table with a function `run(event, touchState`\). When this is set, the GUI will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
+A GUI (or another table with a function `run(event, touchState`). When this is set, the GUI will first be drawn, and then it will call `prompt.run(event, touchState)` instead of running itself. That way, the `prompt` can implement a modal prompt window.
 
 ### GUI Object Functions
 
-#### GUI.run\(event, touchState\)
+#### GUI.run(event, touchState)
 
 Redraws the screen and processes key and touch events. It can directly replace a widget's `refresh` function, or it can be called by `refresh`.
 
-#### GUI.SetEventHandler\(event, f\)
+#### GUI.SetEventHandler(event, f)
 
 Sets a function `f(event, touchState)` to handle an event. If no GUI element is being edited, then this can trap events before they are passed to the GUI, e.g. to press EXIT to go back to the previous screen. If `f` is `nil`, then the event handler is removed.
 
@@ -133,7 +132,7 @@ The screen elements are drawn in the order that they are added to the GUI, and t
 There are some common properties that can be set for all or most of the GUI elements.
 
 * `element.disabled = true` prevents the element from taking focus and receiving events, and disabled buttons are greyed out.
-* `element.hidden = true`  in addition to the above, the element is not drawn.
+* `element.hidden = true` in addition to the above, the element is not drawn.
 * `element.title` can be changed for elements with a title.
 * `element.value` can be changed for elements with a value.
 * `element.flags` drawing flags for the element's text. If no flags were given at element creation, it defaults to `GUI.flags`.
@@ -142,21 +141,21 @@ There are some common properties that can be set for all or most of the GUI elem
 
 The various screen elements are added to the GUI with the functions described below. The functions all add the element to the GUI and returns a reference so the element subsequently can be accessed by the client.
 
-#### GUI.button \(x, y, w, h, title\[, callBack\] \[, flags\]\)
+#### GUI.button (x, y, w, h, title\[, callBack] \[, flags])
 
-Add a button to the GUI. 
+Add a button to the GUI.
 
 When tapped, it calls `callBack(self)` so a call back function can tell which button activated it.
 
-#### GUI.toggleButton\(x, y, w, h, title, value\[, callBack\] \[, flags\]\)
+#### GUI.toggleButton(x, y, w, h, title, value\[, callBack] \[, flags])
 
-Add a toggle button to the GUI. 
+Add a toggle button to the GUI.
 
-The `value` is either `true` or `false`. 
+The `value` is either `true` or `false`.
 
 When tapped, it calls `callBack(self)` so a call back function can tell which toggle button activated it, and what `self.value` is.
 
-#### GUI.number\(x, y, w, h, value\[, callBack\] \[, flags\]\)
+#### GUI.number(x, y, w, h, value\[, callBack] \[, flags])
 
 Add an editable number to the GUI.
 
@@ -164,9 +163,9 @@ The `value` can be either a number or text. By setting the value to a text, it c
 
 When tapped, the number will go to edit mode. In edit mode, events are passed to `callBack(self, event, touchState)`. Thereby, the call back function can use events to edit the number, e.g. sliding a finger up and down can increase and decrease the value. You can look in the LibGUI widget's loadable file for an example of this.
 
-#### 
+####
 
-#### GUI.timer\(x, y, w, h, tmr\[, callBack\] \[, flags\]\)
+#### GUI.timer(x, y, w, h, tmr\[, callBack] \[, flags])
 
 Add a timer to the GUI.
 
@@ -174,13 +173,13 @@ If no `value` is present, then the model timer `tmr` will be shown. If `value` i
 
 When tapped, the timer will go to edit mode, as described above for number.
 
-#### GUI.label\(x, y, w, h, title\[, flags\]\)
+#### GUI.label(x, y, w, h, title\[, flags])
 
 Add a text label to the GUI.
 
 The label does not respond to any events, but its `title` and `flags` can be changed.
 
-#### GUI.menu\(x, y, visibleCount, items\[, callBack\] \[, flags\]\)
+#### GUI.menu(x, y, visibleCount, items\[, callBack] \[, flags])
 
 Add a scrollable menu to the GUI. This function returns a table with each of the menu's line elements.
 
@@ -192,5 +191,24 @@ When a menu item is tapped, it calls `callBack(self)`. Each menu element has a f
 
 Notice that the menu's width is decided by the item texts and the font flags, and the height is decided by `visibleCount` and the font flags.
 
+#### GUI.dropDown(x, y, w, h, items, selected, callBack, flags)
 
+Add a field with values that can be selected on a drop down menu.
 
+`items` is a table with the items that can be selected from.
+
+`selected` is the index of the initially selected item.
+
+When an item has been selected, it calls `callBack(self)`. The index of the selected item is given by `self.selected`.
+
+#### GUI.gui.horizontalSlider(x, y, w, value, min, max, delta, callBack)
+
+Adds a horizontal slider that starts at `(x, y)` and has the width `w`.&#x20;
+
+`value` is the initial value, and `min - max` is the interval of values that can be selected with step size `delta`.
+
+When the value is changed, `callBack(self)` is called, and the value is given by `self.value`.
+
+#### GUI.gui.verticalSlider(x, y, w, value, min, max, delta, callBack)
+
+The same as the above, just vertical.

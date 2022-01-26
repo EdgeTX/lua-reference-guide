@@ -1,4 +1,4 @@
-# model.getLogicalSwitch\(switch\)
+# model.getLogicalSwitch(switch)
 
 Get Logical Switch parameters
 
@@ -6,17 +6,16 @@ Get Logical Switch parameters
 
 ## Parameters
 
-* `switch` \(unsigned number\) logical switch number \(use 0 for LS1\)
+* `switch` (unsigned number) logical switch number (use 0 for LS1)
 
 ## Return value
 
 * `nil` requested logical switch does not exist
 * `table` logical switch data:
-  * `func` \(number\) function index
-  * `v1` \(number\) V1 value \(index\)
-  * `v2` \(number\) V2 value \(index or value\)
-  * `v3` \(number\) V3 value \(index or value\)
-  * `and` \(number\) AND switch index
-  * `delay` \(number\) delay \(time in 1/10 s\)
-  * `duration` \(number\) duration \(time in 1/10 s\)
-
+  * `func` (number) function index, see [Logical Switch Function Constants](../constants/logical-switch-function-constants.md).
+  * `v1` (number) V1 value (index)
+  * `v2` (number) V2 value (index or value)
+  * `v3` (number) V3 value (index or value)
+  * `and` (number) AND switch index
+  * `delay` (number) delay (time in 1/10 s)
+  * `duration` (number) duration (time in 1/10 s)
