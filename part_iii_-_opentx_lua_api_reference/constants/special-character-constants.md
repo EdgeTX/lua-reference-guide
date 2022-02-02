@@ -4,6 +4,8 @@ description: The radio's special characters can be used with the following text 
 
 # Special Character Constants
 
+Please note that the special characters are only available for standard and `BOLD` font sizes.
+
 * CHAR\_RIGHT
 * CHAR\_LEFT
 * CHAR\_UP
