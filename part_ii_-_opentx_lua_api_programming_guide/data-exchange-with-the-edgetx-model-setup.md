@@ -78,7 +78,7 @@ You can also send data the other way: from Lua to the EdgeTX model setup.
 
 To send a _value_, use a global variable: `model.setGlobalVariable(index, fm, value)`. If you use the default GV setting, where all other flight modes use the value of FM0, then you can use 0 for `fm`.
 
-To send a _switch_, setup a `STICKY` type logical switch, and then use `setStickySwitch(index, true/false)`.&#x20;
+To send a _switch_, setup a `STICKY` type logical switch, and then use `setStickySwitch(index, true/false)`.  Notice that a blank sticky switch `STICKY(---, ---)` is ON when the model is first loaded. If you want a sticky switch to be OFF by default then use the value of the switch itself as `V1`, i.e. `L01 = STICKY(L01, ---)` will be off by default.
 
 The following table gives an overview of the Lua API functions that can be used to exchange data with the EdgeTX model setup.
 
