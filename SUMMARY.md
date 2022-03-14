@@ -55,6 +55,8 @@
     * [getRotEncSpeed()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrotencspeed.md)
     * [getRtcTime()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrtctime.md)
     * [getShmVar(id)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getshmvar-id.md)
+    * [getSourceIndex(sourceName)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getsourceindex-sourcename.md)
+    * [getSourceName(sourceIndex)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getsourcename-sourceindex.md)
     * [getSwitchIndex(positionName)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getswitchindex-positionname.md)
     * [getSwitchName(switchIndex)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getswitchname-switchindex.md)
     * [getSwitchValue(switchIndex)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getswitchvalue-switchindex.md)
