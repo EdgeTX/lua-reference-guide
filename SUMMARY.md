@@ -8,7 +8,6 @@
   * [Custom (Mixer) Scripts](part\_i\_-\_script\_type\_overview/mix.md)
   * [Telemetry Scripts](part\_i\_-\_script\_type\_overview/telemetry.md)
   * [One-Time Scripts](part\_i\_-\_script\_type\_overview/one-time\_scripts.md)
-  * [Wizard Script](part\_i\_-\_script\_type\_overview/wizard.md)
   * [Function Scripts](part\_i\_-\_script\_type\_overview/function\_scripts.md)
   * [Widget Scripts](part\_i\_-\_script\_type\_overview/widget\_scripts.md)
 * [Part II - EdgeTX Lua API Programming Guide](part\_ii\_-\_opentx\_lua\_api\_programming\_guide/README.md)
