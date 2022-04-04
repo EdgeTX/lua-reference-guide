@@ -14,7 +14,7 @@ In addition to the provided libraries, Lua has a very elegant mechanism for load
 
 ## First Class Functions
 
-Computer science pioneer Christopher Strachey introduced the concept of functions as _first-class objects_ in his paper F[undamental Concepts in Programming Languages](https://web.archive.org/web/20100216060948/http://www.cs.cmu.edu/~crary/819-f09/Strachey67.pdf) from 1967. What it means is that functions can be treated as other variables: as arguments passed in function calls, as results returned from function calls, and a function identifier can be re-assigned to another chunk of function code, just like a variable ca be assigned to a new value.
+Computer science pioneer Christopher Strachey introduced the concept of functions as _first-class objects_ in his paper [Fundamental Concepts in Programming Languages](https://web.archive.org/web/20100216060948/http://www.cs.cmu.edu/\~crary/819-f09/Strachey67.pdf) from 1967. What it means is that functions can be treated as other variables: as arguments passed in function calls, as results returned from function calls, and a function identifier can be re-assigned to another chunk of function code, just like a variable ca be assigned to a new value.
 
 In Lua, a function declaration is really "syntactic sugar" for assigning a variable to the chunk of code that is called when the function is invoked, i.e.
 
@@ -52,13 +52,13 @@ The function is returned directly without being assigned to a variable name. The
 
 Likewise, the local variables that you declare outside the functions of your script can be used by all of the functions in your script, and they persist between function calls, but they are not visible to other scripts.
 
-The [widget scripts](../part_i_-_script_type_overview/widget_scripts.md) are a little trickier, as you can register multiple instances of the same widget script, and all of these instances run within the same Lua closure. Therefore, local variables declared outside any functions in a widget script are shared among all of the instances of that script. But each call to the `create(...)` function returns a new `widget` list to the system. And since this list is unique to each instance, you can add private instance variables to it.
+The [widget scripts](../part\_i\_-\_script\_type\_overview/widget\_scripts.md) are a little trickier, as you can register multiple instances of the same widget script, and all of these instances run within the same Lua closure. Therefore, local variables declared outside any functions in a widget script are shared among all of the instances of that script. But each call to the `create(...)` function returns a new `widget` list to the system. And since this list is unique to each instance, you can add private instance variables to it.
 
 ## Functions with Variable Number of Arguments
 
 Please consider this function:
 
-```text
+```
 local function match(x, ...)
   for i, y in ipairs({...}) do
     if x == y then
@@ -82,4 +82,3 @@ You can also use `...` directly as a comma separated list of values, e.g. `local
 ## References
 
 The [Lua 5.2 Reference Manual](https://www.lua.org/manual/5.2/manual.html) helpful, both if you want to learn more about Lua, and if you want to search for answers to specific questions.
-
