@@ -6,7 +6,7 @@ _**WARNING -**_ **Do not use Lua Custom scripts for controlling any aspect of yo
 
 Each model can have several custom scripts associated with it, and these scripts are run periodically. They behave similarly to standard OpenTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
 
-**Please note:** the firmware must be compiled with the option LUA\_MIXER=Y for Custom scripts to be available.
+**Please note:** the firmware must be compiled with the option `LUA_MIXER=Y` for Custom scripts to be available.
 
 **Please note:** the scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
 
