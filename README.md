@@ -8,7 +8,9 @@ Please feel free to make suggestions or corrections to the documentation on GitH
 
 This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX 2.7 operating system with Lua support. Readers should be familiar with EdgeTX, the EdgeTX Companion, and know how to transfer files the SD card in the transmitter.
 
-Part I of the guide shows how to enable Lua support for Taranis and includes basic examples of each types of script.
+If you are new to Lua programming, you may also find the [Lua Reference Manual](https://www.lua.org/manual/5.2/) of assistance.&#x20;
+
+Part I is an overview of the different script types, along with basic examples of each.
 
 Part II is a programming guide that introduces the types of EdgeTX Lua scripts and how to use them.
 
