@@ -2,7 +2,7 @@
 
 ## Downloading EdgeTX Companion
 
-EdgeTX Companion 2.5 is [available for download here](https://github.com/EdgeTX/edgetx/releases/tag/v2.5.0) (pick the version for your operating system from Assets heading at the bottom of the page).&#x20;
+EdgeTX Companion 2.6 is [available for download here](https://github.com/EdgeTX/edgetx/releases/tag/v2.6.0) (pick the version for your operating system from Assets heading at the bottom of the page - filename will have `cpn` as part of the name).
 
 ## Updating firmware with Lua option selected
 
