@@ -10,7 +10,7 @@ Regarding memory, the situation is a bit different for the radios with black/whi
 
 ## Telemetry Script Radios
 
-Radios with black/white or grey scale screens and telemetry scripts such as e.g. FrSky Taranis, Xlite, Jumper T12 and Radiomaster TX16 have extremely small RAM memories, and therefore it may be necessary to divide up your script into smaller loadable modules.
+Radios with black/white or grey scale screens and telemetry scripts such as e.g. FrSky Taranis, Xlite, Jumper T12 and Radiomaster TX12 have extremely small RAM memories, and therefore it may be necessary to divide up your script into smaller loadable modules.
 
 The following simple example demonstrates how different screens can be loaded on demand, and how shared data can be stored in a table.
 
@@ -104,7 +104,7 @@ Code is loaded by `shared.changeScreen` with the `loadScript` function, which re
 
 ## Widget Script Radios
 
-Radios with color screens and widget scripts such as e.g. FrSky Horus, Jumper T16 and Radiomaster TX16 have fairly large RAM memories, but since all widget scripts present on the SD card are always loaded into memory, they could run out of memory if many big widget scripts are present on the card - even if they are not being used by the selected model. Therefore, large widget scripts should be divided into a small main script and a large loadable part. One way to accomplish this is the following.
+Radios with color screens and widget scripts such as e.g. FrSky Horus, Jumper T16 and Radiomaster TX16S have fairly large RAM memories, but since all widget scripts present on the SD card are always loaded into memory, they could run out of memory if many big widget scripts are present on the card - even if they are not being used by the selected model. Therefore, large widget scripts should be divided into a small main script and a large loadable part. One way to accomplish this is the following.
 
 ```lua
 -- main.lua
@@ -141,7 +141,7 @@ return {
 }
 ```
 
-The `create` function loads the file `loadable.lua` in the folder /WIDGETS/&lt;widget name&gt;/, and calls it immediately as described in [the previous section](loading-code-modules-dynamically.md). It passes `zone` and `options` as arguments to `loadable.lua`. This scripts adds the functions `refresh`, `update` and \(optionally\) `background` to the `widget` table:
+The `create` function loads the file `loadable.lua` in the folder /WIDGETS/\<widget name>/, and calls it immediately as described in [the previous section](loading-code-modules-dynamically.md). It passes `zone` and `options` as arguments to `loadable.lua`. This scripts adds the functions `refresh`, `update` and (optionally) `background` to the `widget` table:
 
 ```lua
 -- loadable.lua
@@ -172,4 +172,3 @@ return widget
 Obviously, the bulk of the widget's code goes in `loadable.lua`, and is only loaded if the widgets is in fact being used. Therefore, if the widget is not used, only the small amount of code in `main.lua` is loaded into the radio's memory.
 
 For an example of a widget that uses the above design pattern, please have a look at the **EventDemo** widget that is included on the SD card with EdgeTX for color screen radios.
-
