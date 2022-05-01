@@ -14,3 +14,7 @@ Draw text inside rectangle (x,y,w,h) with line breaks
 ## Return value
 
 none
+
+## Notes
+
+* Color radios only.
