@@ -23,5 +23,5 @@ The list of valid sources is available:
   * `id` (number) field identifier
   * `name` (string) field name
   * `desc` (string) field description
-  * 'unit' (number) unit identifier [Full list](https://github.com/EdgeTX/lua-reference-guide/tree/fe42fe461fcccd828fba5d218da01336e4f7b0cd/part\_iii\_-\_opentx\_lua\_api\_reference/appendix/units.html)
+  * 'unit' (number) unit identifier [Full list](../../appendix/units.md)
 * `nil` the requested field was not found
