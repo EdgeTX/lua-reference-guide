@@ -50,6 +50,7 @@
     * [getGeneralSettings()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getgeneralsettings.md)
     * [getGlobalTimer()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getglobaltimer.md)
     * [getLogicalSwitchValue(id)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getlogicalswitchvalue-id.md)
+    * [getOutputValue(outputIndex)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getoutputvalue-outputindex.md)
     * [getRAS()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getras.md)
     * [getRSSI()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrssi.md)
     * [getRotEncMode()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrotencmode.md)
