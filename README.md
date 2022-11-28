@@ -1,4 +1,4 @@
-# EdgeTX 2.8 Lua Reference Guide
+# EdgeTX 2.7 Lua Reference Guide
 
 [Join the chat on Discord](https://discord.gg/CZCwVx2)
 
@@ -6,9 +6,9 @@ The latest version of this guide will always be available [here](https://luadoc.
 
 Please feel free to make suggestions or corrections to the documentation on GitHub, but the preferred method of editing is to use [GitBook](https://www.gitbook.com), so all changes will need to be made by someone who is authorized as a writer there.
 
-This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX 2.8 operating system with Lua support. Readers should be familiar with EdgeTX, the EdgeTX Companion, and know how to transfer files the SD card in the transmitter.
+This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX 2.7 operating system with Lua support. Readers should be familiar with EdgeTX, the EdgeTX Companion, and know how to transfer files the SD card in the transmitter.
 
-If you are new to Lua programming, you may also find the [Lua Reference Manual](https://www.lua.org/manual/5.2/) of assistance.
+If you are new to Lua programming, you may also find the [Lua Reference Manual](https://www.lua.org/manual/5.2/) of assistance.&#x20;
 
 Part I is an overview of the different script types, along with basic examples of each.
 
