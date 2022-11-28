@@ -64,6 +64,8 @@
     * [getUsage()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getusage.md)
     * [getValue(source)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getvalue.md)
     * [getVersion()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getversion.md)
+    * [ghostTelemetryPop()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/ghosttelemetrypop.md)
+    * [ghostTelemetryPush()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/ghosttelemetrypush.md)
     * [killEvents(key)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/killevents.md)
     * [loadScript(file \[, mode\], \[,env\])](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/loadscript.md)
     * [multiBuffer(address\[,value\])](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/multibuffer.md)
