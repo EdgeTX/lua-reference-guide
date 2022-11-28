@@ -161,6 +161,8 @@
   * [Bitmap Functions](part\_iii\_-\_opentx\_lua\_api\_reference/bitmap-functions-less-than-greater-than-luadoc-begin-bitmap/README.md)
     * [Bitmap.getSize(name)](part\_iii\_-\_opentx\_lua\_api\_reference/bitmap-functions-less-than-greater-than-luadoc-begin-bitmap/getsize.md)
     * [Bitmap.open(name)](part\_iii\_-\_opentx\_lua\_api\_reference/bitmap-functions-less-than-greater-than-luadoc-begin-bitmap/open.md)
+    * [Bitmap.resize(bitmap, width, height)](part\_iii\_-\_opentx\_lua\_api\_reference/bitmap-functions-less-than-greater-than-luadoc-begin-bitmap/bitmap.resize-bitmap-width-height.md)
+    * [Bitmap.toMask(bitmap)](part\_iii\_-\_opentx\_lua\_api\_reference/bitmap-functions-less-than-greater-than-luadoc-begin-bitmap/bitmap.tomask-bitmap.md)
   * [Filesystem](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/README.md)
     * [dir(directory)](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/dir-directory.md)
     * [fstat(path)](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/fstat-path.md)
