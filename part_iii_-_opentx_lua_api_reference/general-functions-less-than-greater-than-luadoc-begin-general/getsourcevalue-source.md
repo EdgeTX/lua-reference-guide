@@ -1,6 +1,6 @@
 # getSourceValue(source)
 
-Returns the value of a source. Superseeds getValue.
+Returns the value of a source. Supersedes getValue.
 
 The list of fixed sources:
 
