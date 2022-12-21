@@ -12,7 +12,7 @@ Any variable or function not declared local is implicitly global. Care must be t
 
 This example consists of three scripts
 
-* **count-dn.lua** - this is a mix script than can be run stand alone to announce time remaining based on a user-defined switch and duration.  It updates two global variables \(gCountUp and gCountDown\).  It also creates output values \(ctup and ctdn\) which are for demonstration purposes only.
+* **count-dn.lua** - this is a mix script than can be run stand alone to announce time remaining based on a user-defined switch and duration. It updates two global variables (gCountUp and gCountDown). It also creates output values (ctup and ctdn) which are for demonstration purposes only.
 * **count-up.lua** - this is an optional function script which will do count up announcements based on harded coded values.
 * **shocount.lua** - this is an optional telemetry script which simply shows the current values of the gCountUp and gCountDown variables.
 
@@ -24,22 +24,22 @@ This example consists of three scripts
     * suggested switch = "SA"
     * suggested mins = 3
     * suggested sw\_high = 0
-  * screen image:
+  *   screen image:
 
-    ![count-dn.lua mix script](https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/count-dn.png)
+      <img src="https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/count-dn.png" alt="count-dn.lua mix script" data-size="original">
 * count-up.lua
   * copy to /SCRIPTS/FUNCTIONS
   * configure on the transmitter SPECIAL FUNCTIONS page
-    * suggested switch SA\(down\)
-  * screen image:
+    * suggested switch SA(down)
+  *   screen image:
 
-    ![count-up.lua function script](https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/count-up.png)
+      <img src="https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/count-up.png" alt="count-up.lua function script" data-size="original">
 * shocount.lua
   * copy to /SCRIPTS/TELEMETRY
   * configure on the transmitter TELEMETRY page
-  * screen image:
+  *   screen image:
 
-    ![shocount.lua function script](https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/shocount.png)
+      <img src="https://github.com/opentx/opentx-2-3-lua-reference-guide/tree/0d355d19f1961b689994cf78b84005864d33f9b5/shocount.png" alt="shocount.lua function script" data-size="original">
 
 ## Script sources:
 
@@ -183,4 +183,3 @@ end
 
 return{run=run}
 ```
-
