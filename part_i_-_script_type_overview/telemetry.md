@@ -4,7 +4,7 @@
 
 Telemetry scripts are used for building customized screens. Each model can have up to three active scripts as configured on the model's telemetry configuration page. The same script can be assigned to multiple models.
 
-**Please note: **Telemetry scripts are only available on radios with telemetry screens, such as e.g. FrSky Taranis models (including Xlite), Radiomaster TX12 and and Jumper T12.
+**Please note:** Telemetry scripts are only available on radios with telemetry screens, such as e.g. FrSky Taranis models (including Xlite), Radiomaster TX12 and and Jumper T12.
 
 ## Lifetime
 

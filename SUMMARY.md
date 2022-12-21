@@ -51,7 +51,6 @@
     * [getRSSI()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrssi.md)
     * [getRotEncSpeed()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrotencspeed.md)
     * [getRtcTime()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getrtctime.md)
-    * [getSourceValue(source)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getsourcevalue-source.md)
     * [getTime()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/gettime.md)
     * [getTxGPS()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/gettxgps.md)
     * [getUsage()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getusage.md)

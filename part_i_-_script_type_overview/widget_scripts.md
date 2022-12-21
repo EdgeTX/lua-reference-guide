@@ -8,7 +8,7 @@ But widgets on the main views can also be shown in _full screen mode_, where the
 
 Each model can have up to five main views, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own _options_ table.
 
-**Please note: **Widget scripts are only available on radios with color screens, e.g. FrSky Horus models, Radiomaster TX16 and Jumper T16.
+**Please note:** Widget scripts are only available on radios with color screens, e.g. FrSky Horus models, Radiomaster TX16 and Jumper T16.
 
 ## Lifetime
 
@@ -18,10 +18,10 @@ They can be added to the top bar or a main view  through the telemetry setup men
 
 * `create` is called once when the widget instance is registered (started).
 * `update` is called when widget settings are changed by the user.
-* `background` is called periodically when the widget instance _is_ _not _visible. \
-  **Note: **this is different from the way that telemetry scripts are handled.
-* `refresh` is called periodically when the widget instance _is _visible.\
-  **Note: **if you want `background` to run when the widget is visible, then call it from `refresh`.
+* `background` is called periodically when the widget instance _is_ _not_ visible. \
+  **Note:** this is different from the way that telemetry scripts are handled.
+* `refresh` is called periodically when the widget instance _is_ visible.\
+  **Note:** if you want `background` to run when the widget is visible, then call it from `refresh`.
 * A widget script is stopped and disabled if it misbehaves (e.g. too long runtime, run-time error, or low memory)
 * All widgets are stopped while a One-Time script is running (see [One-Time scripts](one-time\_scripts.md)).
 

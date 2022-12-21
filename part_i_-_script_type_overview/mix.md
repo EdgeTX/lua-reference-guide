@@ -6,9 +6,9 @@ _**WARNING -**_ **Do not use Lua Custom scripts for controlling any aspect of yo
 
 Each model can have several custom scripts associated with it, and these scripts are run periodically. They behave similarly to standard OpenTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
 
-**Please note: **the firmware must be compiled with the option LUA=YES for Custom scripts to be available.
+**Please note:** the firmware must be compiled with the option LUA=YES for Custom scripts to be available.
 
-**Please note: **the scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
+**Please note:** the scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
 
 ### Typical uses
 
@@ -26,14 +26,14 @@ Each model can have several custom scripts associated with it, and these scripts
 ## Lifetime
 
 * Custom scripts are loaded from SD card when model is selected
-* `init`_ _function is called first
+* `init` __ function is called first
 * `run` function is called periodically (about 30 times per second)
 * the script is killed (stopped and disabled) if it misbehaves (e.g. run-time error or low memory)
 * all Custom scripts are stopped while a One-Time script is running (see Lua One-time scripts)
 
 ### Disabled script
 
-If the script output is used as a `mixer source` , and the script is killed for whatever reason, then _the whole mixer line is disabled _! This can be used for example to provide a fallback in case Lua Custom script is killed.
+If the script output is used as a `mixer source` , and the script is killed for whatever reason, then _the whole mixer line is disabled_ ! This can be used for example to provide a fallback in case Lua Custom script is killed.
 
 Example where Lua mix script is used to drive ailerons in some clever way, but control falls back to the standard aileron mix if script is killed. Second mixer line replaces the first one when the script is alive:
 
@@ -53,7 +53,7 @@ Every script must include a `return` statement at the end, defining its interfac
 * `input` table (optional)
 * `output` table (optional)
 * `init` function (optional)
-* `run `function
+* `run` function
 
 ### Example
 
