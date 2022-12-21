@@ -34,7 +34,7 @@ value is a table for battery cells(except where no cells were detected in which 
 * key (number) cell number (1 to number of cells)
 * value (number) current cell voltage
 
-@status current Introduced in 2.0.0, changed in 2.1.0, `Cels+` and `Cels-` added in 2.1.9
+@status current Introduced in 2.8.0
 
 ### Parameters
 
