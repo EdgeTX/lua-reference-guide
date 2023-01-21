@@ -64,7 +64,7 @@ local input =
     { "Interval", VALUE, 0, 100, 0 } -- interval value, default = 0.
   }
     
-local output { "Val1", "Val2" }
+local output = { "Val1", "Val2" }
 
 local function init()
   -- Called once when the script is loaded
