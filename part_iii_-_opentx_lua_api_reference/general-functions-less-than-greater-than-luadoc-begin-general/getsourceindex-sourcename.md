@@ -2,7 +2,7 @@
 
 #### Parameters
 
-* `sourceName`: string naming a value source as it is shown on radio menus where you can select it. Notice that many names have[ special characters](broken-reference) in them.&#x20;
+* `sourceName`: string naming a value source as it is shown on radio menus where you can select it. Notice that many names have[ special characters](../constants/special-character-constants.md) in them.&#x20;
 
 Return value
 
