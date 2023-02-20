@@ -39,8 +39,6 @@
     * [crossfireTelemetryPush()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/crossfiretelemetrypush.md)
     * [defaultChannel(stick)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/defaultchannel.md)
     * [defaultStick(channel)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/defaultstick.md)
-    * [dir(directory)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/dir-directory.md)
-    * [fstat(path)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/fstat-path.md)
     * [getAvailableMemory()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getavailablememory.md)
     * [getDateTime()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getdatetime.md)
     * [getFieldInfo(name)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getfieldinfo.md)
