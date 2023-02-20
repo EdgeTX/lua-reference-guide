@@ -106,4 +106,4 @@ return {
 * When the widget is not in full screen mode, then both `event` and `touchState` are `nil`.
 * The size of the widget's screen area is as follows:
   * Full screen mode: `LCD_W` by `LCD_H`
-  * Not full screen mode: `zone.w` by `zone.h`
+  * Not full screen mode: `zone.w` by `zone.h` (updated if screen options are changed)
