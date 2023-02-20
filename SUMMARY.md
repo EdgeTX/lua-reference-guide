@@ -34,6 +34,7 @@
     * [Screen Constants](part\_iii\_-\_opentx\_lua\_api\_reference/constants/screen-constants.md)
     * [Logical Switch Function Constants](part\_iii\_-\_opentx\_lua\_api\_reference/constants/logical-switch-function-constants.md)
     * [Special Function Constants](part\_iii\_-\_opentx\_lua\_api\_reference/constants/special-function-constants.md)
+    * [Widget Options](part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md)
   * [General Functions](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/README.md)
     * [GREY()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/grey.md)
     * [accessTelemetryPush()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/accesstelemetrypush.md)
