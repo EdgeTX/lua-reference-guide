@@ -1,6 +1,6 @@
-# Widget Options
+# Widget Options Constants
 
-There are several option types that can be specified in the widget options table\
+There are several option types that can be specified in the widget options table, which are exposed to the user via the Widget Settings menu.\
 \
 For example:
 
