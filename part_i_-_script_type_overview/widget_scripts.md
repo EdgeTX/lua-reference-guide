@@ -98,7 +98,7 @@ return {
 * The `name` must be max. 10 characters long.
 * `options` is passed to `create` and then stored in Lua. Changing it has no effect on EdgeTX.
 * If `options` is changed by the user in the Widget Settings menu, then `update` will be called with a new `options` table, unaffected by any changes made by Lua code to the old `options` table.
-* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces.
+* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options-constants.md) for valid option types.&#x20;
 * If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget.
 * Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
 * When the widget is in full screen mode, then `event` is either 0, a [key event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md), or a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md).
