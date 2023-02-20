@@ -177,6 +177,7 @@
   * [Filesystem](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/README.md)
     * [dir(directory)](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/dir-directory.md)
     * [fstat(path)](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/fstat-path.md)
+    * [del(file or directory)](part\_iii\_-\_opentx\_lua\_api\_reference/filesystem/del-file-or-directory.md)
 * [Part IV - Advanced Topics](part\_iv\_-\_advanced\_topics/README.md)
   * [Lua data sharing across scripts](part\_iv\_-\_advanced\_topics/lua\_data\_sharing\_across\_scripts.md)
   * [Debugging techniques](part\_iv\_-\_advanced\_topics/debugging\_techniques.md)
