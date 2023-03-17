@@ -1,4 +1,4 @@
-# getRotEncSpeed\(\)
+# getRotEncSpeed()
 
 Return rotary encoder current speed
 
@@ -11,8 +11,4 @@ none
 ## Return value
 
 * `number` in list: ROTENC\_LOWSPEED, ROTENC\_MIDSPEED, ROTENC\_HIGHSPEED
-
-  ```text
-    return 0 on radio without rotary encoder
-  ```
-
+* `return 0` on radio without rotary encoder
