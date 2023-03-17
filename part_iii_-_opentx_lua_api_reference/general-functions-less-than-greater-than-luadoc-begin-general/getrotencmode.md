@@ -10,4 +10,5 @@ none
 
 **Return value**
 
-* `number` in list: Normal = 0, Both V and H inverted = 1, V-N = 2, V-A = 3 return 0 on radio without rotary encoder
+* `number` in list: Normal = 0, Both V and H inverted = 1, V-N = 2, V-A = 3&#x20;
+* `return 0` on radio without rotary encoder
