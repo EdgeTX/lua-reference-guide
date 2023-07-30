@@ -1,16 +1,26 @@
 # Custom (Mixer) Scripts
 
+_**WARNING -**_ **Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**
+
+{% hint style="warning" %}
+## <mark style="color:red;">Do not use Lua Custom (Mixer) Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
+{% endhint %}
+
+{% hint style="danger" %}
+the firmware must be compiled with the option `LUA_MIXER=Y` for Custom scripts to be available.
+{% endhint %}
+
 {% hint style="danger" %}
 <mark style="color:red;">**Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**</mark>
 {% endhint %}
 
 ## Overview
 
-Each model can have several custom scripts associated with it, and these scripts are run periodically. They behave similarly to standard OpenTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
+Each model can have several Custom Scripts associated with it, and these scripts are run periodically. They behave similarly to standard EdgeTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom Scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
 
-**Please note:** the firmware must be compiled with the option `LUA_MIXER=Y` for Custom scripts to be available.
-
-**Please note:** the scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
+{% hint style="info" %}
+Custom Scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
+{% endhint %}
 
 ### Typical uses
 
@@ -46,16 +56,24 @@ CH1  [I4]Ail Weight(+100%)
 
 ## File Location
 
-Place them on SD card in folder /SCRIPTS/MIXES/. File name length (without extension) **must be 6 characters or less** (this limit was 8 characters in OpenTX 2.1).
+Place them on SD card in folder /SCRIPTS/MIXES/.  (this limit was 8 characters in OpenTX 2.1).
+
+{% hint style="warning" %}
+File name length (without extension) **must be 6 characters or less**
+{% endhint %}
 
 ## Interface
 
-Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+Every Custom Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `input` table (optional)
-* `output` table (optional)
-* `init` function (optional)
-* `run` function
+* `run` function&#x20;
+* `init` function _(optional)_
+* `input` table _(optional)_
+* `output` table _(optional)_
+
+
+
+
 
 ### Example
 
