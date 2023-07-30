@@ -1,17 +1,11 @@
 # Custom (Mixer) Scripts
 
-_**WARNING -**_ **Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**
-
 {% hint style="warning" %}
 ## <mark style="color:red;">Do not use Lua Custom (Mixer) Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
 {% endhint %}
 
 {% hint style="danger" %}
-the firmware must be compiled with the option `LUA_MIXER=Y` for Custom scripts to be available.
-{% endhint %}
-
-{% hint style="danger" %}
-<mark style="color:red;">**Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**</mark>
+To enable Custom (Mixer) Scripts. firmware must be compiled with the option `LUA_MIXER=Y`.
 {% endhint %}
 
 ## Overview
