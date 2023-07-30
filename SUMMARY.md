@@ -46,7 +46,7 @@
     * [flushAudio()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/flushaudio.md)
     * [getAvailableMemory()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getavailablememory.md)
     * [getDateTime()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getdatetime.md)
-    * [getFieldInfo(sourceID)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getfieldinfo.md)
+    * [getFieldInfo(source)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getfieldinfo.md)
     * [getFlightMode(mode)](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getflightmode.md)
     * [getGeneralSettings()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getgeneralsettings.md)
     * [getGlobalTimer()](part\_iii\_-\_opentx\_lua\_api\_reference/general-functions-less-than-greater-than-luadoc-begin-general/getglobaltimer.md)
