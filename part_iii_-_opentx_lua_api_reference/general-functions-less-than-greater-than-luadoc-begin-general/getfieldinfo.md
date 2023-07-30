@@ -1,4 +1,4 @@
-# getFieldInfo(source)
+# getFieldInfo(sourceID)
 
 Return detailed information about field (source)
 
@@ -15,7 +15,7 @@ The list of valid sources is available:
 
 ## Parameters
 
-* `source` can be an identifier (number) or a name (string) of the source.
+* `sourceID` can be an identifier (number) or a name (string) of the source.
 
 ## Return value
 
