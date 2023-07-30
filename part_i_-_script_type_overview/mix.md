@@ -1,6 +1,8 @@
 # Custom (Mixer) Scripts
 
-_**WARNING -**_ **Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**
+{% hint style="danger" %}
+<mark style="color:red;">**Do not use Lua Custom scripts for controlling any aspect of your model that could cause a crash if the script stops executing!**</mark>
+{% endhint %}
 
 ## Overview
 
