@@ -50,7 +50,7 @@ CH1  [I4]Ail Weight(+100%)
 
 ## File Location
 
-Place them on SD card in folder /SCRIPTS/MIXES/.  (this limit was 8 characters in OpenTX 2.1).
+Place them on SD card in folder /SCRIPTS/MIXES/
 
 {% hint style="warning" %}
 File name length (without extension) **must be 6 characters or less**
