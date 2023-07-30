@@ -5,7 +5,7 @@
 {% endhint %}
 
 {% hint style="danger" %}
-To enable Custom (Mixer) Scripts. firmware must be compiled with the option `LUA_MIXER=Y`.
+To enable Custom (Mixer) Scripts, firmware must be compiled with the option `LUA_MIXER=Y`.
 {% endhint %}
 
 ## Overview
