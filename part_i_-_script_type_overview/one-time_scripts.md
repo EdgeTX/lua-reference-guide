@@ -10,7 +10,7 @@ One-Time scripts start when called upon by a specific radio function or when the
 <mark style="color:red;">**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions). They are automatically restarted once the One-Time script is finished. This is done to provide enough system resources to execute the One-Time script.**</mark>
 {% endhint %}
 
-## Executioin & Lifetime
+## Execution & Lifetime
 
 Script is executed when user selects Execute on a script file from SD card browser screen, or opens a Lua Tool, or creates a new model with a Wizard script.
 
