@@ -29,9 +29,10 @@ One-Time Scripts can be placed anywhere on SD card, however, the folder /SCRIPTS
 {% hint style="info" %}
 If One-Time Script is placed in special folder /SCRIPTS/TOOLS it will be visible in EdgeTX RADIO>TOOLS tab\
 \
-To give this One-Time Script unique name place at the beginning of lua script line: `-- toolName = "TNS|ScriptName|TNE`
+To give this One-Time Script unique name place at the beginning of lua script line: \
+`-- toolName = "TNS|ScriptName|TNE`
 
-Otherwise script filename will be used to display script name.
+Otherwise script's filename will be used to display in RADIO>TOOLS list.
 {% endhint %}
 
 {% hint style="info" %}
