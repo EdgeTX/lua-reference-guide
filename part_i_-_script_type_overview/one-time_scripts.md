@@ -75,7 +75,7 @@ Every script must include a `return` statement at the end, defining its interfac
     **Return Value**\
     none
 
-### Examples
+## Examples
 
 Simplest one-time LUA script
 
