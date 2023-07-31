@@ -4,13 +4,13 @@
 ## <mark style="color:red;">Do not use Lua Custom (Mixer) Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
 {% endhint %}
 
-{% hint style="danger" %}
-To enable Custom (Mixer) Scripts, firmware must be compiled with the option `LUA_MIXER=Y`.
-{% endhint %}
-
 ## Overview
 
 Each model can have several Custom Scripts associated with it, and these scripts are run periodically. They behave similarly to standard EdgeTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom Scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
+
+{% hint style="danger" %}
+To enable Custom (Mixer) Scripts, firmware must be compiled with the option `LUA_MIXER=Y`.
+{% endhint %}
 
 {% hint style="info" %}
 Custom Scripts should be as short as possible, to avoid delays. It is also important to keep in mind that other loaded Telemetry and Function scripts can add to the response time, or worse: hang the system!
