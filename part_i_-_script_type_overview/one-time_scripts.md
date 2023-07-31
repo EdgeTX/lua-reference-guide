@@ -6,8 +6,8 @@ _**WARNING -**_ **Running a One-Time script will suspend execution of all other 
 
 One-Time scripts start when called upon by a specific radio function or when the user selects them from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.&#x20;
 
-{% hint style="warning" %}
-**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions). They are automatically restarted once the One-Time script is finished. This is done to provide enough system resources to execute the One-Time script.**
+{% hint style="danger" %}
+<mark style="color:red;">**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions). They are automatically restarted once the One-Time script is finished. This is done to provide enough system resources to execute the One-Time script.**</mark>
 {% endhint %}
 
 ## Lifetime
