@@ -2,7 +2,7 @@
 
 ## Downloading EdgeTX Companion
 
-EdgeTX Companion 2.9 is [available for download here](https://github.com/EdgeTX/edgetx/releases/tag/v2.9.0) (pick the appropriate download for your operating system from Assets heading at the bottom of the page - the filename will have `cpn` in the name).
+EdgeTX Companion 2.10 is [available for download here](https://github.com/EdgeTX/edgetx/releases/tag/v2.10.0) (pick the appropriate download for your operating system from Assets heading at the bottom of the page - the filename will have `cpn` in the name).
 
 ## Enabling support for Mixer Scripts
 
