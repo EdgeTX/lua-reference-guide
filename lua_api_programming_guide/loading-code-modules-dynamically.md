@@ -6,7 +6,7 @@ description: >-
 
 # Loading Code Modules Dynamically
 
-The [`loadScript(<file>)`](../part_iii_-_opentx_lua_api_reference/general-functions-less-than-greater-than-luadoc-begin-general/loadscript.md) function will load a script from a the file and return a function that is the body of the script, as described in the previous section. So you could have the following Lua script file saved on the SD card:
+The [`loadScript(<file>)`](../lua_api_reference/general-functions-less-than-greater-than-luadoc-begin-general/loadscript.md) function will load a script from a the file and return a function that is the body of the script, as described in the previous section. So you could have the following Lua script file saved on the SD card:
 
 ```lua
 -- /SCRIPTS/TestScript.lua

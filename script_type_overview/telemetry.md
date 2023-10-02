@@ -47,5 +47,5 @@ return { run = run, background = background, init = init }
 
 ### Notes:
 
-* The `event` parameter indicates which transmitter key has been pressed \(see [Key Events](../part_iii_-_opentx_lua_api_reference/constants/key_events.md)\). 
+* The `event` parameter indicates which transmitter key has been pressed \(see [Key Events](../lua_api_reference/constants/key_events.md)\). 
 

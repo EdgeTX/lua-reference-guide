@@ -39,7 +39,7 @@ end
 
 * **Input parameters:**
 
-  The _key-event_ parameter indicates which transmitter button has been pressed \(see [Key Events](../part_iii_-_opentx_lua_api_reference/constants/key_events.md)\)
+  The _key-event_ parameter indicates which transmitter button has been pressed \(see [Key Events](../lua_api_reference/constants/key_events.md)\)
 
 * **Return values:**
 
