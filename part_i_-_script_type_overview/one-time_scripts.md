@@ -20,20 +20,52 @@ The script executes until:
 
 ## File Location
 
-General One-Time scripts can be placed anywhere on SD card, however, the folder /SCRIPTS/ is recommended.&#x20;
+General One-Time scripts can be placed anywhere on SD card, however, the folder /SCRIPTS/ is recommended.
 
-Tool scripts must be stored in /SCRIPTS/TOOLS.
+{% hint style="info" %}
+If One-Time Script is placed in special folder /SCRIPTS/TOOLS it will be visible in EdgeTX RADIO>TOOLS tab\
+\
+To give this One-Time Script unique name place at the beginning of lua script line: `-- toolName = "TNS|ScriptName|TNE`
 
+Otherwise script filename will be used to display script name.
+{% endhint %}
+
+{% hint style="info" %}
 Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same "first name" as the template file using it. Some Wizard scripts are just small scripts that load one of the common scripts located in /SCRIPTS/WIZARD/.
 
 ## **Interface**
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `init` function (optional)
-* `run` function
+#### Obligatory
 
-### Example
+*   `run` function (event, touchState) - this function is called periodicaly when sccript is running\
+    \
+    Parameters
+
+    * `event` (number)\
+      this parameter indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+    * `touchState` (table) \
+      This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
+
+
+    Returns
+
+    * `exit` (multi type)&#x20;
+      1. if `exit` value is 0 (zero) script will continue to run&#x20;
+      2. if `exit` value is non-zero script will be halted.&#x20;
+      3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.
+
+#### Optional
+
+* `init` function () - this function is called once when script is executed.\
+  \
+  Parameters
+  * none
+
+### Examples
+
+Simplest one-time LUA script
 
 ```lua
 local function init()
@@ -41,16 +73,18 @@ local function init()
 end
 
 local function run(event, touchState)
-  -- run is called periodically only when screen is visible
-  -- A non-zero return value will halt the script
-  return x
+  print("Script run function executed")
+  -- code to execute
+  if event == EVT_VIRTUAL_EXIT then 
+    exit = 1
+  end 
+  return exit
+end
+
+local function init()
+  print("Script init function executed")
+  -- code to execute
 end
 
 return { run=run, init=init }
 ```
-
-### Notes:
-
-* The `event` parameter indicates which transmitter key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
-* The `touchState` value is only present when `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).
-* A non-zero return value from `run` will halt the script. If the return value is a text string with the file path to a new Lua script, then the new script will be loaded and run.
