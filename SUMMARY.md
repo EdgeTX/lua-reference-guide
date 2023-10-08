@@ -1,9 +1,7 @@
 # Table of contents
 
-* [EdgeTX 2.10 Lua Reference Guide](README.md)
-* [Introduction](introduction/README.md)
-  * [Acknowledgments](introduction/acknowledgments.md)
-  * [Getting Started](introduction/getting\_started.md)
+* [EdgeTX 2.10 LUA Reference Guide](README.md)
+* [Quick Start](quick-started.md)
 * [Overview](overview/README.md)
   * [Script Types](overview/script-types/README.md)
     * [One-Time Scripts](overview/script-types/one-time-scripts.md)
