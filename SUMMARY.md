@@ -1,6 +1,7 @@
 # Table of contents
 
-* [EdgeTX 2.10 Lua Reference Guide](README.md)
+* [EdgeTX 2.10 Lua Reference Guide](.mdREADME)
+* [Overview](overview/README.md)
 * [Part I - Script Type Overview](script\_type\_overview/README.md)
   * [One-Time Scripts](script\_type\_overview/one-time\_scripts.md)
   * [Telemetry Scripts](script\_type\_overview/telemetry.md)
