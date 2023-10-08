@@ -2,6 +2,11 @@
 
 * [EdgeTX 2.10 Lua Reference Guide](README.md)
 * [Part I - Script Type Overview](script\_type\_overview/README.md)
+  * [Function Scripts](script\_type\_overview/function\_scripts.md)
+  * [Custom (Mixer) Scripts](script\_type\_overview/mix.md)
+  * [One-Time Scripts](script\_type\_overview/one-time\_scripts.md)
+  * [Telemetry Scripts](script\_type\_overview/telemetry.md)
+  * [Widget Scripts](script\_type\_overview/widget\_scripts.md)
 * [Part VI - Advanced Topics](advanced\_topics/README.md)
   * [Debugging techniques](advanced\_topics/debugging\_techniques.md)
   * [Lua data sharing across scripts](advanced\_topics/lua\_data\_sharing\_across\_scripts.md)
