@@ -15,7 +15,7 @@ The **io** library has been simplified and only a subset of functions and their 
 ### Read the whole file
 
 ```lua
--- this is an EdgeTX One-time script
+-- this is an EdgeTX *One-time script
 
 local function run(event)
   print("lua io.read test")         -- print() statements are visible in Debug output window
