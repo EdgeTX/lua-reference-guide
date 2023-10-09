@@ -1,7 +1,7 @@
 # Custom (Mixer) Scripts
 
 {% hint style="warning" %}
-## <mark style="color:red;">Do not use Lua Custom (Mixer) Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
+### <mark style="color:red;">Do not use Lua Custom (Mixer) Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
 {% endhint %}
 
 ## Overview
@@ -60,14 +60,10 @@ File name length (without extension) **must be 6 characters or less**
 
 Every Custom Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `run` function&#x20;
+* `run` function
 * `init` function _(optional)_
 * `input` table _(optional)_
 * `output` table _(optional)_
-
-
-
-
 
 ### Example
 

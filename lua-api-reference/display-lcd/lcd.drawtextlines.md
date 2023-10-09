@@ -9,7 +9,7 @@ Draw text inside rectangle (x,y,w,h) with line breaks
 * `x,y` (positive numbers) starting coordinate
 * `w,h` (positive numbers) width and height of bounding rectangle
 * `text` (string) text to display
-* `flags` (optional) please see [Lcd functions overview](lcd\_functions-overview.html) for drawing flags and colors, and [Appendix](../../appendix/fonts.md) for available characters in each font set. RIGHT, CENTER and VCENTER are not implemented.
+* `flags` (optional) please see [Lcd functions overview](../../lua\_api\_reference/lcd/lcd\_functions-overview.html) for drawing flags and colors, and [Appendix](../../appendix/fonts.md) for available characters in each font set. RIGHT, CENTER and VCENTER are not implemented.
 
 ## Return value
 
