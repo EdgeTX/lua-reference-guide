@@ -8,12 +8,12 @@ The latest version of this guide will always be available [here](https://luadoc.
 
 ## Sections
 
-| Chapter             | Content                                                                       |
-| ------------------- | ----------------------------------------------------------------------------- |
-| Overview            | Covers various topics of LUA implementation in EdgeTX operating system system |
-| LUA API Reference   | Reference of all constants and functions available in EdgeTX LUA API          |
-| LUA API Programming | EdgeTX LUA programming guide that covers coding techniques with examples.     |
-| Appendixes          |                                                                               |
+| Chapter                                     | Content                                                                       |
+| ------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Overview](overview/)                       | Covers various topics of LUA implementation in EdgeTX operating system system |
+| [LUA API Reference](lua-api-reference/)     | Reference of all constants and functions available in EdgeTX LUA API          |
+| [LUA API Programming](lua-api-programming/) | EdgeTX LUA programming guide that covers coding techniques with examples.     |
+| [Appendixes](appendix/)                     |                                                                               |
 
 ## LUA Support
 
