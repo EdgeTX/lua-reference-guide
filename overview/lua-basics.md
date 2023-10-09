@@ -6,11 +6,6 @@ description: >-
 
 # Lua Basics
 
-{% hint style="info" %}
-EdgeTX 2.10 uses LUA 5.2 interpreter & compiler. \
-For detailed reference read [Lua 5.2 Reference Manual](https://www.lua.org/manual/5.2/manual.html)&#x20;
-{% endhint %}
-
 ## Introduction
 
 Lua was chosen for EdgeTX, because it is a small language designed to be highly extensible by libraries written in C and C++, so it can be integrated into other systems like EdgeTX. It is also relatively efficient, both in terms of memory and CPU usage, and hence well suited for the radios.
