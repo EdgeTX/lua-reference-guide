@@ -15,20 +15,20 @@ The latest version of this guide will always be available [here](https://luadoc.
 | [LUA API Programming](lua-api-programming/) | EdgeTX LUA programming guide that covers coding techniques with examples.     |
 | [Appendixes](appendix/)                     |                                                                               |
 
-## LUA Support
+## EdgeTX LUA development support
 
-Quickest way to get support from EdgeTX LUA developers is to join our Discord server and ask on dedicated #lua channel&#x20;
+Quickest way to get support from seasoned EdgeTX LUA developers is to join our Discord server and ask on dedicated #lua channel&#x20;
 
 [Join the chat on Discord](https://discord.gg/CZCwVx2)
 
-## Collaboration
+## LUA Reference guide collaboration
 
 Please feel free to make suggestions or corrections to the documentation.&#x20;
 
 * Preferred method of editing is to use [GitBook](https://www.gitbook.com), as it uses WYSWIG editor allowing two-stage publication. If you want to change or add whole page or become collaborator _<mark style="color:red;">\<decribe what to do></mark>_.
 * For simple typos or proof reading you may submit PR to [lua-reference-guide](https://github.com/EdgeTX/lua-reference-guide/pulls)[ ](https://github.com/EdgeTX/lua-reference-guide)repository on EdgeTX GitHub.
 
-## Acknowledgments
+## Project support
 
 The EdgeTX team has no intention of making a profit from their work - EdgeTX is free and open source and will remain free and open source. However, the project is more expensive to maintain than most open source projects. This in mainly because there is a never ending flood of hardware to integrate and maintain code for. Hardware that costs. In addition, in order to develop for this hardware, certain specalised test and measurement equipment is also required.
 
