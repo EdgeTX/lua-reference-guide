@@ -1,6 +1,6 @@
 # io Library
 
-The **io** library has been simplified and only a subset of functions and their functionality is available. What follows is a complete reference of io functions that are available to EdgeTX scripts
+Standard LUA [**io**](https://www.lua.org/manual/5.2/manual.html#6.8) library has been simplified and only a subset of functions and their functionality is available.&#x20;
 
 ## Available functions:
 
