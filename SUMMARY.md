@@ -5,7 +5,7 @@
 * [Overview](overview/README.md)
   * [Lua Basics](overview/lua-basics.md)
   * [Included Lua Libraries](overview/included-lua-libraries/README.md)
-    * [io Library](overview/included-lua-libraries/io-library/README.md)
+    * [io Library](overview/included-lua-libraries/io-library.md)
   * [Script Types](overview/script-types/README.md)
     * [One-Time Scripts](overview/script-types/one-time-scripts.md)
     * [Telemetry Scripts](overview/script-types/telemetry-scripts.md)
