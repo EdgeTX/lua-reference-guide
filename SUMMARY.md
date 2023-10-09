@@ -1,7 +1,6 @@
 # Table of contents
 
 * [EdgeTX 2.10 LUA Reference Guide](README.md)
-* [Quick Start](quick-start.md)
 * [Overview](overview/README.md)
   * [Lua Basics](overview/lua-basics.md)
   * [Included Lua Libraries](overview/included-lua-libraries/README.md)
