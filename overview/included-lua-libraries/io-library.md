@@ -15,7 +15,7 @@ Standard LUA [**io**](https://www.lua.org/manual/5.2/manual.html#6.8) library ha
 ### Read the whole file
 
 ```lua
--- this is a stand-alone script
+-- this is a One-time script
 
 local function run(event)
   print("lua io.read test")         -- print() statements are visible in Debug output window
@@ -35,7 +35,7 @@ return {  run=run }
 ### Append data to file
 
 ```lua
--- this is a stand-alone script
+-- this is a One-time script
 
 local function run(event)
   print("lua io.write test")
