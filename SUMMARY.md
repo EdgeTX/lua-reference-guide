@@ -3,7 +3,7 @@
 * [EdgeTX 2.10 LUA Reference Guide](README.md)
 * [Overview](overview/README.md)
   * [Lua Basics](overview/lua-basics.md)
-  * [Included Lua Libraries](overview/version-libraries/README.md)
+  * [LUA version and included libraries](overview/version-libraries/README.md)
     * [io Library](overview/version-libraries/io-library.md)
   * [Script Types](overview/script-types/README.md)
     * [One-Time Scripts](overview/script-types/one-time-scripts.md)

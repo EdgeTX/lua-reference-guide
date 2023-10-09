@@ -1,11 +1,11 @@
-# LUA version and included standard libraries
+# LUA version and included libraries
 
 ## LUA Version
 
-EdgeTX 2.10 uses LUA interpreter and compiler version 5.2
-For detailed reference read [Lua 5.2 Reference Manual](https://www.lua.org/manual/5.2/manual.html)&#x20;
+EdgeTX 2.10 uses LUA interpreter and compiler version 5.2 \
+For detailed reference read [Lua 5.2 Reference Manual](https://www.lua.org/manual/5.2/manual.html)
 
-## Included starndard libraried
+## Included standard libraries
 
 | Lua Standard Libraries                                   | Comment                                                              |
 | -------------------------------------------------------- | -------------------------------------------------------------------- |
