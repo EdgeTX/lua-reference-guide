@@ -20,7 +20,7 @@
       * [TX16S](overview/radios/radiomaster/tx16s.md)
   * [Internal indexes](overview/internal-indexes/README.md)
     * [Source List](overview/internal-indexes/source-list.md)
-    * [switch positions ID](overview/internal-indexes/switch-positions-id.md)
+    * [Switch positions List](overview/internal-indexes/switch-positions-list.md)
     * [source names](overview/internal-indexes/source-names.md)
 * [LUA API Reference](lua-api-reference/README.md)
   * [Constants](lua-api-reference/constants/README.md)
