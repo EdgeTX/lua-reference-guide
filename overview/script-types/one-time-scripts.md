@@ -1,7 +1,5 @@
 # One-Time Scripts
 
-_**WARNING -**_ **Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions)**
-
 ## Overview
 
 One-Time scripts start when called upon by a specific radio function or when the user selects them from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.&#x20;
@@ -37,6 +35,7 @@ Otherwise script's filename will be used to display in RADIO>TOOLS list.
 
 {% hint style="info" %}
 Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same "first name" as the template file using it. Some Wizard scripts are just small scripts that load one of the common scripts located in /SCRIPTS/WIZARD/.
+{% endhint %}
 
 ## **Interface**
 
@@ -80,9 +79,22 @@ Every script must include a `return` statement at the end, defining its interfac
 Simplest one-time LUA script
 
 ```lua
-local function init()
-  -- init is called once when model is loaded
+local function run(event, touchState)
+  print("Script run executed")
+  return 0
 end
+
+return { run=run }
+```
+
+{% hint style="info" %}
+Because 0 is returned all the time this script will continue running until user long press EXIT (RTN) key.&#x20;
+{% endhint %}
+
+One-Time LUA script with initialization and exit feature if user short press and release EXIT (RTN) key&#x20;
+
+```lua
+local exit = 0
 
 local function run(event, touchState)
   print("Script run function executed")
