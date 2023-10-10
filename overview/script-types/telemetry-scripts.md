@@ -16,7 +16,7 @@ Telemetry script is loaded and executed when model is selected.\
 Script executes until:
 
 * it misbehaves (e.g. run-time error or low memory)
-* [One-time Script](one-time-scripts.md) is running
+* [One-time Script](one-time-scripts.md) is running. When One-time script finishes execution, Wigdet Script resumes execution.
 
 ## File Location
 
