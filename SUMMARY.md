@@ -17,6 +17,7 @@
     * [FrSky](overview/radios/frsky/)
     * [Jumper](overview/radios/jumper/)
     * [Radiomaster](overview/radios/radiomaster/)
+      * [Radiomaster](overview/radios/radiomaster/tx16s.md)
 * [LUA API Reference](lua-api-reference/README.md)
   * [Constants](lua-api-reference/constants/README.md)
     * [Color Constants](lua-api-reference/constants/color-constants.md)
