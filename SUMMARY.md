@@ -83,7 +83,7 @@
     * [model.deleteFlightModes](lua-api-reference/model/deleteflightmodes.md)
     * [model.deleteInput](lua-api-reference/model/deleteinput.md)
     * [model.deleteInputs](lua-api-reference/model/deleteinputs.md)
-    * [model.deleteMix(channel, line)](lua-api-reference/model/deletemix.md)
+    * [model.deleteMix](lua-api-reference/model/deletemix.md)
     * [model.deleteMixes()](lua-api-reference/model/deletemixes.md)
     * [model.getCurve(curve)](lua-api-reference/model/getcurve.md)
     * [model.getCustomFunction(function)](lua-api-reference/model/getcustomfunction.md)
