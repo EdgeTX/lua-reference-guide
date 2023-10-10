@@ -43,7 +43,7 @@ Example of proper Widget script placement to be registered by EdgeTX as valid Wi
 {% endhint %}
 
 {% hint style="info" %}
-Try to use unique folder name as in case of naming clash previously installed widget will be overwrtitten. &#x20;
+Try to use unique folder name. In case of naming clash, previously installed widget will be overwritten. &#x20;
 {% endhint %}
 
 ## Interface
