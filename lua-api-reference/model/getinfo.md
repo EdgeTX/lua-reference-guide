@@ -2,7 +2,7 @@
 
 ## Description
 
-Get current Model information@status current Introduced in 2.0.6, changed in 2.2.0, filename added in 2.6.0, extendedLimits, jitterFilter, and labels added in 2.8.0
+Gets currently selected Model's information
 
 ## Syntax
 
