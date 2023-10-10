@@ -2,50 +2,86 @@
 
 ## Overview
 
-Telemetry scripts are used for building customized screens. Each model can have up to three active scripts as configured on the model's telemetry configuration page. The same script can be assigned to multiple models.
+Although they are named "Telemetry scripts" in fact they can be used to perform constant task while running in background. Telemetry scripts are mostly used for building customized screens that are avalilable to user directly from main screen using key shortcut. Each model can have up to three active scripts as configured on the model's Telemetry configuration page. The same script can be assigned to multiple models.
 
-**Please note:** Telemetry scripts are only available on radios with telemetry screens, such as e.g. FrSky Taranis models \(including Xlite\), Radiomaster TX12 and and Jumper T12.
+{% hint style="warning" %}
+Telemetry scripts are only available on radios with B\&W LCD screens, such as e.g. FrSky Taranis models (including Xlite), Radiomaster TX12, Zorro, Boxer or Jumper T12.\
+Read more about <mark style="color:red;">\<radios></mark>.
+{% endhint %}
 
-## Lifetime
+## Execution & Lifetime
 
-* Telemetry scripts are loaded when the model is selected.
-* `init` function is called one time when the script is loaded
-* `background` function is periodically; both when the telemetry screen is visible and when it is not. 
-* `run` function is called periodically only when the telemetry screen is visible
-* script is stopped and disabled if it misbehaves \(e.g. run-time error or low memory\)
-* all telemetry scripts are stopped if a one-time script is running \(see One-time scripts\)
+Telemetry script is loaded and executed when model is selected.\
+\
+Script executes until:
+
+* it misbehaves (e.g. run-time error or low memory)
+* one-time script is running (see One-time scripts)
 
 ## File Location
 
-Scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/&lt;_name_&gt;.lua. File name length \(without extension\) **must be 6 characters or less** \(this limit was 8 characters in OpenTX 2.1\).
+Telemetry scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/.&#x20;
+
+{% hint style="warning" %}
+File name length (without extension) **must be 6 characters or less**&#x20;
+{% endhint %}
 
 ## Interface
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `init` function \(optional\)
-* `background` function \(optional\)
-* `run` function
+*   `run` (function) obligatory\
+    this function is called periodicaly when Telemetry script is running\
+    \
+    **Parameters** \
+    \
+    `event` (number)\
+    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
 
-### Example
+    \
+    `touchState` (table)\
+    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
+    \
+    **Return values**\
+    \
+    none\
+
+* `init` function (optional)\
+  this function is called once when Telemtry script is loaded and executed for the first time.\
+  \
+  **Parameters**\
+  \
+  none\
+  \
+  **Return values**\
+  \
+  none\
+
+* `background` function (optional)\
+  \
+  **Parameters**\
+  \
+  none\
+  \
+  **Return values**\
+  \
+  none
+
+### Examples
 
 ```lua
-local function init()
+local function my_init()
   -- init is called once when model is loaded
 end
 
-local function background()
+local function my_background()
   -- background is called periodically
 end
 
-local function run(event)
+local function my_run(event)
   -- run is called periodically only when screen is visible
 end
 
-return { run = run, background = background, init = init }
+return { run = my_run, background = my_background, init = my_init }
 ```
-
-### Notes:
-
-* The `event` parameter indicates which transmitter key has been pressed \(see [Key Events](../lua_api_reference/constants/key_events.md)\). 
 
