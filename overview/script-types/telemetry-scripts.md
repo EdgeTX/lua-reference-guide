@@ -1,6 +1,6 @@
 # Telemetry Scripts
 
-## Overview
+## Purpose
 
 Although they are named "Telemetry scripts" in fact they can be used to perform constant task while running in background. Telemetry scripts are mostly used for building customized screens that are avalilable to user directly from main screen using key shortcut. Each model can have up to three active scripts as configured on the model's Telemetry configuration page. The same script can be assigned to multiple models.
 
