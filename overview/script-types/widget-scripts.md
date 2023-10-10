@@ -1,6 +1,6 @@
 # Widget Scripts
 
-## Overview
+## Purpose
 
 Widget scripts are avaiable on radios equiped with color LCD. They are designed to run constantly in the background performinfg various task. Widget scripts are mostly used to extend EdgeTX functionality via _<mark style="color:purple;">Widgets</mark>_ that are places by user on _<mark style="color:purple;">Main Views</mark>_. They are equivalent of Telemetry Scripts on radios equiped with B\&W LCD.&#x20;
 
