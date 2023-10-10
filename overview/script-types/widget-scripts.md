@@ -57,14 +57,16 @@ Every Widget Script must include a `return` statement at the end, defining its i
 The `name` length must be 10 **characters or less**.
 {% endhint %}
 
+
+
 *   `options` (table) optional\
 
 
-    Options table is to store Widget's options available to EdgeTX user via Widget's Settings menu.\
-    To see available options table's variables read [Widget Options Constants](../../lua-api-reference/constants/widget-options.md).&#x20;
+    Options table is to store Widget's options available to EdgeTX user via Widget's Settings menu.
 
 {% hint style="info" %}
-Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md) for valid option types
+Maximum five `options` are allowed, with names of max. 10 characters and no spaces.\
+To see valid options read [Widget Options Constants](../../lua-api-reference/constants/widget-options.md).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -75,24 +77,92 @@ Maximum five `options` are allowed, with names of max. 10 characters, and no spa
 If `options` is changed by the user in the Widget Settings menu, then `update` will be called with a new `options` table, unaffected by any changes made by Lua code to the old `options` table.
 {% endhint %}
 
-* `create` function
-* `update` function
-* `background` function (optional)
-* `refresh` function
 
-They can be added to the top bar or a main view through the telemetry setup menu. When a widget has been added to a screen, then the widget functions are called as follows:
 
-* `create` is called once when the widget instance is registered (started).
-* `update` is called when widget settings are changed by the user.
-* `background` is called periodically when the widget instance _is_ _not_ visible. **Note:** this is different from the way that telemetry scripts are handled.
-* `refresh` is called periodically when the widget instance _is_ visible. **Note:** if you want `background` to run when the widget is visible, then call it from `refresh`.
-*
+* `create` (function) obligatory\
+  \
+  This function is called once when the widget instance is registered (started).\
+  \
+  **Parameters**\
+  \
+  `zone` (table) obligatory\
+  This parameter will hold visible dimensions of Widget (height & width)\
+  \
+  `options` (table) obligatory\
+  Initial optionst table as described above\
+  \
+  **Return values**\
+  \
+  `widget` (table)\
+  Create function will return table that has to be later passed to `update` ,  `background` & `refresh`  functions allowing to access widget's unique variables&#x20;
 
-##
+{% hint style="info" %}
+The size of the widget's zone area is as follows:
 
-##
+* Full screen mode: `LCD_W` by `LCD_H`
+* Not full screen mode: `zone.w` by `zone.h` (updated if screen options are changed)
+{% endhint %}
 
-### Example
+{% hint style="warning" %}
+If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget. Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
+{% endhint %}
+
+
+
+* `update` (function)\
+  This function is called when Widget's Settings are changed by the user. It is mostly used to modify Widget Script variables or behaviour basing on options values entered by user.\
+  \
+  **Parameters**\
+  \
+  `widget` (table) obligatory\
+  Widget's table returned by `create` function decribed above\
+  \
+  `options` (table) obligatory\
+  Initial options table as described above\
+  \
+  **Return values**\
+  \
+  none
+
+
+
+* `background` function (optional)\
+  This function is called periodically when the widget instance _is_ _not_ visible. \
+  \
+  **Parameters**\
+  \
+  `widget` (table) obligatory\
+  Widget's table returned by `create` function decribed above\
+  \
+  **Return values**\
+  \
+  none\
+
+*   `refresh` function\
+    This function is called periodically when the widget instance _is_ visible. \
+    **Note:** if you want `background` to run when the widget is visible, then call it from `refresh`\
+    \
+    **Parameters**\
+    \
+    `widget` (table) obligatory\
+    Widget's table returned by `create` function decribed above\
+    \
+    `event` (number)\
+    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+
+    \
+    `touchState` (table)\
+    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
+    \
+    **Return values**\
+    \
+    none
+
+{% hint style="info" %}
+if you want `background` function to run when the widget is visible, then call it from `refresh function.`
+{% endhint %}
+
+### Examples
 
 ```lua
 local name = "WidgetName"
@@ -151,9 +221,9 @@ return {
 
 *
 *
-* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md) for valid option types.
-* If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget.
-* Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
+*
+*
+*
 * When the widget is in full screen mode, then `event` is either 0, a [key event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md), or a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md).
 * If `event` is a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md), then `touchState` is a table. Otherwise, it is `nil`.
 * When the widget is not in full screen mode, then both `event` and `touchState` are `nil`.
