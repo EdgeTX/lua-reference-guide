@@ -11,7 +11,7 @@
     * [Widget Scripts](overview/script-types/widget-scripts.md)
     * [Function Scripts](overview/script-types/function-scripts.md)
     * [Mixes Scripts](overview/script-types/mixes-scripts.md)
-  * [Radios](overview/radios/README.md)
+  * [Radios](overview/radios/)
 * [LUA API Reference](lua-api-reference/README.md)
   * [Constants](lua-api-reference/constants/README.md)
     * [Color Constants](lua-api-reference/constants/color-constants.md)
