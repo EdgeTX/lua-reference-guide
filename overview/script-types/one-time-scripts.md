@@ -42,9 +42,9 @@ Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
 *   `run` (function) obilgatory\
-    this function is called periodicaly when sccript is running\
+    This function is called periodicaly when sccript is running\
     \
-    **Parameter**
+    **Parameters**
 
     \
     `event` (number)\
@@ -52,18 +52,20 @@ Every script must include a `return` statement at the end, defining its interfac
 
     \
     `touchState` (table)\
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\\
+    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
 
-    **Return value**
+
+    **Return values**
 
     \
     `exit` (multi type)
 
     1. if `exit` value is 0 (zero) script will continue to run
     2. if `exit` value is non-zero script will be halted.
-    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\\
+    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
+
 *   `init` (function) _optional_\
-    this function is called once when script is executed.\
+    This function is called once when script is executed.\
     \
     **Parameters**
 
