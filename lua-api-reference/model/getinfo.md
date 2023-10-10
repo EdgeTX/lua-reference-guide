@@ -22,7 +22,7 @@ none
 
 ## API Status
 
-<table><thead><tr><th width="153"></th><th width="100" data-type="checkbox">Available</th><th width="168" data-type="select">Status</th><th>Comment</th></tr></thead><tbody><tr><td>BW radios</td><td>true</td><td></td><td></td></tr><tr><td>Color radios</td><td>true</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="153"></th><th width="72" data-type="checkbox">Avail</th><th width="145" data-type="select">Status</th><th>Comment</th></tr></thead><tbody><tr><td>BW radios</td><td>true</td><td></td><td></td></tr><tr><td>Color radios</td><td>true</td><td></td><td></td></tr></tbody></table>
 
 ## Change log
 
