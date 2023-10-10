@@ -16,7 +16,7 @@ Telemetry script is loaded and executed when model is selected.\
 Script executes until:
 
 * it misbehaves (e.g. run-time error or low memory)
-* one-time script is running (see [One-time scripts](one-time-scripts.md))
+* [One-time Script](one-time-scripts.md) is running
 
 ## File Location
 
