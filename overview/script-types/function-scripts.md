@@ -32,42 +32,37 @@ File name length (without extension) **must be 6 characters or less**
 
 ## Interface
 
-Every Function script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+Every Function script must include a `return` statement at the end, defining its interface to EdgeTX.&#x20;
 
-* `run` (function) obligatory\
-  This function is called periodicaly when **switch** assiociated the Special Function **is ON**. \
-  \
-  **Parameters** \
-  \
-  none\
-  \
-  **Return values**\
-  \
-  none\
-  \
+This statement returns a table with the following fields:
 
-* `background` (function) obligatory\
-  This function is called periodicaly when **switch** assiociated the Special Function **is OFF**\
-  \
-  **Parameters**\
-  \
-  none\
-  \
-  **Return values**\
-  \
-  none\
-  \
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>run</strong></td><td>function</td><td>true</td><td>This function is called periodicaly when <strong>switch</strong> assiociated the Special Function <strong>is ON</strong>. </td></tr></tbody></table>
 
-* `init` (function) optional\
-  this function is called once when Function script is loaded and executed for the first time.\
-  \
-  **Parameters**\
-  \
-  none\
-  \
-  **Return values**\
-  \
-  none\
+_Parameters_\
+_none_
+
+_Return values_\
+_none_
+
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>init</strong></td><td>function</td><td>false</td><td>This function is called once when Function script is loaded and executed for the first time</td></tr></tbody></table>
+
+_Parameters_\
+none
+
+_Return Values_\
+none
+
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>background</strong></td><td>function</td><td>true</td><td>This function is called periodicaly when <strong>switch</strong> assiociated the Special Function <strong>is OFF</strong></td></tr></tbody></table>
+
+_Parameters_\
+none
+
+_Return Values_\
+none\
 
 
 ### Example
