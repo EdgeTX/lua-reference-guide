@@ -41,40 +41,27 @@ Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-| table item | type     | required |
-| ---------- | -------- | -------- |
-| **run**    | function | yes      |
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>run</strong></td><td>function</td><td>true</td><td>Function is called periodicaly when script is running. </td></tr></tbody></table>
 
-This function is called periodicaly when script is running.&#x20;
+_Parameters_
 
-**Parameters**
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>event</strong><br>number</td><td>Used to indicates which radio key has been pressed (see <a href="../part_iii_-_opentx_lua_api_reference/constants/key_events.md">Key Events</a>)</td></tr><tr><td><strong>touchState</strong><br>table</td><td>This parameter is only present when radio is equiped with touch interface and <code>event</code> is a touch event (see <a href="../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md">Touch State Events</a>).</td></tr></tbody></table>
 
-`event` (number)\
-This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+_Return values_
 
-`touchState` (table)\
-This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).
-
-**Return values**
-
-`exit` (multi type)
-
-1. if `exit` value is 0 (zero) script will continue to run
-2. if `exit` value is non-zero script will be halted.
-3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
+<table data-header-hidden><thead><tr><th width="140.33333333333331">Returns</th><th>Description</th></tr></thead><tbody><tr><td><strong>exit</strong><br>multi type</td><td><ul><li>if <code>exit</code> value is 0 (zero) script will continue to run</li></ul><ul><li>if <code>exit</code> value is non-zero script will be halted.</li></ul><ul><li>If <code>exit</code> value is a text string with the file path to a new Lua script, then the new script will be loaded and run.</li></ul></td></tr></tbody></table>
 
 
-| table item | type     | required |
-| ---------- | -------- | -------- |
-| **init**   | function | no       |
 
-This function is called once when script is executed.
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>init</strong></td><td>function</td><td>false</td><td>This function is called once when script is executed</td></tr></tbody></table>
 
-**Parameters**\
+_Parameters_\
 none
 
-**Return Values**\
+_Return Values_\
 none
+
+
 
 ## Examples
 
