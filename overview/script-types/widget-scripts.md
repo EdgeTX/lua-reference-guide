@@ -2,17 +2,83 @@
 
 ## Overview
 
-Most of the time, widget scripts show some info in a _zone_ either in the _top bar_ or in one of the user defined _main views_, and they cannot receive direct input from the user via key events like e.g. Telemetry scripts.
+Widget scripts are avaiable on radios equiped with color LCD. They are designed to run constantly in the background performinfg various task. Widget scripts are mostly used to extend EdgeTX functionality via _<mark style="color:purple;">Widgets</mark>_ that are places by user on _<mark style="color:purple;">Main Views</mark>_. They are equivalent of Telemetry Scripts on radios equiped with B\&W LCD.&#x20;
 
-But widgets on the main views can also be shown in _full screen mode_, where they take over the entire screen area. And here they receive user input via key events, and for radios with touch screen, also touch events. Full screen mode can be entered by selecting the widget, pressing ENTER and selecting **Full screen** on the widget menu, or by double tapping the widget on radios with a touch screen. Full screen mode can be exited by long pressing the RETURN button, or by calling the Lua function `lcd.exitFullScreen()`.
+Most of the time, widget scripts show some info in a _<mark style="color:purple;">Widget's zone</mark>_ in one of the user defined _<mark style="color:purple;">Main Views.</mark>_ They cannot receive direct input from the user via key events with exeption of being displayed in so called _<mark style="color:purple;">Full Screen mode</mark>_. Full screen mode can be entered by selecting the widget, pressing ENTER and selecting **Full screen** from the widget's contextual menu, ~~or by double tapping the widget on radios with a touch screen~~. Full screen mode can be exited by long pressing the EXIT (RTN) button, or by calling the Lua function `lcd.exitFullScreen()`.
 
-Each model can have up to five main views, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own _options_ table.
+Each model can have up to nine Main Views, with up to 8 widgets per screen, depending on their size and layout. Each instance of a widget has his own _options_ table.
 
-**Please note:** Widget scripts are only available on radios with color screens, e.g. FrSky Horus models, Radiomaster TX16 and Jumper T16.
+{% hint style="warning" %}
+Widget scripts are only available on radios with color LCD screens, such as e.g. FrSky X10 or X12, Radiomaster TX16S, Jumper T16 or T18, Flysky NV14., etc.\
+Read more about _<mark style="color:purple;">radios</mark>_.
+{% endhint %}
 
-## Lifetime
+## Execution & Lifetime
 
-All widget scripts on the SD card are loaded into memory when the model is selected; even widgets that are not used. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any script on the SD card will consume part of the radio's memory - even if it is not being used. Therefore, it is important to either keep widget scripts small, or to use Lua's loadScript() function to load code dynamically.
+All widget scripts on the SD card are loaded into memory when the model is selected, even widgets that are not used. This has the side effect that any global functions defined in a widget script will always be available to other widget scripts. It also means that any Widget Script placed in proper location on the SD card will consume part of the radio's memory - even if it is not being used.&#x20;
+
+{% hint style="warning" %}
+&#x20;It is important to either keep Widget Scripts small, or to use Lua's [loadScript()](../../lua-api-reference/lua-scripts/loadscript.md) function to load code dynamically
+{% endhint %}
+
+Script executes until:
+
+* it misbehaves (e.g. too long runtime, run-time error, or low memory)
+* One-Time script is running. When One-time script finishes execution, Wigdet Script resumes execution.
+
+## File Location
+
+Widget scripts are located on the SD card, each one in their specific folder: \
+/WIDGETS/\<folder _name_>/
+
+{% hint style="warning" %}
+Widget script folder name length **must be 8 characters or less**&#x20;
+{% endhint %}
+
+Widget script name is constant and has to be named **main.lua**
+
+{% hint style="info" %}
+Example of proper Widget script placement to be registered by EdgeTX as valid Widget script available to user in Widgets selection menu:\
+/WIDGETS/MYWGT/main.lua&#x20;
+{% endhint %}
+
+{% hint style="info" %}
+Try to use unique folder name as in case of naming clash previously installed widget will be overwrtitten. &#x20;
+{% endhint %}
+
+## Interface
+
+Every Widget Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+
+* `name` (string) obligatory\
+  This variable holds a name that is displayed to user as Widget scripts name in available Widgets list.
+
+{% hint style="warning" %}
+The `name` length must be 10 **characters or less**.
+{% endhint %}
+
+*   `options` (table) optional\
+
+
+    Options table is to store Widget's options available to EdgeTX user via Widget's Settings menu.\
+    To see available options table's variables read [Widget Options Constants](../../lua-api-reference/constants/widget-options.md).&#x20;
+
+{% hint style="info" %}
+Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md) for valid option types
+{% endhint %}
+
+{% hint style="warning" %}
+`options` table is passed to `create` function when invohed and then stored in Lua. Changing options table values while Widget script is running has no effect as this table values are designed to be changed with EdgeTX sysem menus.
+{% endhint %}
+
+{% hint style="warning" %}
+If `options` is changed by the user in the Widget Settings menu, then `update` will be called with a new `options` table, unaffected by any changes made by Lua code to the old `options` table.
+{% endhint %}
+
+* `create` function
+* `update` function
+* `background` function (optional)
+* `refresh` function
 
 They can be added to the top bar or a main view through the telemetry setup menu. When a widget has been added to a screen, then the widget functions are called as follows:
 
@@ -20,23 +86,11 @@ They can be added to the top bar or a main view through the telemetry setup menu
 * `update` is called when widget settings are changed by the user.
 * `background` is called periodically when the widget instance _is_ _not_ visible. **Note:** this is different from the way that telemetry scripts are handled.
 * `refresh` is called periodically when the widget instance _is_ visible. **Note:** if you want `background` to run when the widget is visible, then call it from `refresh`.
-* A widget script is stopped and disabled if it misbehaves (e.g. too long runtime, run-time error, or low memory)
-* All widgets are stopped while a One-Time script is running (see [One-Time scripts](one-time\_scripts.md)).
+*
 
-## File Location
+##
 
-Widgets are located on the SD card, each in their specific folder /WIDGETS/<_name_>/main.lua (<_name_> must be in 8 characters or less).
-
-## Interface
-
-Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
-
-* `name` string
-* `options` table
-* `create` function
-* `update` function
-* `background` function (optional)
-* `refresh` function
+##
 
 ### Example
 
@@ -95,10 +149,9 @@ return {
 
 ### Notes
 
-* The `name` must be max. 10 characters long.
-* `options` is passed to `create` and then stored in Lua. Changing it has no effect on EdgeTX.
-* If `options` is changed by the user in the Widget Settings menu, then `update` will be called with a new `options` table, unaffected by any changes made by Lua code to the old `options` table.
-* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md) for valid option types.&#x20;
+*
+*
+* Maximum five `options` are allowed, with names of max. 10 characters, and no spaces. cf. [widget options constants](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/widget-options.md) for valid option types.
 * If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget.
 * Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
 * When the widget is in full screen mode, then `event` is either 0, a [key event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md), or a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md).
