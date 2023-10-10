@@ -28,44 +28,37 @@ Telemetry script file name length (without extension) **must be 6 characters or 
 
 ## Interface
 
-Every Telemetry script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+Every Telemetry script must include a `return` statement at the end, defining its interface to EdgeTX. \
+This statement returns a table with the following fields:
 
-*   `run` (function) obligatory\
-    this function is called periodicaly when Telemetry script is running\
-    \
-    **Parameters** \
-    \
-    `event` (number)\
-    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>run</strong></td><td>function</td><td>true</td><td>Function is called periodicaly when when telemetry screen is visible. </td></tr></tbody></table>
 
-    \
-    `touchState` (table)\
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
-    \
-    **Return values**\
-    \
-    none\
+_Parameters_
 
-* `init` (function) optional\
-  this function is called once when Telemetry script is loaded and executed for the first time.\
-  \
-  **Parameters**\
-  \
-  none\
-  \
-  **Return values**\
-  \
-  none\
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>event</strong><br>number</td><td>Used to indicates which radio key has been pressed (see <a href="../part_iii_-_opentx_lua_api_reference/constants/key_events.md">Key Events</a>)</td></tr></tbody></table>
 
-* `background` (function) optional\
-  \
-  **Parameters**\
-  \
-  none\
-  \
-  **Return values**\
-  \
-  none
+_Return values_\
+_none_
+
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>init</strong></td><td>function</td><td>false</td><td>This function is called once when script is executed</td></tr></tbody></table>
+
+_Parameters_\
+none
+
+_Return Values_\
+none
+
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>background</strong></td><td>function</td><td>false</td><td>This function is called periodically, both when the telemetry screen is visible and when it is not</td></tr></tbody></table>
+
+_Parameters_\
+none
+
+_Return Values_\
+none
 
 ### Examples
 
