@@ -41,38 +41,40 @@ Wizard scripts must be stored in the same subfolder of /TEMPLATES/ with the same
 
 Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-*   `run` (function) obilgatory\
-    This function is called periodicaly when sccript is running\
-    \
-    **Parameters**
+| table item | type     | required |
+| ---------- | -------- | -------- |
+| **run**    | function | yes      |
 
-    \
-    `event` (number)\
-    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+This function is called periodicaly when script is running.&#x20;
 
-    \
-    `touchState` (table)\
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
+**Parameters**
+
+`event` (number)\
+This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
+
+`touchState` (table)\
+This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).
+
+**Return values**
+
+`exit` (multi type)
+
+1. if `exit` value is 0 (zero) script will continue to run
+2. if `exit` value is non-zero script will be halted.
+3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
 
 
-    **Return values**
+| table item | type     | required |
+| ---------- | -------- | -------- |
+| **init**   | function | no       |
 
-    \
-    `exit` (multi type)
+This function is called once when script is executed.
 
-    1. if `exit` value is 0 (zero) script will continue to run
-    2. if `exit` value is non-zero script will be halted.
-    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
+**Parameters**\
+none
 
-*   `init` (function) _optional_\
-    This function is called once when script is executed.\
-    \
-    **Parameters**
-
-    none\
-    \
-    **Return Value**\
-    none
+**Return Values**\
+none
 
 ## Examples
 
@@ -90,6 +92,8 @@ return { run=run }
 {% hint style="info" %}
 Because 0 is returned all the time this script will continue running until user long press EXIT (RTN) key.
 {% endhint %}
+
+***
 
 One-Time LUA script with initialization and exit feature if user short press and release EXIT (RTN) key
 
