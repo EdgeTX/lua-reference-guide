@@ -2,7 +2,7 @@
 
 ## Purpose
 
-One-Time scripts start when called upon by a specific radio function or when the user selects script browsing SD Card and then selects "Execute" from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.
+One-time scripts are used mainly to perform tasks that are not connected with flying. In example ELRS configuration LUA script. They do their task and are then terminated (by user or function) and unloaded.
 
 ## Execution & Lifetime
 
