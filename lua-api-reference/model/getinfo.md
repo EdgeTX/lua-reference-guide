@@ -71,8 +71,6 @@ local function my_run(event) {
 return { run = my_run, init = my_init }
 ```
 
-Displaying model's information
-
 [^1]: <mark style="color:red;">Name of what?</mark>    &#x20;
 
 [^2]: <mark style="color:red;">What values are allowed?</mark>     &#x20;
