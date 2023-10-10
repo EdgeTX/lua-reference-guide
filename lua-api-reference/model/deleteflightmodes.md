@@ -1,14 +1,31 @@
-# model.deleteFlightModes\(\)
+# model.deleteFlightModes
 
-Clear all flightModes
+Clears all Flight Modes
 
-@status current Introduced in 2.3.10
+## Syntax
+
+model.deleteFlightModes()
 
 ## Parameters
 
 none
 
-## Return value
+## Return values
 
 none
 
+## API Status
+
+<table><thead><tr><th width="161"></th><th width="72" data-type="checkbox">Avail</th><th width="145" data-type="select">Status</th><th>Comment</th></tr></thead><tbody><tr><td>BW radios</td><td>true</td><td></td><td></td></tr><tr><td>Color radios</td><td>true</td><td></td><td></td></tr></tbody></table>
+
+## Change log
+
+<table><thead><tr><th width="177">EdgeTX version</th><th>Change</th></tr></thead><tbody><tr><td>2.4.0</td><td>Introduced</td></tr></tbody></table>
+
+## Examples
+
+Example description
+
+```lua
+-- sample script
+```

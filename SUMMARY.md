@@ -80,7 +80,7 @@
     * [GREY()](lua-api-reference/display-lcd/grey.md)
   * [Model Functions](lua-api-reference/model/README.md)
     * [model.defaultInputs](lua-api-reference/model/defaultinputs.md)
-    * [model.deleteFlightModes()](lua-api-reference/model/deleteflightmodes.md)
+    * [model.deleteFlightModes](lua-api-reference/model/deleteflightmodes.md)
     * [model.deleteInput(input, line)](lua-api-reference/model/deleteinput.md)
     * [model.deleteInputs()](lua-api-reference/model/deleteinputs.md)
     * [model.deleteMix(channel, line)](lua-api-reference/model/deletemix.md)
