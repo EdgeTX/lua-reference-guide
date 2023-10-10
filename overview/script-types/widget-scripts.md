@@ -50,8 +50,7 @@ Try to use unique folder name as in case of naming clash previously installed wi
 
 Every Widget Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-* `name` (string) obligatory\
-  This variable holds a name that is displayed to user as Widget scripts name in available Widgets list.
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>name</strong></td><td>string</td><td>true</td><td>This variable holds a name that is displayed to user as Widget scripts name in available Widgets list.</td></tr></tbody></table>
 
 {% hint style="warning" %}
 The `name` length must be 10 **characters or less**.
@@ -59,42 +58,31 @@ The `name` length must be 10 **characters or less**.
 
 
 
-*   `options` (table) optional\
 
 
-    Options table is to store Widget's options available to EdgeTX user via Widget's Settings menu.
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>options</strong></td><td>table</td><td>false</td><td>Options table is to store Widget's options available to EdgeTX user via Widget's Settings menu. <br>To see valid options read <a href="../../lua-api-reference/constants/widget-options.md">Widget Options Constants</a>.</td></tr></tbody></table>
 
 {% hint style="info" %}
-Maximum five `options` are allowed, with names of max. 10 characters and no spaces.\
-To see valid options read [Widget Options Constants](../../lua-api-reference/constants/widget-options.md).
+`options` table is passed to `create` function when invoked and then stored in Lua. Changing options table values while Widget script is running has no effect. This table is designed to be changed with EdgeTX system menus.
 {% endhint %}
 
-{% hint style="warning" %}
-`options` table is passed to `create` function when invohed and then stored in Lua. Changing options table values while Widget script is running has no effect as this table values are designed to be changed with EdgeTX sysem menus.
-{% endhint %}
-
-{% hint style="warning" %}
+{% hint style="info" %}
 If `options` is changed by the user in the Widget Settings menu, then `update` will be called with a new `options` table, unaffected by any changes made by Lua code to the old `options` table.
 {% endhint %}
 
 
 
-* `create` (function) obligatory\
-  \
-  This function is called once when the widget instance is registered (started).\
-  \
-  **Parameters**\
-  \
-  `zone` (table) obligatory\
-  This parameter will hold visible dimensions of Widget (height & width)\
-  \
-  `options` (table) obligatory\
-  Initial optionst table as described above\
-  \
-  **Return values**\
-  \
-  `widget` (table)\
-  Create function will return table that has to be later passed to `update` ,  `background` & `refresh`  functions allowing to access widget's unique variables&#x20;
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>create</strong></td><td>function</td><td>true</td><td>function is called once when the widget instance is registered (started).</td></tr></tbody></table>
+
+_Parameters_
+
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>zone</strong><br>table</td><td>This parameter will hold visible dimensions of Widget (height &#x26; width)</td></tr><tr><td><strong>options</strong><br>table</td><td>Initial options table as described above</td></tr></tbody></table>
+
+_Return values_
+
+<table data-header-hidden><thead><tr><th width="140.33333333333331">Returns</th><th>Description</th></tr></thead><tbody><tr><td><strong>widget</strong><br>table</td><td>Create function will return table that has to be later passed to <code>update</code> ,  <code>background</code> &#x26; <code>refresh</code>  functions allowing to access widget's unique variables </td></tr></tbody></table>
 
 {% hint style="info" %}
 The size of the widget's zone area is as follows:
@@ -103,64 +91,54 @@ The size of the widget's zone area is as follows:
 * Not full screen mode: `zone.w` by `zone.h` (updated if screen options are changed)
 {% endhint %}
 
-{% hint style="warning" %}
+{% hint style="info" %}
 If local variables are declared outside functions in the widget script, then they are shared between all instances of the widget. Therefore, local variables that are private for each instance should be added to the `widget` table in the `create` function before returning the `widget` table to EdgeTX.
 {% endhint %}
 
 
 
-* `update` (function)\
-  This function is called when Widget's Settings are changed by the user. It is mostly used to modify Widget Script variables or behaviour basing on options values entered by user.\
-  \
-  **Parameters**\
-  \
-  `widget` (table) obligatory\
-  Widget's table returned by `create` function decribed above\
-  \
-  `options` (table) obligatory\
-  Initial options table as described above\
-  \
-  **Return values**\
-  \
-  none
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>update</strong></td><td>function</td><td>false</td><td>This function is called when Widget's Settings are changed by the user. It is mostly used to modify Widget Script variables or behaviour basing on options values entered by user.</td></tr></tbody></table>
+
+_Parameters_
+
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>widget</strong><br>table</td><td>Widget's table returned by <code>create</code> function, decribed above.</td></tr><tr><td><strong>options</strong><br>table</td><td>Initial options table as described above</td></tr></tbody></table>
+
+_Return values_\
+_none_
 
 
 
-* `background` function (optional)\
-  This function is called periodically when the widget instance _is_ _not_ visible. \
-  \
-  **Parameters**\
-  \
-  `widget` (table) obligatory\
-  Widget's table returned by `create` function decribed above\
-  \
-  **Return values**\
-  \
-  none\
 
-*   `refresh` function\
-    This function is called periodically when the widget instance _is_ visible. \
-    **Note:** if you want `background` to run when the widget is visible, then call it from `refresh`\
-    \
-    **Parameters**\
-    \
-    `widget` (table) obligatory\
-    Widget's table returned by `create` function decribed above\
-    \
-    `event` (number)\
-    This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
 
-    \
-    `touchState` (table)\
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
-    \
-    **Return values**\
-    \
-    none
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>background</strong></td><td>function</td><td>false</td><td>This function is called periodically when the widget instance is NOT VISIBLE.</td></tr></tbody></table>
+
+_Parameters_
+
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>widget</strong><br>table</td><td>Widget's table returned by <code>create</code> function, decribed above.</td></tr></tbody></table>
+
+_Return values_\
+_none_
+
+
+
+
+
+<table><thead><tr><th width="142.33333333333331">Field</th><th width="108">Type</th><th width="105" data-type="checkbox">Required</th><th>Desctiption</th></tr></thead><tbody><tr><td><strong>refresh</strong></td><td>function</td><td>true</td><td>This function is called periodically when the widget instance IS VISIBLE.  </td></tr></tbody></table>
+
+_Parameters_
+
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>widget</strong><br>table</td><td>Widget's table returned by <code>create</code> function, decribed above.</td></tr><tr><td><strong>event</strong><br>number</td><td><ul><li>When Widget Script is in full screen mode, then <code>event</code> is either 0, a <a href="../../lua-api-reference/constants/key-event-constants.md">key event value</a>, or a <a href="../../lua-api-reference/constants/touch-event-constants.md">touch event value</a>.</li><li>When the widget is not in full screen mode, then <code>event</code> is <code>nil</code></li></ul><p>See <a href="../../lua-api-reference/constants/key-event-constants.md">Key Events</a>.</p></td></tr><tr><td><strong>touchState</strong><br>table</td><td><p>This parameter is only present when radio is equiped with touch interface and <code>event</code> is a touch event.<br></p><ul><li>If <code>event</code> is a <a href="../../lua-api-reference/constants/touch-event-constants.md">touch event value</a>, then <code>touchState</code> is a table. Otherwise, it is <code>nil</code>.</li><li>When the widget is not in full screen mode then <code>touchState</code> is <code>nil</code></li></ul><p><br>See <a href="../part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md">Touch State Events</a>.</p></td></tr></tbody></table>
+
+_Return values_\
+_none_
 
 {% hint style="info" %}
 if you want `background` function to run when the widget is visible, then call it from `refresh function.`
 {% endhint %}
+
+
 
 ### Examples
 
@@ -216,17 +194,3 @@ return {
   background = background
 }
 ```
-
-### Notes
-
-*
-*
-*
-*
-*
-* When the widget is in full screen mode, then `event` is either 0, a [key event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md), or a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md).
-* If `event` is a [touch event value](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md), then `touchState` is a table. Otherwise, it is `nil`.
-* When the widget is not in full screen mode, then both `event` and `touchState` are `nil`.
-* The size of the widget's screen area is as follows:
-  * Full screen mode: `LCD_W` by `LCD_H`
-  * Not full screen mode: `zone.w` by `zone.h` (updated if screen options are changed)
