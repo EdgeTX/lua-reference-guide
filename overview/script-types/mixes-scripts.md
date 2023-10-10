@@ -1,7 +1,7 @@
 # Mixes Scripts
 
 {% hint style="warning" %}
-### <mark style="color:red;">se Lua Mixes Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
+### <mark style="color:red;">Don't use Lua Mixes Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
 {% endhint %}
 
 ## Purpose
@@ -55,46 +55,45 @@ File name length (without extension) **must be 6 characters or less**
 
 
 
-***
-
 ## Interface
 
-Every Mixes Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:\
+Every Mixes Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
-
-`run` (function) required
-
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>table item:<br><strong>run</strong></td><td><br></td><td></td></tr><tr><td>type: <br>function <br>required</td><td></td><td></td></tr><tr><td>parameters:<br>none<br><br>return values:<br>none</td><td></td><td></td></tr></tbody></table>
+| table item | type     | required |
+| ---------- | -------- | -------- |
+| **run**    | function | yes      |
 
 This function is called periodicaly when script is running. \
 \
 **Parameters** \
-\
 Variables matching those used in `input` table\
 \
 **Return values**\
-\
 Variables matching those used in `output` table\
-\
-\
-`init` (function) optional
+
+
+| table item | type     | required |
+| ---------- | -------- | -------- |
+| **init**   | function | no       |
 
 This function is called once when Mixes Script is loaded and executed for the first time
 
-\
 **Parameters**\
-\
 none\
 \
 **Return values**\
-\
 none\
-\
 
 
-<table data-header-hidden><thead><tr><th width="166"></th><th width="132"></th><th></th></tr></thead><tbody><tr><td><code>input</code></td><td>table</td><td>obligatory</td></tr></tbody></table>
+| table item | type  | required |
+| ---------- | ----- | -------- |
+| **input**  | table | yes      |
 
-The input table defines what values are available as input(s) to custom scripts. There are two forms of input table entries
+The input table defines what values are available as input(s) to custom scripts.&#x20;
+
+There are two forms of input table entries
+
+**SOURCE**
 
 ```
 { "<name>", SOURCE }
@@ -102,6 +101,8 @@ The input table defines what values are available as input(s) to custom scripts.
 
 SOURCE inputs provide the current value of a selected OpenTX variable. The source must be selected by the user when the script is configured. Source can be any value that EdgeTX knows about (inputs, channels, telemetry values, switches, custom functions etc.).\
 **Note:** the typical input range is -1024 thru +1024. Simply divide the input value by 10.24 to convert to a percentage from -100% to +100%.
+
+**VALUE**
 
 ```
 { "<name>", VALUE, <min>, <max>, <default> }
@@ -117,7 +118,9 @@ VALUE inputs provide a constant value that is set by the user when the script is
 
 
 
-`output` (table) obligatory
+| table item | type  | required |
+| ---------- | ----- | -------- |
+| **output** | table | yes      |
 
 The output table defines only name(s), as the actual values are returned by the script's run function.
 
@@ -125,7 +128,9 @@ The output table defines only name(s), as the actual values are returned by the 
 { "<name1>", "<name2>" }
 ```
 
-**Note:** the above names are only visible as source values on the radio screen when the script is running. If the model is edited in Companion, then the values show as `LUA1a` and `LUA1b` etc.
+{% hint style="info" %}
+Above names are only visible as source values on the radio screen when the script is running. If the model is edited in Companion, then the values show as `LUA1a` and `LUA1b` etc.
+{% endhint %}
 
 
 
@@ -161,7 +166,3 @@ Example where Lua mix script is used to drive ailerons in some clever way, but c
 CH1  [I4]Ail Weight(+100%)
   := LUA4b Weight(+100%)
 ```
-
-####
-
-#### Output table
