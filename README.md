@@ -25,7 +25,7 @@ Quickest way to get support from seasoned EdgeTX LUA developers is to join our D
 
 Please feel free to make suggestions or corrections to the documentation.&#x20;
 
-* Preferred method of editing is to use [GitBook](https://www.gitbook.com), as it uses WYSWIG editor allowing two-stage publication. If you want to change or add whole page or become collaborator _<mark style="color:red;">\<decribe what to do></mark>_.
+* Preferred method of editing is to use [GitBook](https://www.gitbook.com), as it uses WYSWIG editor allowing two-stage publication. If you want to change or add whole page or become collaborator _<mark style="color:purple;">\<decribe what to do></mark>_.
 * For simple typos or proof reading you may submit PR to [lua-reference-guide](https://github.com/EdgeTX/lua-reference-guide/pulls)[ ](https://github.com/EdgeTX/lua-reference-guide)repository on EdgeTX GitHub.
 
 ## Project support
