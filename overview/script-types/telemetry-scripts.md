@@ -46,8 +46,8 @@ Every Telemetry script must include a `return` statement at the end, defining it
     \
     none\
 
-* `init` function (optional)\
-  this function is called once when Telemtry script is loaded and executed for the first time.\
+* `init` (function) optional\
+  this function is called once when Telemetry script is loaded and executed for the first time.\
   \
   **Parameters**\
   \
@@ -57,7 +57,7 @@ Every Telemetry script must include a `return` statement at the end, defining it
   \
   none\
 
-* `background` function (optional)\
+* `background` (function) optional\
   \
   **Parameters**\
   \
