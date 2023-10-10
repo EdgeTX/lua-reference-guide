@@ -1,7 +1,7 @@
 # Mixes Scripts
 
 {% hint style="warning" %}
-### <mark style="color:red;">Do not use Lua Mixes Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
+### <mark style="color:red;">se Lua Mixes Scripts for controlling any aspect of your model that could cause a crash if the script stops executing!</mark>
 {% endhint %}
 
 ## Purpose
@@ -62,7 +62,9 @@ File name length (without extension) **must be 6 characters or less**
 Every Mixes Script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:\
 
 
-`run` (function) obligatory
+`run` (function) required
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td>table item:<br><strong>run</strong></td><td><br></td><td></td></tr><tr><td>type: <br>function <br>required</td><td></td><td></td></tr><tr><td>parameters:<br>none<br><br>return values:<br>none</td><td></td><td></td></tr></tbody></table>
 
 This function is called periodicaly when script is running. \
 \
