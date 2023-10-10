@@ -1,7 +1,5 @@
 # model.getInfo
 
-## Description
-
 Gets currently selected Model's information
 
 ## Syntax
