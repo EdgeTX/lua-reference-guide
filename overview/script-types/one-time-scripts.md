@@ -2,7 +2,7 @@
 
 ## Overview
 
-One-Time scripts start when called upon by a specific radio function or when the user selects them from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.&#x20;
+One-Time scripts start when called upon by a specific radio function or when the user selects script browsing SD Card and then selects "Execute" from a contextual menu. They do their task and are then terminated (by user or function) and unloaded.
 
 {% hint style="danger" %}
 <mark style="color:red;">**Running a One-Time script will suspend execution of all other currently loaded Lua scripts (Custom, Telemetry, and Functions). They are automatically restarted once the One-Time script is finished. This is done to provide enough system resources to execute the One-Time script.**</mark>
@@ -10,7 +10,7 @@ One-Time scripts start when called upon by a specific radio function or when the
 
 ## Execution & Lifetime
 
-Script is executed when user selects Execute on a script file from SD card browser screen, or opens a Lua Tool, or creates a new model with a Wizard script.
+Script is executed when user selects "Execute" on a script file from SD card browser screen, or opens a Lua Tool, or creates a new model with a Wizard script.
 
 The script executes until:
 
@@ -27,7 +27,7 @@ One-Time Scripts can be placed anywhere on SD card, however, the folder /SCRIPTS
 {% hint style="info" %}
 If One-Time Script is placed in special folder /SCRIPTS/TOOLS it will be visible in EdgeTX RADIO>TOOLS tab\
 \
-To give this One-Time Script unique name place at the beginning of lua script line: \
+To give this One-Time Script unique name place at the beginning of lua script line:\
 `-- toolName = "TNS|ScriptName|TNE`
 
 Otherwise script's filename will be used to display in RADIO>TOOLS list.
@@ -51,20 +51,18 @@ Every script must include a `return` statement at the end, defining its interfac
     This parameter is used to indicates which radio key has been pressed (see [Key Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/key\_events.md)).
 
     \
-    `touchState` (table) \
-    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\
-
+    `touchState` (table)\
+    This parameter is only present when radio is equiped with touch interface and `event` is a touch event (see [Touch State Events](../part\_iii\_-\_opentx\_lua\_api\_reference/constants/touch-event-constants.md)).\\
 
     **Return value**
 
     \
-    `exit` (multi type)&#x20;
+    `exit` (multi type)
 
-    1. if `exit` value is 0 (zero) script will continue to run&#x20;
-    2. if `exit` value is non-zero script will be halted.&#x20;
-    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\
-
-*   `init` (function) _optional_ \
+    1. if `exit` value is 0 (zero) script will continue to run
+    2. if `exit` value is non-zero script will be halted.
+    3. If `exit` value is a text string with the file path to a new Lua script, then the new script will be loaded and run.\\
+*   `init` (function) _optional_\
     this function is called once when script is executed.\
     \
     **Parameters**
@@ -88,10 +86,10 @@ return { run=run }
 ```
 
 {% hint style="info" %}
-Because 0 is returned all the time this script will continue running until user long press EXIT (RTN) key.&#x20;
+Because 0 is returned all the time this script will continue running until user long press EXIT (RTN) key.
 {% endhint %}
 
-One-Time LUA script with initialization and exit feature if user short press and release EXIT (RTN) key&#x20;
+One-Time LUA script with initialization and exit feature if user short press and release EXIT (RTN) key
 
 ```lua
 local exit = 0
