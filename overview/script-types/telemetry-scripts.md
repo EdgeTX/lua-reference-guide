@@ -28,7 +28,7 @@ Telemetry script file name length (without extension) **must be 6 characters or 
 
 ## Interface
 
-Every script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
+Every Telemetry script must include a `return` statement at the end, defining its interface to EdgeTX. This statement returns a table with the following fields:
 
 *   `run` (function) obligatory\
     this function is called periodicaly when Telemetry script is running\
