@@ -8,29 +8,13 @@ model.getCurve( curveID )
 
 ## Parameters
 
-<table><thead><tr><th width="157.33333333333331">Name</th><th width="124">Type</th><th width="64" data-type="checkbox">Req</th><th>Description</th></tr></thead><tbody><tr><td><strong>curveID</strong></td><td>number</td><td>true</td><td>Curve ID number. Normal Lua index.  <br>Use 1 for curve 1, 8 for Input 8 etc.</td></tr></tbody></table>
-
-## Return values
+<table><thead><tr><th width="157">Name</th><th width="124">Type</th><th width="64" data-type="checkbox">Req</th><th>Description</th></tr></thead><tbody><tr><td><strong>curveID</strong></td><td>number</td><td>true</td><td>Curve ID number. Normal Lua index.  <br>Use 1 for curve 1, 8 for Input 8 etc.</td></tr></tbody></table>
 
 ## Return values
 
 `table` containing model information with following fields:
 
 <table data-header-hidden><thead><tr><th width="178">Field</th><th width="102">Type</th><th>Decription</th></tr></thead><tbody><tr><td><strong>name</strong></td><td>string</td><td>Model's name set.  </td></tr><tr><td><strong>filename</strong></td><td>string</td><td>Name of <a data-footnote-ref href="#user-content-fn-1">&#x3C;<mark style="color:purple;">???></mark></a></td></tr><tr><td><strong>bitmap</strong></td><td>string</td><td>Name of model's picture file located on SD Card in /IMAGES/ folder</td></tr><tr><td><strong>extendedLimits</strong></td><td>boolean</td><td><code>true</code> if extended limits are enabled otherwise <code>false</code></td></tr><tr><td><strong>jitterFilter</strong></td><td>number</td><td><a data-footnote-ref href="#user-content-fn-2">model level ADC filter</a></td></tr></tbody></table>
-
-{% hint style="warning" %}
-**bitmap** field is not available on BW radios
-{% endhint %}
-
-## API Status
-
-`table` containing model information with following fields:
-
-`table` containing model information with following fields:
-
-
-
-
 
 ## API Status
 
