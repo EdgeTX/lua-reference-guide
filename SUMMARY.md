@@ -89,7 +89,7 @@
     * [model.getCustomFunction(function)](lua-api-reference/model/getcustomfunction.md)
     * [model.getFlightMode(index)](lua-api-reference/model/getflightmode.md)
     * [model.getGlobalVariable(index, flight\_mode)](lua-api-reference/model/getglobalvariable.md)
-    * [model.getInfo()](lua-api-reference/model/getinfo.md)
+    * [model.getInfo](lua-api-reference/model/getinfo.md)
     * [model.getInput(input, line)](lua-api-reference/model/getinput.md)
     * [model.getInputsCount(input)](lua-api-reference/model/getinputscount.md)
     * [model.getLogicalSwitch(switch)](lua-api-reference/model/getlogicalswitch.md)
