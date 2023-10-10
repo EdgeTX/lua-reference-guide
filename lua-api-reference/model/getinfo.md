@@ -28,7 +28,7 @@ none
 
 ## Change log
 
-<table><thead><tr><th width="179">EdgeTX version</th><th>Change</th></tr></thead><tbody><tr><td>2.4.0</td><td>Introduced</td></tr><tr><td>2.6.0</td><td>added <code>filename</code> to return value table.</td></tr><tr><td>2.8.0</td><td>added <code>extendedLimits</code> , <code>jitterFilter</code>, <code>labels</code> to return value table.</td></tr></tbody></table>
+<table><thead><tr><th width="177">EdgeTX version</th><th>Change</th></tr></thead><tbody><tr><td>2.4.0</td><td>Introduced</td></tr><tr><td>2.6.0</td><td>added <code>filename</code> to return value table.</td></tr><tr><td>2.8.0</td><td>added <code>extendedLimits</code> , <code>jitterFilter</code>, <code>labels</code> to return value table.</td></tr></tbody></table>
 
 ## Examples
 
