@@ -68,12 +68,12 @@ none
 Simplest one-time LUA script
 
 ```lua
-local function run(event, touchState)
+local function my_run(event, touchState)
   print("Script run executed")
   return 0
 end
 
-return { run=run }
+return { run = my_run }
 ```
 
 {% hint style="info" %}
@@ -87,19 +87,20 @@ One-Time LUA script with initialization and exit feature if user short press and
 ```lua
 local exit = 0
 
-local function run(event, touchState)
-  print("Script run function executed")
+local function my_run(event, touchState)
+  print("Script my_run function executed")
   -- code to execute
   if event == EVT_VIRTUAL_EXIT then 
+    print("Script exit executed")
     exit = 1
   end 
   return exit
 end
 
-local function init()
-  print("Script init function executed")
+local function my_init()
+  print("Script my_init function executed")
   -- code to execute
 end
 
-return { run=run, init=init }
+return { run = my_run, init = my_init }
 ```
