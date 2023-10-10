@@ -10,7 +10,7 @@
     * [Telemetry Scripts](overview/script-types/telemetry-scripts.md)
     * [Widget Scripts](overview/script-types/widget-scripts.md)
     * [Function Scripts](overview/script-types/function-scripts.md)
-    * [Mixes Scripts](overview/script-types/mixer-scripts.md)
+    * [Mixes Scripts](overview/script-types/mixes-scripts.md)
 * [LUA API Reference](lua-api-reference/README.md)
   * [Constants](lua-api-reference/constants/README.md)
     * [Color Constants](lua-api-reference/constants/color-constants.md)
