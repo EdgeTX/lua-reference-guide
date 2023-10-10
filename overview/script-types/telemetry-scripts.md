@@ -16,14 +16,14 @@ Telemetry script is loaded and executed when model is selected.\
 Script executes until:
 
 * it misbehaves (e.g. run-time error or low memory)
-* one-time script is running (see One-time scripts)
+* one-time script is running (see [One-time scripts](one-time-scripts.md))
 
 ## File Location
 
 Telemetry scripts are located on the SD card in the folder /SCRIPTS/TELEMETRY/.&#x20;
 
 {% hint style="warning" %}
-File name length (without extension) **must be 6 characters or less**&#x20;
+Telemetry script file name length (without extension) **must be 6 characters or less**&#x20;
 {% endhint %}
 
 ## Interface
