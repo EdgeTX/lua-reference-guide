@@ -29,11 +29,3 @@ playFile("armed.wav", 5) -- play file armed.wav, use Wav volume 2
 playFile("armed.wav", 1) -- play file armed.wav, use Wav volume 1
 playFile("armed.wav")	 -- play file armed.wav, use radio settings Wav volume
 ```
-
-## &#x20;
-
-\
-
-
-
-
