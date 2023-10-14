@@ -1,4 +1,4 @@
-# model.setCurve\(curve, params\)
+# model.setCurve(curve, params)
 
 Set Curve parameters
 
@@ -25,21 +25,20 @@ setting a 6-point standard smoothed curve
 
 ## Parameters
 
-* `curve` \(unsigned number\) curve number \(use 0 for Curve1\)
-* `params` see model.getCurve return format for table format. setCurve uses standard lua array indexing and arrays start at index 1
+* `curve` (unsigned number) curve number (use 0 for Curve1)
+* `params` see [model.getCurve](getcurve.md) return format for table format. setCurve uses standard lua array indexing and arrays start at index 1
 
 ## Return value
 
-* \`\` 0 - Everything okay
+*   \`\` 0 - Everything okay
 
-  ```text
-     1 - Wrong number of points
-     2 - Invalid Curve number
-     3 - Cuve does not fit anymore
-     4 - point of out of index
-     5 - x value not monotonically increasing
-     6 - y value not in range [-100;100]
-     7 - extra values for y are set
-     8 - extra values for x are set
-  ```
-
+    ```
+       1 - Wrong number of points
+       2 - Invalid Curve number
+       3 - Cuve does not fit anymore
+       4 - point of out of index
+       5 - x value not monotonically increasing
+       6 - y value not in range [-100;100]
+       7 - extra values for y are set
+       8 - extra values for x are set
+    ```

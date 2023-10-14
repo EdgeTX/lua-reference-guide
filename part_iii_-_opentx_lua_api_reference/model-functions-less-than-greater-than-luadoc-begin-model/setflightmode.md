@@ -1,4 +1,4 @@
-# model.setFlightMode\(index, params\)
+# model.setFlightMode(index, params)
 
 Set Flight mode parameters
 
@@ -6,10 +6,9 @@ Set Flight mode parameters
 
 ## Parameters
 
-* `index` \(unsigned number\) flight mode number \(use 0 for FM0\)
-* `params` see model.getFlightMode return format for table format.
+* `index` (unsigned number) flight mode number (use 0 for FM0)
+* `params` see [model.getFlightMode()](getflightmode.md) return format for table format.
 
 ## Return value
 
 none
-

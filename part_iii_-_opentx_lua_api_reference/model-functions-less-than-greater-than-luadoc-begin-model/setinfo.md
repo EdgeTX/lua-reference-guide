@@ -1,4 +1,4 @@
-# model.setInfo\(value\)
+# model.setInfo(value)
 
 Set the current Model information
 
@@ -6,7 +6,7 @@ Set the current Model information
 
 ## Parameters
 
-* `value` model information data, see model.getInfo\(\)
+* `value` model information data, see [model.getInfo()](getinfo.md)
 
 ## Return value
 
@@ -15,4 +15,3 @@ none
 ### Notice
 
 If a parameter is missing from the value, then that parameter remains unchanged.
-

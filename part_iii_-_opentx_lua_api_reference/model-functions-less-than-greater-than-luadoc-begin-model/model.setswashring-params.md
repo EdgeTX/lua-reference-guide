@@ -6,7 +6,7 @@ Set heli swash parameters
 
 **Parameters**
 
-* `value` (table) swash ring parameters, see model.getSwashRing() for table format
+* `value` (table) swash ring parameters, see [model.getSwashRing()](model.getswashring.md) for table format
 
 **Return value**
 

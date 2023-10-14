@@ -1,4 +1,4 @@
-# model.setLogicalSwitch\(switch, value\)
+# model.setLogicalSwitch(switch, value)
 
 Set Logical Switch parameters
 
@@ -6,8 +6,8 @@ Set Logical Switch parameters
 
 ## Parameters
 
-* `switch` \(unsigned number\) logical switch number \(use 0 for LS1\)
-* `value` \(table\) see model.getLogicalSwitch\(\) for table format
+* `switch` (unsigned number) logical switch number (use 0 for LS1)
+* `value` (table) see [model.getLogicalSwitch()](getlogicalswitch.md) for table format
 
 ## Return value
 
@@ -17,5 +17,4 @@ none
 
 If a parameter is missing from the value, then that parameter remains unchanged.
 
-To set the `and` member \(which is Lua keyword\) use the following syntax: `model.setLogicalSwitch(30, {func=4,v1=1,v2=-99, ["and"]=24})`
-
+To set the `and` member (which is Lua keyword) use the following syntax: `model.setLogicalSwitch(30, {func=4,v1=1,v2=-99, ["and"]=24})`

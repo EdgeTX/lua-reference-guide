@@ -1,4 +1,4 @@
-# model.setTimer\(timer, value\)
+# model.setTimer(timer, value)
 
 Set model timer parameters
 
@@ -6,8 +6,8 @@ Set model timer parameters
 
 ## Parameters
 
-* `timer` \(number\) timer index \(0 for Timer 1\)
-* `value` timer parameters, see model.getTimer\(\)
+* `timer` (number) timer index (0 for Timer 1)
+* `value` timer parameters, see [model.getTimer()](gettimer.md)
 
 ## Return value
 
@@ -16,4 +16,3 @@ none
 ### Notice
 
 If a parameter is missing from the value, then that parameter remains unchanged.
-

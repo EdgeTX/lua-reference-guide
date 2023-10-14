@@ -1,4 +1,4 @@
-# model.setOutput\(index, value\)
+# model.setOutput(index, value)
 
 Set servo parameters
 
@@ -6,8 +6,8 @@ Set servo parameters
 
 ## Parameters
 
-* `index` \(unsigned number\) channel number \(use 0 for CH1\)
-* `value` \(table\) servo parameters, see model.getOutput\(\) for table format
+* `index` (unsigned number) channel number (use 0 for CH1)
+* `value` (table) servo parameters, see [model.getOutput()](getoutput.md) for table format
 
 ## Return value
 
@@ -16,4 +16,3 @@ none
 ### Notice
 
 If a parameter is missing from the value, then that parameter remains unchanged.
-
