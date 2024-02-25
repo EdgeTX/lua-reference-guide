@@ -1,6 +1,6 @@
 # EdgeTX 2.9 Lua Reference Guide
 
-[Join the chat on Discord](https://discord.gg/CZCwVx2)
+[Join the chat on Discord](https://discord.gg/DrHkAn28sq)
 
 The latest version of this guide will always be available [here](https://luadoc.edgetx.org). At the top of the left sidebar there is a version option if you are running an older version of EdgeTX and need the docs for that specific version.
 
