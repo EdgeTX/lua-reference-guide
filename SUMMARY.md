@@ -32,6 +32,7 @@
     * [Special Function Constants](lua-api-reference/constants/special-function-constants.md)
     * [Touch Event Constants](lua-api-reference/constants/touch-event-constants.md)
     * [Widget Options Constants](lua-api-reference/constants/widget-options.md)
+    * [Units](lua-api-reference/constants/units.md)
   * [Display LCD](lua-api-reference/display-lcd/README.md)
     * [lcd.RGB( r, g, b | rgb )](lua-api-reference/display-lcd/RGB.md)
     * [lcd.clear( \[color\] )](lua-api-reference/display-lcd/clear.md)
@@ -203,4 +204,3 @@
     * [Speed/memory optimizaton tricks](advanced-topics/optimization-tricks.md)
 * [Appendixes](appendix/README.md)
   * [Fonts](appendix/fonts.md)
-  * [Units](appendix/units.md)
