@@ -8,11 +8,11 @@ Returns colorFlag in RGB565 format that can be used with lcd draw functions.
 
 ### Parameters
 
-<table><thead><tr><th width="109">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>r</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 255 (0xFF) that expresses te amount of red in the color</td></tr><tr><td>g</td><td>true</td><td>interer</td><td>number between (0x00) and 255 (0xFF) that expresses te amount of green in the color</td></tr><tr><td>b</td><td>true</td><td>integer</td><td>number between (0x00) and 255 (0xFF)that expresses te amount of blue in the color</td></tr></tbody></table>
+<table><thead><tr><th width="109">Name</th><th width="64" data-type="checkbox">Req</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>r</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 255 (0xFF) that expresses te amount of red in the color</td></tr><tr><td>g</td><td>true</td><td>interer</td><td>number between (0x00) and 255 (0xFF) that expresses te amount of green in the color</td></tr><tr><td>b</td><td>true</td><td>integer</td><td>number between (0x00) and 255 (0xFF)that expresses te amount of blue in the color</td></tr></tbody></table>
 
 or
 
-<table><thead><tr><th width="109">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>rgb</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 16777215 (0xFFFFFF) that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)</td></tr></tbody></table>
+<table><thead><tr><th width="109">Name</th><th width="67" data-type="checkbox">Req</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>rgb</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 16777215 (0xFFFFFF) that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)</td></tr></tbody></table>
 
 ### Returns
 
