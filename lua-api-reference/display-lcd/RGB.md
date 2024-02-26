@@ -1,4 +1,4 @@
-# lcd.RGB(r, g, b | rgb)
+# lcd.RGB( r, g, b | rgb )
 
 Returns a 5/6/5 rgb color code, that can be used with lcd.setColor
 
@@ -30,3 +30,4 @@ or
 
 <table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.3.0</td><td>Introduced</td></tr></tbody></table>
 
+\-
