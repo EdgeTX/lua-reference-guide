@@ -16,8 +16,10 @@ or
 
 ### Return value
 
-* `color_flag` \[integer] number in RGB565 format shifted to proper place in `drawing_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
+* `color_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
 
-#### Notice
+### Avaiable on
 
-Only available on Colorlcd radios
+* [ ] B\&W LCD radios
+* [ ] Grayscale LCD radios
+* [x] Color LCD radios
