@@ -1,8 +1,8 @@
 # lcd.clear( \[color] )
 
-Clear the LCD screen
+### Desctiption
 
-@status current Introduced in 2.3
+Clears the LCD screen
 
 ### Parameters
 
