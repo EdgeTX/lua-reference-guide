@@ -18,8 +18,15 @@ or
 
 * `color_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
 
-### Avaiable on
+### Notes
+
+### Available on
 
 * [ ] B\&W LCD radios
 * [ ] Grayscale LCD radios
 * [x] Color LCD radios
+
+### API status
+
+<table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.3.0</td><td>Introduced</td></tr></tbody></table>
+
