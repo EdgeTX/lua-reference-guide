@@ -6,17 +6,11 @@ Clear the LCD screen
 
 ### Parameters
 
-* `color_flag` (optional), only on color screens)
+* `color_flag` (optional), see [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
 
-### Return value
+### Returns
 
 none
-
-### Avaiable on
-
-* [ ] B\&W LCD radios
-* [ ] Grayscale LCD radios
-* [x] Color LCD radios
 
 #### Notice
 
