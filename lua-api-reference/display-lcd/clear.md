@@ -1,4 +1,4 @@
-# lcd.clear(\[color])
+# lcd.clear( \[color] )
 
 Clear the LCD screen
 
@@ -11,6 +11,22 @@ Clear the LCD screen
 ### Returns
 
 none
+
+### Notes
+
+This function works only in stand-alone and telemetry & widget scripts. See [script types](../../overview/script-types/).
+
+### Available on
+
+* [x] B\&W LCD radios
+* [x] Grayscale LCD radios
+* [x] Color LCD radios
+
+### API status
+
+<table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.3.0</td><td>Introduced</td></tr></tbody></table>
+
+\-
 
 #### Notice
 
