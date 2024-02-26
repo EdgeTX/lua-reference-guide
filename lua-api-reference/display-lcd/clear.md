@@ -8,7 +8,7 @@ Clears the LCD screen optionaly filling it with selected color
 
 ### Parameters
 
-<table><thead><tr><th width="117">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>color</td><td>false</td><td>integer (colorFlag)</td><td>see <a href="../../lua-api-programming/drawing-flags-and-colors.md">Drawing Flags</a></td></tr></tbody></table>
+<table><thead><tr><th width="117">Name</th><th width="68" data-type="checkbox">Req</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>color</td><td>false</td><td>integer (colorFlag)</td><td>see <a href="../../lua-api-programming/drawing-flags-and-colors.md">Drawing Flags</a></td></tr></tbody></table>
 
 
 
