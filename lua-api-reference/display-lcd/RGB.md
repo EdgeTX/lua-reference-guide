@@ -14,7 +14,7 @@ or
 
 * `rgb` (required) \[integer]  number between 0 and 0xFFFFFF that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)
 
-### Return value
+### Returns
 
 * `color_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
 
