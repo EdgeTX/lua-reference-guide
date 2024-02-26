@@ -8,11 +8,11 @@ Display a number at (x,y)
 
 * `x,y` (positive numbers) starting coordinate
 * `value` (number) value to display
-* `flags` (unsigned number) drawing flags:
+* `flags` (unsigned number) drawing [flags](../constants/flags-and-pattern-constants.md):
   * `0 or not specified` display with no decimal (like abs())
   * `PREC1` display with one decimal place (number 386 is displayed as 38.6)
   * `PREC2` display with tow decimal places (number 386 is displayed as 3.86)
-  * other general LCD flag also apply\
+  * other general LCD [flags](../constants/flags-and-pattern-constants.md) also apply\
 
 
 ### Return value
