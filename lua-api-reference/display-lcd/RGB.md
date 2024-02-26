@@ -1,18 +1,10 @@
----
-description: >-
-  Function returns colorFlag in RGB565 format that can be used with lcd draw
-  functions.
----
-
 # lcd.RGB
-
-### Description
 
 Returns colorFlag in RGB565 format that can be used with lcd draw functions.
 
 ### Syntax
 
-**lcd.RGB( r, g, b | rgb )**
+#### **lcd.RGB( r, g, b | rgb )**
 
 ### Parameters
 

@@ -1,8 +1,10 @@
-# lcd.drawBitmap( bitmap, x, y \[, scale] )
-
-### Description
+# lcd.drawBitmap
 
 Displays prevoiusly loaded bitmap at (x,y) and optionally scales it.
+
+### Syntax
+
+#### lcd.drawBitmap( bitmap, x, y \[, scale] )
 
 ### Parameters
 

@@ -1,8 +1,10 @@
-# lcd.clear( \[color] )
-
-### Description
+# lcd.clear
 
 Clears the LCD screen optionaly filling it with selected color
+
+### Syntax
+
+#### lcd.clear( \[color] )
 
 ### Parameters
 
