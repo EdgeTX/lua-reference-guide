@@ -1,6 +1,6 @@
 # lcd.clear( \[color] )
 
-### Desctiption
+### Description
 
 Clears the LCD screen
 
