@@ -18,9 +18,9 @@ This function works only in stand-alone and telemetry & widget scripts. See [scr
 
 ### Available on
 
-* [x] B\&W LCD radios
-* [x] Grayscale LCD radios
-* [x] Color LCD radios
+* [x] [B\&W LCD radios](../../overview/radios/#radios-with-b-and-w-lcd-screen)
+* [x] [Grayscale LCD radios](../../overview/radios/#radios-with-grayscale-lcd-screen)
+* [x] [Color LCD radios](../../overview/radios/#radios-with-color-lcd-screen)
 
 ### API status
 
