@@ -19,7 +19,7 @@ model.getCurve( curveID )
 
 ## API Status
 
-<table><thead><tr><th width="161"></th><th width="71.1764705882353" data-type="checkbox">Avail</th><th width="145" data-type="select">Status</th><th>Comment</th></tr></thead><tbody><tr><td>BW radios</td><td>true</td><td></td><td></td></tr><tr><td>Color radios</td><td>true</td><td></td><td></td></tr></tbody></table>
+<table><thead><tr><th width="161"></th><th width="71.1764705882353" data-type="checkbox">Avail</th><th width="145">Status<select></select></th><th>Comment</th></tr></thead><tbody><tr><td>BW radios</td><td>true</td><td></td><td></td></tr><tr><td>Color radios</td><td>true</td><td></td><td></td></tr></tbody></table>
 
 ## Change log
 

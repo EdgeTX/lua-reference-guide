@@ -21,7 +21,6 @@
   * [Internal indexes](overview/internal-indexes/README.md)
     * [Source List](overview/internal-indexes/source-list.md)
     * [Switch Positions List](overview/internal-indexes/switch-positions-id.md)
-    * [Source Names](overview/internal-indexes/source-names.md)
 * [LUA API Reference](lua-api-reference/README.md)
   * [Constants](lua-api-reference/constants/README.md)
     * [Color Constants](lua-api-reference/constants/color-constants.md)
