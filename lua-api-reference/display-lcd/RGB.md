@@ -1,8 +1,8 @@
 # lcd.RGB( r, g, b | rgb )
 
-Returns a 5/6/5 rgb color code, that can be used with lcd.setColor
+### Description
 
-@status current Introduced in 2.2.0
+Returns a 5/6/5 rgb color code, that can be used with lcd.setColor
 
 ### Parameters
 
