@@ -1,16 +1,4 @@
-# lcd.drawChannel(x, y, source, flags)
-
-Display a telemetry value at (x,y)
-
-@status current Introduced in 2.0.6, changed in 2.1.0 (only telemetry sources are valid)
-
-### Parameters
-
-* `x,y` (positive numbers) starting coordinate
-* `source` can be a source identifier (number) or a source name (string). See getValue()
-* `flags` (unsigned number) drawing flags
-
-###
+# lcd.drawChannel
 
 Draws channel value defined in source variable at (x,y)
 
@@ -20,7 +8,7 @@ Draws channel value defined in source variable at (x,y)
 
 ### Parameters
 
-<table><thead><tr><th width="109">Name</th><th width="61" data-type="checkbox">Req</th><th width="146">Type</th><th>Description</th></tr></thead><tbody><tr><td>x</td><td>true</td><td>integer</td><td>top coordinate</td></tr><tr><td>y</td><td>true</td><td>integer</td><td>left coordinate</td></tr><tr><td>source</td><td>true</td><td>integer (sourceID) or string (sourceName)</td><td>See Sou</td></tr><tr><td>flags</td><td>false</td><td>integer (drawingFlag)</td><td>See <a href="../../lua-api-programming/drawing-flags-and-colors.md">Drawing Flags</a> </td></tr></tbody></table>
+<table><thead><tr><th width="109">Name</th><th width="61" data-type="checkbox">Req</th><th width="146">Type</th><th>Description</th></tr></thead><tbody><tr><td>x</td><td>true</td><td>integer</td><td>top coordinate</td></tr><tr><td>y</td><td>true</td><td>integer</td><td>left coordinate</td></tr><tr><td>source</td><td>true</td><td>integer (sourceID) or string (sourceName)</td><td> can be a source identifier (number) or a source name (string). See getValue()</td></tr><tr><td>flags</td><td>false</td><td>integer (drawingFlag)</td><td>See <a href="../../lua-api-programming/drawing-flags-and-colors.md">Drawing Flags</a> </td></tr></tbody></table>
 
 ### Returns
 

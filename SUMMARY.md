@@ -37,7 +37,7 @@
     * [lcd.RGB](lua-api-reference/display-lcd/RGB.md)
     * [lcd.clear](lua-api-reference/display-lcd/clear.md)
     * [lcd.drawBitmap](lua-api-reference/display-lcd/drawBitmap.md)
-    * [lcd.drawChannel(x, y, source, flags)](lua-api-reference/display-lcd/drawChannel.md)
+    * [lcd.drawChannel](lua-api-reference/display-lcd/drawChannel.md)
     * [lcd.drawCombobox(x, y, w, list, idx \[, flags\])](lua-api-reference/display-lcd/drawCombobox.md)
     * [lcd.drawFilledRectangle(x, y, w, h \[, flags\])](lua-api-reference/display-lcd/drawFilledRectangle.md)
     * [lcd.drawGauge(x, y, w, h, fill, maxfill \[, flags\])](lua-api-reference/display-lcd/drawGauge.md)
