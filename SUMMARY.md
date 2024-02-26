@@ -34,7 +34,7 @@
     * [Widget Options Constants](lua-api-reference/constants/widget-options.md)
     * [Units](lua-api-reference/constants/units.md)
   * [Display LCD](lua-api-reference/display-lcd/README.md)
-    * [lcd.RGB( r, g, b | rgb )](lua-api-reference/display-lcd/RGB.md)
+    * [lcd.RGB](lua-api-reference/display-lcd/RGB.md)
     * [lcd.clear( \[color\] )](lua-api-reference/display-lcd/clear.md)
     * [lcd.drawBitmap( bitmap, x, y \[, scale\] )](lua-api-reference/display-lcd/drawBitmap.md)
     * [lcd.drawChannel(x, y, source, flags)](lua-api-reference/display-lcd/drawChannel.md)
