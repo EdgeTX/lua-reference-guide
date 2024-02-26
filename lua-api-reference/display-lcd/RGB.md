@@ -2,17 +2,15 @@
 
 ### Description
 
-Returns a 5/6/5 rgb color code, that can be used with lcd.setColor
+Returns colorFlag in RGB565 format that can be used with lcd draw functions.
 
 ### Parameters
 
-* `r` (required) \[integer] number between 0x00 and 0xff that expresses te amount of red in the color
-* `g` (required) \[integer] number between 0x00 and 0xff that expresses te amount of green in the color
-* `b` (required) \[integer]  number between 0x00 and 0xff that expresses te amount of blue in the color
+<table><thead><tr><th width="109">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>r</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 255 (0xFF) that expresses te amount of red in the color</td></tr><tr><td>g</td><td>true</td><td>interer</td><td>number between (0x00) and 255 (0xFF) that expresses te amount of green in the color</td></tr><tr><td>b</td><td>true</td><td>integer</td><td>number between (0x00) and 255 (0xFF)that expresses te amount of blue in the color</td></tr></tbody></table>
 
 or
 
-* `rgb` (required) \[integer]  number between 0 and 0xFFFFFF that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)
+<table><thead><tr><th width="109">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>rgb</td><td>true</td><td>integer</td><td>number between 0 (0x00) and 16777215 (0xFFFFFF) that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)</td></tr></tbody></table>
 
 ### Returns
 

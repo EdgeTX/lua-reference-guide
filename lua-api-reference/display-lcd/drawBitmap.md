@@ -2,13 +2,11 @@
 
 ### Description
 
-Displays a bitmap at (x,y)
+Displays prevoiusly loaded bitmap at (x,y) and optionally scales it.
 
 ### Parameters
 
-* `bitmap_pointer` (required) \[bitmap\_pointer]  - stored in variable pointer to a bitmap previously opened with Bitmap.open()
-* `x,y` (required) \[integer] - top left coordinates
-* `scale` (optional) \[integer positive] - scale in percent ie. 50 divides size by two, 100 displays bitmap in original size, 200 doubles size.
+<table><thead><tr><th width="109">Name</th><th width="61" data-type="checkbox">Req</th><th width="146">Type</th><th>Description</th></tr></thead><tbody><tr><td>bitmap</td><td>true</td><td>bitmapPointer</td><td>stored in variable pointer to a bitmap previously opened with <a href="../bitmap/open.md">Bitmap.open</a></td></tr><tr><td>x</td><td>true</td><td>integer</td><td>top coordinate</td></tr><tr><td>y</td><td>true</td><td>integer</td><td>left coordinate</td></tr><tr><td>scale</td><td>false</td><td>integer (0-100)</td><td>scale in percent ie. 50 divides size by two, 100 displays bitmap in original size, 200 doubles size.</td></tr></tbody></table>
 
 ### Returns
 
@@ -35,16 +33,17 @@ Omitting scale draws image in 1:1 scale and is faster than specifying 100 for sc
 {% tabs %}
 {% tab title="Example 1" %}
 ```lua
--- clearing lcd with default color
-lcd.clear()
+-- drawing bitmap stored on sd card root folder with original size
+local myLogo = Bitmap.open("/logo.png")
+lcd.drawBitmap(myLogo,10,10)
 ```
 {% endtab %}
 
 {% tab title="Example 2" %}
 ```lua
--- clearing lcd screen to dark red
-local darkred = lcd.RGB(20,0,0)  -- create color_flag for color
-lcd.clear(darkred)
+-- drawing bitmap stored on sd card root folder doubling its size
+local myLogo = Bitmap.open("/logo.png")
+lcd.drawBitmap(myLogo,10,10,200)
 ```
 {% endtab %}
 {% endtabs %}

@@ -2,11 +2,13 @@
 
 ### Description
 
-Clears the LCD screen
+Clears the LCD screen optionaly filling it with selected color
 
 ### Parameters
 
-* `color_flag` (optional), see [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
+<table><thead><tr><th width="117">Name</th><th width="99" data-type="checkbox">Required</th><th width="115">Type</th><th>Description</th></tr></thead><tbody><tr><td>color</td><td>false</td><td>integer (colorFlag)</td><td>see <a href="../../lua-api-programming/drawing-flags-and-colors.md">Drawing Flags</a></td></tr></tbody></table>
+
+
 
 ### Returns
 
@@ -31,7 +33,7 @@ This function works only in stand-alone and telemetry & widget scripts. See [scr
 {% tabs %}
 {% tab title="Example 1" %}
 ```lua
--- clearing lcd with default color
+-- clearing lcd with system default color
 lcd.clear()
 ```
 {% endtab %}
