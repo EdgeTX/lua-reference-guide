@@ -12,6 +12,12 @@ Clear the LCD screen
 
 none
 
+### Avaiable on
+
+* [ ] B\&W LCD radios
+* [ ] Grayscale LCD radios
+* [x] Color LCD radios
+
 #### Notice
 
 This function only works in stand-alone and telemetry scripts.
