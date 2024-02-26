@@ -6,17 +6,17 @@ Returns a 5/6/5 rgb color code, that can be used with lcd.setColor
 
 ### Parameters
 
-* `r` (integer) a number between 0x00 and 0xff that expresses te amount of red in the color
-* `g` (integer) a number between 0x00 and 0xff that expresses te amount of green in the color
-* `b` (integer) a number between 0x00 and 0xff that expresses te amount of blue in the color
+* `r` (required) \[integer] number between 0x00 and 0xff that expresses te amount of red in the color
+* `g` (required) \[integer] number between 0x00 and 0xff that expresses te amount of green in the color
+* `b` (required) \[integer]  number between 0x00 and 0xff that expresses te amount of blue in the color
 
 or
 
-* `rgb` (integer) number between 0 and 0xFFFFFF that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)
+* `rgb` (required) \[integer]  number between 0 and 0xFFFFFF that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)
 
 ### Return value
 
-* `color_flag` (integer) number in RGB565 format shifted to proper place in `drawing_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
+* `color_flag` \[integer] number in RGB565 format shifted to proper place in `drawing_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
 
 #### Notice
 
