@@ -35,7 +35,7 @@
   * [Display LCD](lua-api-reference/display-lcd/README.md)
     * [lcd.RGB( r, g, b | rgb )](lua-api-reference/display-lcd/RGB.md)
     * [lcd.clear( \[color\] )](lua-api-reference/display-lcd/clear.md)
-    * [lcd.drawBitmap(bitmap, x, y \[, scale\])](lua-api-reference/display-lcd/drawBitmap.md)
+    * [lcd.drawBitmap( bitmap, x, y \[, scale\] )](lua-api-reference/display-lcd/drawBitmap.md)
     * [lcd.drawChannel(x, y, source, flags)](lua-api-reference/display-lcd/drawChannel.md)
     * [lcd.drawCombobox(x, y, w, list, idx \[, flags\])](lua-api-reference/display-lcd/drawCombobox.md)
     * [lcd.drawFilledRectangle(x, y, w, h \[, flags\])](lua-api-reference/display-lcd/drawFilledRectangle.md)

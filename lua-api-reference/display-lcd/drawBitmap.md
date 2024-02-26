@@ -1,24 +1,4 @@
-# lcd.drawBitmap(bitmap, x, y \[, scale])
-
-Displays a bitmap at (x,y)
-
-@status current Introduced in 2.2.0
-
-### Parameters
-
-* `bitmap` (pointer) point to a bitmap previously opened with Bitmap.open()
-* `x,y` (positive numbers) starting coordinates
-* `scale` (positive numbers) scale in %, 50 divides size by two, 100 is unchanged, 200 doubles size. Omitting scale draws image in 1:1 scale and is faster than specifying 100 for scale.
-
-### Return value
-
-none
-
-#### Notice
-
-Only available on Horus
-
-
+# lcd.drawBitmap( bitmap, x, y \[, scale] )
 
 ### Description
 
@@ -26,19 +6,19 @@ Displays a bitmap at (x,y)
 
 ### Parameters
 
-* `r` (required) \[integer] number between 0x00 and 0xff that expresses te amount of red in the color
-* `g` (required) \[integer] number between 0x00 and 0xff that expresses te amount of green in the color
-* `b` (required) \[integer]  number between 0x00 and 0xff that expresses te amount of blue in the color
-
-or
-
-* `rgb` (required) \[integer]  number between 0 and 0xFFFFFF that expresses the RGB value (0xFF0000=RED, 0x00FF00=GREEN, 0x0000FF=BLUE)
+* `bitmap_pointer` (required) \[bitmap\_pointer]  - stored in variable pointer to a bitmap previously opened with Bitmap.open()
+* `x,y` (required) \[integer] - top left coordinates
+* `scale` (optional) \[integer positive] - scale in percent ie. 50 divides size by two, 100 displays bitmap in original size, 200 doubles size.
 
 ### Returns
 
-* `color_flag`.   See [Drawing Flags](../../lua-api-programming/drawing-flags-and-colors.md)
+none
 
 ### Notes
+
+{% hint style="info" %}
+Omitting scale draws image in 1:1 scale and is faster than specifying 100 for scale parameter.
+{% endhint %}
 
 ### Available on
 
@@ -50,4 +30,28 @@ or
 
 <table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.3.0</td><td>Introduced</td></tr></tbody></table>
 
-\-
+### Examples&#x20;
+
+{% tabs %}
+{% tab title="Example 1" %}
+```lua
+-- clearing lcd with default color
+lcd.clear()
+```
+{% endtab %}
+
+{% tab title="Example 2" %}
+```lua
+-- clearing lcd screen to dark red
+local darkred = lcd.RGB(20,0,0)  -- create color_flag for color
+lcd.clear(darkred)
+```
+{% endtab %}
+{% endtabs %}
+
+### Related topics
+
+* [Drawing flag](../../lua-api-programming/drawing-flags-and-colors.md)
+* [Color constants](../constants/color-constants.md)
+* [Bitmap.open](../bitmap/open.md)
+

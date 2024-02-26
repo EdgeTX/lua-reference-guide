@@ -30,11 +30,27 @@ or
 
 <table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.3.0</td><td>Introduced</td></tr></tbody></table>
 
-### Examples
+### Examples&#x20;
 
-`local darkred = lcd.RGB(20,0,0)  -- create color_flag for color`\
-`lcd.drawText(0,0,"Very dark red text", darkred)`\
-\
-`local mygrey = lcd.RGB(0xAEAEAE)  -- create color_flag for color`\
-`lcd.drawText(0,20,"My grey color", mygrey)`\
-&#x20;
+{% tabs %}
+{% tab title="Example 1" %}
+```lua
+-- RGB numeric parameters
+local darkred = lcd.RGB(20,0,0)  -- create color_flag for color
+lcd.drawText(0,0,"Very dark red text", darkred)
+```
+{% endtab %}
+
+{% tab title="Example 2" %}
+```lua
+-- RGB hex parameter
+local mygrey = lcd.RGB(0xAEAEAE)  -- create color_flag for color
+lcd.drawText(0,20,"My grey color", mygrey)
+```
+{% endtab %}
+{% endtabs %}
+
+### Related topics
+
+* [Drawing flag](../../lua-api-programming/drawing-flags-and-colors.md)
+* [Color constants](../constants/color-constants.md)
