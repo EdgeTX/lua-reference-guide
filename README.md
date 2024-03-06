@@ -1,4 +1,4 @@
-# EdgeTX 2.10 LUA Reference Guide
+# EdgeTX LUA Reference Guide
 
 This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX operating system with Lua support. Readers should be familiar with EdgeTX, the EdgeTX Companion, and know how to transfer files the SD card in the transmitter.
 
@@ -17,13 +17,13 @@ The latest version of this guide will always be available [here](https://luadoc.
 
 ## EdgeTX LUA development support
 
-Quickest way to get support from seasoned EdgeTX LUA developers is to join our Discord server and ask on dedicated #lua channel&#x20;
+Quickest way to get support from seasoned EdgeTX LUA developers is to join our Discord server and ask on dedicated #lua channel
 
-[Join the chat on Discord](https://discord.gg/DrHkAn28sq))
+[Join the chat on Discord](https://discord.gg/DrHkAn28sq)
 
 ## LUA Reference guide collaboration
 
-Please feel free to make suggestions or corrections to the documentation.&#x20;
+Please feel free to make suggestions or corrections to the documentation.
 
 * Preferred method of editing is to use [GitBook](https://www.gitbook.com), as it uses WYSWIG editor allowing two-stage publication. If you want to change or add whole page or become collaborator _<mark style="color:purple;">\<decribe what to do></mark>_.
 * For simple typos or proof reading you may submit PR to [lua-reference-guide](https://github.com/EdgeTX/lua-reference-guide/pulls)[ ](https://github.com/EdgeTX/lua-reference-guide)repository on EdgeTX GitHub.
