@@ -299,7 +299,7 @@ for m in MODULES.iterkeys():
     logDebug("Function: %s" % repr(f))
     doc = generateFunctionDoc(f)
     # print(doc)
-    docName = "part_iii_-_opentx_lua_api_reference/%s-functions-less-than-greater-than-luadoc-begin-%s/%s.md" % (f[0], f[0], f[1].lower())
+    docName = "lua_api_reference/%s-functions-less-than-greater-than-luadoc-begin-%s/%s.md" % (f[0], f[0], f[1].lower())
     mkdir_p(os.path.dirname(docName))
     with open(docName, "w") as out:
       out.write(doc)

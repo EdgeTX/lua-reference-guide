@@ -1,21 +1,21 @@
 # io Library
 
-The **io** library has been simplified and only a subset of functions and their functionality is available. What follows is a complete reference of io functions that are available to OpenTX scripts
+Standard LUA [**io**](https://www.lua.org/manual/5.2/manual.html#6.8) library has been simplified and only a subset of functions and their functionality is available.&#x20;
 
 ## Available functions:
 
-* [io.open\(\)](io_open.md)
-* [io.close\(\)](io_close.md)
-* [io.read\(\)](io_read.md)
-* [io.write\(\)](io_write.md)
-* [io.seek\(\)](io_seek.md)
+* io.open()
+* io.close()
+* io.read()
+* io.write()
+* io.seek()
 
 ## Examples
 
 ### Read the whole file
 
 ```lua
--- this is an EdgeTX *One-time script
+-- this is a One-time script
 
 local function run(event)
   print("lua io.read test")         -- print() statements are visible in Debug output window
@@ -35,7 +35,7 @@ return {  run=run }
 ### Append data to file
 
 ```lua
--- this is an EdgeTX One-time script
+-- this is a One-time script
 
 local function run(event)
   print("lua io.write test")
@@ -50,4 +50,3 @@ end
 
 return { run=run }
 ```
-
