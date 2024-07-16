@@ -40,7 +40,7 @@ Mixes Scripts should be as short as possible, to avoid delays. It is also import
 {% endhint %}
 
 {% hint style="info" %}
-To enable Mixes Scripts, firmware must be compiled with the option `LUA_MIXER=Y`.
+To enable Mixes Scripts, firmware must be compiled with the option `LUA_MIXER=Y`. Presently, the Mixes Scripts functionality is included in the firmware build for all color radio targets and in RadioMaster MT12 firmware, as the only black-and-white screen target.
 {% endhint %}
 
 
