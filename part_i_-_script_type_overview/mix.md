@@ -9,7 +9,7 @@
 Each model can have several Custom Scripts associated with it, and these scripts are run periodically. They behave similarly to standard EdgeTX mixers, but at the same time they provide a much more flexible and powerful tool. Custom Scripts take one or more values as inputs, do some processing in Lua code, and output one or more values.
 
 {% hint style="danger" %}
-To enable Custom (Mixer) Scripts, firmware must be compiled with the option `LUA_MIXER=Y`.
+To enable Custom (Mixer) Scripts, firmware must be compiled with the option `LUA_MIXER=Y`. Presently, the Mixes Scripts functionality is included in the firmware build for all color radio targets and in RadioMaster MT12 firmware, as the only black-and-white screen target.
 {% endhint %}
 
 {% hint style="info" %}
