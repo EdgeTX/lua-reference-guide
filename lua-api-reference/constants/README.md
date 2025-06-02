@@ -3,8 +3,7 @@ description: This section describes various constants that are provided for Lua 
 ---
 
 # Constants
-
-* [Key Events](broken-reference)
+* [Key Events](key-event-constants.md)
 * [Touch Events](touch-event-constants.md)
 * [Flags and Patterns](flags-and-pattern-constants.md)
 * [Colors](color-constants.md)
