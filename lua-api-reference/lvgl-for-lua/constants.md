@@ -13,3 +13,7 @@ Constants for the 'filter' property of the lvgl.source control. Can be used to l
 Constants for the 'filter' property of the lvgl.witch control. Can be used to limit which sources the user can select.
 
 <table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.SW_ALL</td><td>Allow all switch types, enable the 'Clear' button.</td></tr><tr><td>lvgl.SW_SWITCH</td><td>Switches</td></tr><tr><td>lvgl.SW_TRIM</td><td>Trims</td></tr><tr><td>lvgl.SW_LOGICAL_SWITCH</td><td>Logical switches</td></tr><tr><td>lvgl.SW_FLIGHT_MODE</td><td>Flight modes</td></tr><tr><td>lvgl.SW_TELEM</td><td>Telemetry sensors</td></tr><tr><td>lvgl.SW_OTHER</td><td>ON, ONE, trainer connected, radio activity, etc</td></tr><tr><td>lvgl.SW_CLEAR</td><td>Special value to control the 'Clear' button in the switch chooser.</td></tr></tbody></table>
+
+Constants to control scrolling of containers such as box and rectangle
+
+<table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.SCROLL_OFF</td><td>No scrolling allowed. Objects outside the containers boundary will be clipped</td></tr><tr><td>lvgl.SCROLL_HOR</td><td>Horizontal scrolling only</td></tr><tr><td>lvgl.SCROLL_VER</td><td>Vertical scrolling only</td></tr><tr><td>lvgl.SCROLL_ALL</td><td>Both horizontal and vertical scrolling allowed</td></tr></tbody></table>

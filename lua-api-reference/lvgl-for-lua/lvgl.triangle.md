@@ -18,7 +18,7 @@ The 'x, 'y, 'w' and 'h' settings are not used.
 
 Triangle specific settings:
 
-<table><thead><tr><th width="127">Name</th><th width="227">Type</th><th width="244">Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>opacity</td><td>Number or Function</td><td>Sets the opacity.<br>Note: range is 0 (transparent) to 255 (opaque)</td><td>255 (opaque)</td></tr><tr><td>pts</td><td>Table of points. Each point must be a table with two number values ({x, y})</td><td>Defines the points used to draw the triangle. There must be three points.</td><td>nil</td></tr></tbody></table>
+<table><thead><tr><th width="127">Name</th><th width="227">Type</th><th width="244">Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>opacity</td><td>Number or Function</td><td>Sets the opacity.<br>Note: range is 0 (transparent) to 255 (opaque)</td><td>255 (opaque)</td></tr><tr><td>pts</td><td><p>Table or Function</p><p></p><p>Table of points. Each point must be a table with two number values ({x, y})</p></td><td>Defines the points used to draw the triangle. There must be three points.</td><td>nil</td></tr></tbody></table>
 
 ## Return values
 
