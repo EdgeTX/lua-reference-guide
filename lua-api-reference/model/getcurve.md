@@ -8,7 +8,7 @@ model.getCurve( curveID )
 
 ## Parameters
 
-<table><thead><tr><th width="136.47889908256883">Name</th><th width="124">Type</th><th width="64" data-type="checkbox">Req</th><th>Description</th></tr></thead><tbody><tr><td><strong>curveID</strong></td><td>number</td><td>true</td><td>Curve ID number. Normal Lua index.<br>Use 1 for curve 1, 8 for Input 8 etc.</td></tr></tbody></table>
+<table><thead><tr><th width="136.47889908256883">Name</th><th width="124">Type</th><th width="64" data-type="checkbox">Req</th><th>Description</th></tr></thead><tbody><tr><td><strong>curveID</strong></td><td>number</td><td>true</td><td>Curve ID number. Indexing starts with 0, thus use 0 for curve 1, 7 for Input 8 etc.</td></tr></tbody></table>
 
 ## Return values
 
