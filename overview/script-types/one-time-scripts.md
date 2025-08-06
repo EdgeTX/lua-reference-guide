@@ -25,12 +25,12 @@ The script executes until:
 One-Time Scripts can be placed anywhere on SD card, however, the folder /SCRIPTS/ is recommended.
 
 {% hint style="info" %}
-If One-Time Script is placed in special folder /SCRIPTS/TOOLS it will be visible in EdgeTX RADIO>TOOLS tab\
+If One-Time Script is placed in a special folder /SCRIPTS/TOOLS, it will be visible under EdgeTX SYSTEM>TOOLS tab\
 \
-To give this One-Time Script unique name place at the beginning of lua script line:\
-`-- toolName = "TNS|ScriptName|TNE`
+To give this One-Time Script a unique name, place at the beginning of a Lua script the following line:\
+`-- toolName = TNS|ScriptName|TNE`
 
-Otherwise script's filename will be used to display in RADIO>TOOLS list.
+Otherwise script's filename will be used to display in SYSTEM>TOOLS list.
 {% endhint %}
 
 {% hint style="info" %}
@@ -45,7 +45,7 @@ Every script must include a `return` statement at the end, defining its interfac
 
 _Parameters_
 
-<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>event</strong><br>number</td><td>Used to indicates which radio key has been pressed (see <a href="https://github.com/EdgeTX/lua-reference-guide/blob/main/overview/part_iii_-_opentx_lua_api_reference/constants/key_events.md">Key Events</a>)</td></tr><tr><td><strong>touchState</strong><br>table</td><td>This parameter is only present when radio is equiped with touch interface and <code>event</code> is a touch event (see <a href="https://github.com/EdgeTX/lua-reference-guide/blob/main/overview/part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md">Touch State Events</a>).</td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="145">Parameter</th><th>Decription</th></tr></thead><tbody><tr><td><strong>event</strong><br>number</td><td>Used to indicate which radio key has been pressed (see <a href="https://github.com/EdgeTX/lua-reference-guide/blob/main/overview/part_iii_-_opentx_lua_api_reference/constants/key_events.md">Key Events</a>)</td></tr><tr><td><strong>touchState</strong><br>table</td><td>This parameter is only present when radio is equiped with touch interface and <code>event</code> is a touch event (see <a href="https://github.com/EdgeTX/lua-reference-guide/blob/main/overview/part_iii_-_opentx_lua_api_reference/constants/touch-event-constants.md">Touch State Events</a>).</td></tr></tbody></table>
 
 _Return values_
 
