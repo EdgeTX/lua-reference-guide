@@ -73,12 +73,12 @@ return { run = my_run }
 ```
 
 {% hint style="info" %}
-Because 0 is returned all the time this script will continue running until user long press EXIT (RTN) key.
+Because the script return 0, this script will continue to run until the user long presses the EXIT (RTN) key.
 {% endhint %}
 
 ***
 
-One-Time LUA script with initialization and exit feature if user short press and release EXIT (RTN) key
+An example of a One-Time LUA script, where the user can short press and release the EXIT (RTN) key to end/exit the script:
 
 ```lua
 local exit = 0
