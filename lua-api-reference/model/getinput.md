@@ -22,4 +22,4 @@ Return input data for given input and line number
   * `curveType` (number) curve type (function, expo, custom curve)
   * `curveValue` (number) curve index
   * `carryTrim` (boolean) input trims applied
-  * 'flightModes' (number) bit-mask of active flight modes
+  * `flightModes` (number) bit-mask of active flight modes
