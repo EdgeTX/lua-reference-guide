@@ -2,13 +2,13 @@
 
 Draw a filled circle at (x, y) of specified radius
 
-## Parameters
+### Parameters
 
 * `x,y` (positive numbers) center position
 * `r` (number) radius in pixels
 * `flags` (optional) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
-## Return value
+### Return value
 
 none
 

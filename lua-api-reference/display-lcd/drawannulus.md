@@ -2,14 +2,14 @@
 
 Draw an arc
 
-## Parameters
+### Parameters
 
 * `x,y` (positive numbers) coordinates of the center
 * `r1,r2` (positive numbers) radii of the inside and outside of the annulus
 * `start,end` (positive numbers) start and end of the annulus
 * `flags` (optional) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
-## Return value
+### Return value
 
 none
 

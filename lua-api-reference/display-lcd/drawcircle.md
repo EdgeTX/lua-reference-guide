@@ -2,13 +2,13 @@
 
 Draw a circle at (x, y) of specified radius
 
-## Parameters
+### Parameters
 
 * `x,y` (positive numbers) center position
 * `r` (number) radius in pixels
 * `flags` (optional) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
-## Return value
+### Return value
 
 none
 
@@ -21,3 +21,4 @@ none
 ### API status
 
 <table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.4.0</td><td>Introduced</td></tr></tbody></table>
+

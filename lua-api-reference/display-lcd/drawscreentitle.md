@@ -2,8 +2,6 @@
 
 Draw a title bar
 
-@status current Introduced in 2.0.0
-
 ### Parameters
 
 * `title` (string) text for the title
@@ -14,6 +12,13 @@ Draw a title bar
 
 none
 
-#### Notice
+### Available on
 
-Only available on Taranis
+* [x] [B\&W LCD radios](../../overview/radios/#radios-with-b-and-w-lcd-screen)
+* [x] [Grayscale LCD radios](../../overview/radios/#radios-with-grayscale-lcd-screen)
+* [ ] [Color LCD radios](../../overview/radios/#radios-with-color-lcd-screen)
+
+### API status
+
+<table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.0.0</td><td>Introduced</td></tr></tbody></table>
+

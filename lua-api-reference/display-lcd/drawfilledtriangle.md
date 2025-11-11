@@ -2,12 +2,12 @@
 
 Draw a filled triangle
 
-## Parameters
+### Parameters
 
 * `x1,y1,x2,y2,x3,y3` (positive numbers) coordinates of the three vertices
 * `flags` (optional) please see [flags](../constants/flags-and-pattern-constants.md) and [color](../constants/color-constants.md) constants
 
-## Return value
+### Return value
 
 none
 
