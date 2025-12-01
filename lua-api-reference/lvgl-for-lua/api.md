@@ -30,3 +30,16 @@ The functions associated with settings are called periodically by the firmware. 
 ### A note on object width and height
 
 Although width and height, and the size function, can be defined for all objects they may not be used in some cases. For example when creating a circle or arc object the radius property should be used instead.
+
+### Dynamically managing object size and position for different screens
+
+EdgeTx supports both landscape and portrait orientation displays in a variety of resolutions (480x272, 480x320, 320x480, 320x240, 800x480, etc). Managing all these in a Lua script dynamically can be challenging.
+
+To assist with this there are a number of things that can be used:
+
+* Flex layouts can be used; but care should be taken as they are noticeably slower than using absolution position and size.
+* When using the 'page' object the lvgl.PAGE\_BODY\_HEIGHT contant will give the size of the page body (minus the header). This can be used to manage the layout for the page content.
+* The lvgl.UI\_ELEMENT\_HEIGHT constant defines the default height for buttons, toggles, sliders etc.
+* The lvgl.LCD\_SCALE constant can be used to scale values for the current LCD size, when compared to the default 480x272 size. For example if a button needs to be 80 pixels wide on a 480x272 display then setting the width to 80 \* lvgl.LCD\_SCALE will ensure the size is adusted for the actual LCD size.&#x20;
+* The lvgl.PERCENT\_SIZE value can be used to set the size and position of an object as a percentage of the parent size. For example setting width to lvgl.PERCENT\_SIZE+80 will size the object to 80% of the parent width. Setting x = lvgl.PERCENT\_SIZE+50 will set the X position to ½ of the parent width.
+  * NOTE: this requires that the parent container has a defined size. If the parent size is the default auto size base on content then percentage sizing will fail. This results in a catch-22 where the parent need the child size; but the child first needs the parent size.

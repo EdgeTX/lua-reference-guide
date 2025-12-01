@@ -4,7 +4,7 @@ description: Constants defined for use in LVGL layouts.
 
 # Constants
 
-<table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.FLOW_ROW</td><td>Sets flex layout flow.</td></tr><tr><td>lvgl.FLOW_COLUMN</td><td>Set flex layout flow.</td></tr><tr><td>lvgl.PAD_TINY</td><td>2 pixel padding.</td></tr><tr><td>lvgl.PAD_SMALL</td><td>4 pixel padding.</td></tr><tr><td>lvgl.PAD_MEDIUM</td><td>6 pixel padding.</td></tr><tr><td>lvgl.PAD_LARGE</td><td>8 pixel padding.</td></tr><tr><td>lvgl.PAD_OUTLINE</td><td>Padding required around controls for focus outline.</td></tr></tbody></table>
+<table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.FLOW_ROW</td><td>Sets flex layout flow.</td></tr><tr><td>lvgl.FLOW_COLUMN</td><td>Set flex layout flow.</td></tr><tr><td>lvgl.PAD_TINY</td><td>2 pixel padding.</td></tr><tr><td>lvgl.PAD_SMALL</td><td>4 pixel padding.</td></tr><tr><td>lvgl.PAD_MEDIUM</td><td>6 pixel padding.</td></tr><tr><td>lvgl.PAD_LARGE</td><td>8 pixel padding.</td></tr><tr><td>lvgl.PAD_OUTLINE</td><td>Padding required around controls for focus outline.</td></tr><tr><td>lvgl.PAD_BORDER</td><td>Padding size of the default border around controls.</td></tr></tbody></table>
 
 Constants for the 'filter' property of the lvgl.source control. Can be used to limit which sources the user can select.
 
@@ -17,3 +17,7 @@ Constants for the 'filter' property of the lvgl.witch control. Can be used to li
 Constants to control scrolling of containers such as box and rectangle
 
 <table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.SCROLL_OFF</td><td>No scrolling allowed. Objects outside the containers boundary will be clipped</td></tr><tr><td>lvgl.SCROLL_HOR</td><td>Horizontal scrolling only</td></tr><tr><td>lvgl.SCROLL_VER</td><td>Vertical scrolling only</td></tr><tr><td>lvgl.SCROLL_ALL</td><td>Both horizontal and vertical scrolling allowed</td></tr></tbody></table>
+
+Constants for managing page layout (see the API section for more details). Added in 2.11.4.
+
+<table><thead><tr><th width="206">Name</th><th>Description</th></tr></thead><tbody><tr><td>lvgl.PAGE_BODY_HEIGHT</td><td>Height of the body section for a 'page' object.</td></tr><tr><td>lvgl.UI_ELEMENT_HEiGHT</td><td>Default height for controls (buttons, toggle, etc)</td></tr><tr><td>lvgl.LCD_SCALE</td><td>Scale factor for the LCD display compared to the standard 480x272 size display.</td></tr><tr><td>lvgl.PERCENT_SIZE</td><td>Used to create percentage based position and size values for objects., based on the size of the parent container.</td></tr></tbody></table>
