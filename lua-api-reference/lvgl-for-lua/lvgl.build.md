@@ -16,7 +16,7 @@ See the API page for parameter description and common settings.
 
 Build specific settings:
 
-<table><thead><tr><th width="127">Name</th><th>Type</th><th>Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>type</td><td>String</td><td>Mandatory on each table entry to determine what type of LVGL object to create.</td><td></td></tr><tr><td>name</td><td>String</td><td></td><td>Empty string</td></tr><tr><td>children</td><td>Table</td><td></td><td>nil</td></tr></tbody></table>
+<table><thead><tr><th width="127">Name</th><th>Type</th><th>Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>type</td><td>String or type constant</td><td>Mandatory on each table entry to determine what type of LVGL object to create.<br><br>e.g.<br>  type="rectangle"<br>  type=lvgl.RECTANGLE</td><td></td></tr><tr><td>name</td><td>String</td><td></td><td>Empty string</td></tr><tr><td>children</td><td>Table</td><td></td><td>nil</td></tr></tbody></table>
 
 ## Return values
 
