@@ -16,8 +16,7 @@ To avoid confusion wherever there is reference to Source List ID short-name **so
 
 ## Source List Name
 
-Source List name can also change due to firmware changes during development or user configuration (ie. assigning custom name to input). In current version of EdgeTX firmware Source List Name also may contain special visual symbols to indicate type source (see [Special Charactes Constants](../../lua-api-reference/constants/special-character-constants.md)).\
-
+Source List name can also change due to firmware changes during development or user configuration (ie. assigning custom name to input). In current version of EdgeTX firmware Source List Name also may contain special visual symbols to indicate type source (see [Special Charactes Constants](../../lua-api-reference/constants/special-character-constants.md)).<br>
 
 {% hint style="info" %}
 To avoid confusion wherever there is reference to Source List Name short-name **sourceListName** is used.
