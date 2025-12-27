@@ -43,7 +43,7 @@
     * [lcd.drawGauge(x, y, w, h, fill, maxfill \[, flags\])](lua-api-reference/display-lcd/drawgauge.md)
     * [lcd.drawLine(x1, y1, x2, y2, pattern, flags)](lua-api-reference/display-lcd/drawline.md)
     * [lcd.drawNumber(x, y, value \[, flags\])](lua-api-reference/display-lcd/drawnumber.md)
-    * [lcd.drawPixmap(x, y, name)](lua-api-reference/display-lcd/drawpixmap.md)
+    * [lcd.drawPixmap](lua-api-reference/display-lcd/drawpixmap.md)
     * [lcd.drawPoint(x, y)](lua-api-reference/display-lcd/drawpoint.md)
     * [lcd.drawRectangle(x, y, w, h \[, flags \[, t\]\])](lua-api-reference/display-lcd/drawrectangle.md)
     * [lcd.drawScreenTitle(title, page, pages)](lua-api-reference/display-lcd/drawscreentitle.md)
