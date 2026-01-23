@@ -2,7 +2,7 @@
 
 Return input data for given input and line number
 
-@status current Introduced in 2.3.10
+@status current Introduced in 2.3.10, uses Lua's normal indexing for `trimsValues` and `trimsModes` tables as of 2.9.0
 
 ## Parameters
 
@@ -17,8 +17,8 @@ Return input data for given input and line number
   * `fadeIn` (number) fade in value (in 0.1s)
   * `fadeOut` (number) fade out value (in 0.1s)
   * `trimsValues` (table) table of trim values:
-    * `key` is trim number (zero based)
+    * `key` is trim number (starts from 1)
     * `value` is trim value
   * `trimsModes` (table) table of trim mode:
-    * `key` is trim number (zero based)
+    * `key` is trim number (starts from 1)
     * `value` is trim mode
