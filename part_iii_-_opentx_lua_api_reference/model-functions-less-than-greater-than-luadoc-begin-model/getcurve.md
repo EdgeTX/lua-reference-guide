@@ -4,7 +4,7 @@ Get Curve parameters
 
 Note this function uses Lua's usual index starting with 1 since version 2.9.0.
 
-@status current Introduced in 2.0.12, uses Lua's normal indexing as of 2.9.0
+@status current Introduced in 2.0.12, uses Lua's normal indexing for `x` and `y` tables as of 2.9.0
 
 ## Parameters
 
@@ -19,8 +19,8 @@ Note this function uses Lua's usual index starting with 1 since version 2.9.0.
   * `smooth` (boolean) smooth
   * `points` (number) number of points
   * `y` (table) table of Y values:
-    * `key` is point number (zero based)
+    * `key` is point number (starts from 1)
     * `value` is y value
   * `x` (table) **only included for custom curve type**:
-    * `key` is point number (zero based)
+    * `key` is point number (starts from 1)
     * `value` is x value
