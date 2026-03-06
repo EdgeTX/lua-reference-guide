@@ -16,7 +16,7 @@ See the API page for parameter description and common settings.
 
 Setting specific settings:
 
-<table><thead><tr><th width="120">Name</th><th width="201">Type</th><th width="341">Description</th><th>Default</th></tr></thead><tbody><tr><td>title</td><td>String</td><td>Text to be displayed on the left.</td><td>Empty string</td></tr></tbody></table>
+<table><thead><tr><th width="120">Name</th><th width="201">Type</th><th width="341">Description</th><th>Default</th></tr></thead><tbody><tr><td>title</td><td>String or Function<br><br>(Function support available in 2.11.6 or later)</td><td>Text to be displayed on the left.</td><td>Empty string</td></tr></tbody></table>
 
 ## Notes
 
