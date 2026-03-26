@@ -16,7 +16,7 @@ See the API page for parameter description and common settings.
 
 Label specific settings:
 
-<table><thead><tr><th width="159">Name</th><th>Type</th><th>Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>text</td><td>String or Function</td><td>Set the text to be displayed on the label</td><td>Empty string</td></tr><tr><td>font</td><td>Font value or Function</td><td>Sets the font size. <br>E.G.:<br>- MIDSIZE<br>- DBLSIZE</td><td>STDSIZE</td></tr><tr><td>align</td><td>Text alignment value or function</td><td>Sets the justification for the text.<br>E.G.:<br> - RIGHT<br> - VCENTER</td><td>LEFT</td></tr></tbody></table>
+<table><thead><tr><th width="159">Name</th><th>Type</th><th>Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>text</td><td>String or Function</td><td>Set the text to be displayed on the label</td><td>Empty string</td></tr><tr><td>font</td><td>Font value or Function</td><td>Sets the font size. <br>E.G.:<br>- MIDSIZE<br>- DBLSIZE</td><td>STDSIZE</td></tr><tr><td>align</td><td>Text alignment value or function</td><td><p>Sets the justification for the text.<br>E.G.:<br> - RIGHT<br> - VCENTER<br><br>Notes:</p><p>RIGHT and CENTER alignment require the width for the label to be set.<br>LEFT, RIGHT and CENTER will align the text horizontally within the label bounding box (x,y,w,h).<br>VCENTER, VTOP and VBOTTOM will align the label bounding box vertically within the parent object.</p></td><td>LEFT</td></tr></tbody></table>
 
 ## Return values
 
