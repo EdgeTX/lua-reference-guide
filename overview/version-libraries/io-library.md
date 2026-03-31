@@ -1,0 +1,59 @@
+---
+metaLinks:
+  alternates:
+    - >-
+      https://app.gitbook.com/s/Ly8RKETivxoHMb7Zzqkb/overview/version-libraries/io-library
+---
+
+# io Library
+
+Standard LUA [**io**](https://www.lua.org/manual/5.2/manual.html#6.8) library has been simplified and only a subset of functions and their functionality is available.
+
+## Available functions:
+
+* io.open()
+* io.close()
+* io.read()
+* io.write()
+* io.seek()
+
+## Examples
+
+### Read the whole file
+
+```lua
+-- this is a One-time script
+
+local function run(event)
+  print("lua io.read test")         -- print() statements are visible in Debug output window
+  local f = io.open("foo.bar", "r")
+  while true do
+    local data = io.read(f, 10)     -- read up to 10 characters (newline char also counts!)
+    if #data == 0 then break end    -- we get zero length string back when we reach end of the file
+    print("data: "..data)
+    end
+  io.close(f)
+  return 1
+end
+
+return {  run=run }
+```
+
+### Append data to file
+
+```lua
+-- this is a One-time script
+
+local function run(event)
+  print("lua io.write test")
+  local f = io.open("foo.bar", "a")        -- open file in append mode
+  io.write(f, "first line\r\nsecond line\r\n")
+  io.write(f, 4, "\r\n", 35.6778, "\r\n")  -- one can write multiple items at the same time
+  local foo = -4.45
+  io.write(f, foo, "\r\n")
+  io.close(f)
+  return 1    -- this will end the script execution
+end
+
+return { run=run }
+```
