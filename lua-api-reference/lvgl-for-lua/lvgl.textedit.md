@@ -16,7 +16,7 @@ See the API page for parameter description and common settings.
 
 Text edit specific settings:
 
-<table><thead><tr><th width="133">Name</th><th width="122">Type</th><th width="289">Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>value</td><td>String</td><td>Sets the initial text that the user can edit.</td><td>Empty string</td></tr><tr><td>length</td><td>Number</td><td>Sets the maximum length of the text that can be edited.<br>Must be a number between 32 and 128.</td><td>32</td></tr><tr><td>set</td><td>Function</td><td>Called when the user edits the text.<br>The function is a string with the edited content.</td><td>nil</td></tr><tr><td>active</td><td>Function</td><td>Set the enabled / disabled state. Return value must be a boolean - true to enable the control, false to disable.</td><td>nil</td></tr></tbody></table>
+<table><thead><tr><th width="133">Name</th><th width="122">Type</th><th width="289">Description</th><th>Default if not set</th></tr></thead><tbody><tr><td>value</td><td>String or Function</td><td>Sets the text that the user can edit.<br>If a function is used then the text can be changed by both the Lua script and the user.</td><td>Empty string</td></tr><tr><td>length</td><td>Number</td><td>Sets the maximum length of the text that can be edited.<br>Must be a number between 1 and 128.</td><td>32</td></tr><tr><td>set</td><td>Function</td><td>Called when the user edits the text.<br>The function has a single parameter which is a string with the edited content.</td><td>nil</td></tr><tr><td>active</td><td>Function</td><td>Set the enabled / disabled state. Return value must be a boolean - true to enable the control, false to disable.</td><td>nil</td></tr></tbody></table>
 
 ## Return values
 
