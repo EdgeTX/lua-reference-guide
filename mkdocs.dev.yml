@@ -1,0 +1,385 @@
+INHERIT: mkdocs.yml
+
+# Internal working config: un-excludes everything mkdocs.yml drops from the
+# public build (migration/ pipeline docs, the review workbench, and the
+# per-module dashboards), restates nav with the Migration section added
+# back, and restates extra_javascript with review-workbench.js added back
+# (it talks to a localhost-only decision server and has no reason to ship
+# in the public build; MkDocs replaces rather than merges list-type keys
+# on INHERIT, so both of these have to be full restatements, not diffs).
+#
+# Usage: mkdocs serve -f mkdocs.dev.yml (defaults to http://127.0.0.1:8014,
+# per HANDOFF.md's local-preview convention)
+exclude_docs: ""
+
+extra_javascript:
+  - javascripts/mobile-nav-inline.js
+  - javascripts/review-workbench.js
+  - javascripts/legacy-version-banner.js
+
+nav:
+  - EdgeTX Lua Reference Guide: index.md
+  - API Overview:
+      - API Overview: api-overview/README.md
+      - Lua version:
+          - Lua version: api-overview/version-libraries/README.md
+          - io Library: api-overview/version-libraries/io-library.md
+      - Script Types:
+          - Script Types: api-overview/script-types/README.md
+          - One-Time Scripts: api-overview/script-types/one-time-scripts.md
+          - Telemetry Scripts: api-overview/script-types/telemetry-scripts.md
+          - Widget Scripts: api-overview/script-types/widget-scripts.md
+          - Function Scripts: api-overview/script-types/function-scripts.md
+          - Mixes Scripts: api-overview/script-types/mixes-scripts.md
+      - Constants:
+          - api-overview/constants/README.md
+          - Color Constants: api-overview/constants/color-constants.md
+          - Flags and Pattern Constants: api-overview/constants/flags-and-pattern-constants.md
+          - Key Event Constants: api-overview/constants/key-event-constants.md
+          - Key Event Mechanism: api-overview/constants/key_events.md
+          - Logical Switch Function Constants: api-overview/constants/logical-switch-function-constants.md
+          - LVGL Constants: api-overview/constants/lvgl-constants.md
+          - Screen Constants: api-overview/constants/screen-constants.md
+          - Special Character Constants: api-overview/constants/special-character-constants.md
+          - Special Function Constants: api-overview/constants/special-function-constants.md
+          - Touch Event Constants: api-overview/constants/touch-event-constants.md
+          - Widget Options Constants: api-overview/constants/widget-options.md
+          - Units: api-overview/constants/units.md
+      - Sources and Switches:
+          - Sources and Switches: api-overview/internal-indexes/README.md
+          - Sources: api-overview/internal-indexes/source-list.md
+          - Switches: api-overview/internal-indexes/switch-positions-id.md
+      - Fonts: api-overview/fonts.md
+  - API Reference:
+      - API Reference: api-reference/index.md
+      # BEGIN GENERATED -- tools/docs_pipeline.py update-nav; do not hand-edit
+      - Audio-Sound:
+          - Audio-Sound: api-reference/audio-sound/index.md
+          - flushAudio: api-reference/audio-sound/flush-audio.md
+          - playDuration: api-reference/audio-sound/play-duration.md
+          - playFile: api-reference/audio-sound/play-file.md
+          - playHaptic: api-reference/audio-sound/play-haptic.md
+          - playNumber: api-reference/audio-sound/play-number.md
+          - playTone: api-reference/audio-sound/play-tone.md
+      - Display LCD:
+          - Display LCD: api-reference/display-lcd/index.md
+          - Bitmap.getSize: api-reference/display-lcd/bitmap-get-size.md
+          - Bitmap.open: api-reference/display-lcd/bitmap-open.md
+          - Bitmap.resize: api-reference/display-lcd/bitmap-resize.md
+          - Bitmap.toMask: api-reference/display-lcd/bitmap-to-mask.md
+          - GREY: api-reference/display-lcd/grey.md
+          - lcd.RGB: api-reference/display-lcd/lcd-rgb.md
+          - lcd.clear: api-reference/display-lcd/lcd-clear.md
+          - lcd.drawAnnulus: api-reference/display-lcd/lcd-draw-annulus.md
+          - lcd.drawArc: api-reference/display-lcd/lcd-draw-arc.md
+          - lcd.drawBitmap: api-reference/display-lcd/lcd-draw-bitmap.md
+          - lcd.drawBitmapPattern: api-reference/display-lcd/lcd-draw-bitmap-pattern.md
+          - lcd.drawBitmapPatternPie: api-reference/display-lcd/lcd-draw-bitmap-pattern-pie.md
+          - lcd.drawChannel: api-reference/display-lcd/lcd-draw-channel.md
+          - lcd.drawCircle: api-reference/display-lcd/lcd-draw-circle.md
+          - lcd.drawCombobox: api-reference/display-lcd/lcd-draw-combobox.md
+          - lcd.drawFilledCircle: api-reference/display-lcd/lcd-draw-filled-circle.md
+          - lcd.drawFilledRectangle: api-reference/display-lcd/lcd-draw-filled-rectangle.md
+          - lcd.drawFilledTriangle: api-reference/display-lcd/lcd-draw-filled-triangle.md
+          - lcd.drawGauge: api-reference/display-lcd/lcd-draw-gauge.md
+          - lcd.drawHudRectangle: api-reference/display-lcd/lcd-draw-hud-rectangle.md
+          - lcd.drawLine: api-reference/display-lcd/lcd-draw-line.md
+          - lcd.drawLineWithClipping: api-reference/display-lcd/lcd-draw-line-with-clipping.md
+          - lcd.drawNumber: api-reference/display-lcd/lcd-draw-number.md
+          - lcd.drawPie: api-reference/display-lcd/lcd-draw-pie.md
+          - lcd.drawPixmap: api-reference/display-lcd/lcd-draw-pixmap.md
+          - lcd.drawPoint: api-reference/display-lcd/lcd-draw-point.md
+          - lcd.drawRectangle: api-reference/display-lcd/lcd-draw-rectangle.md
+          - lcd.drawScreenTitle: api-reference/display-lcd/lcd-draw-screen-title.md
+          - lcd.drawSource: api-reference/display-lcd/lcd-draw-source.md
+          - lcd.drawSwitch: api-reference/display-lcd/lcd-draw-switch.md
+          - lcd.drawText: api-reference/display-lcd/lcd-draw-text.md
+          - lcd.drawTextLines: api-reference/display-lcd/lcd-draw-text-lines.md
+          - lcd.drawTimer: api-reference/display-lcd/lcd-draw-timer.md
+          - lcd.drawTriangle: api-reference/display-lcd/lcd-draw-triangle.md
+          - lcd.exitFullScreen: api-reference/display-lcd/lcd-exit-full-screen.md
+          - lcd.getColor: api-reference/display-lcd/lcd-get-color.md
+          - lcd.getLastLeftPos: api-reference/display-lcd/lcd-get-last-left-pos.md
+          - lcd.getLastPos: api-reference/display-lcd/lcd-get-last-pos.md
+          - lcd.getLastRightPos: api-reference/display-lcd/lcd-get-last-right-pos.md
+          - lcd.invertRect: api-reference/display-lcd/lcd-invert-rect.md
+          - lcd.refresh: api-reference/display-lcd/lcd-refresh.md
+          - lcd.resetBacklightTimeout: api-reference/display-lcd/lcd-reset-backlight-timeout.md
+          - lcd.setColor: api-reference/display-lcd/lcd-set-color.md
+          - lcd.sizeText: api-reference/display-lcd/lcd-size-text.md
+          - popupConfirmation: api-reference/display-lcd/popup-confirmation.md
+          - popupInput: api-reference/display-lcd/popup-input.md
+          - popupWarning: api-reference/display-lcd/popup-warning.md
+      - Display LVGL:
+          - Display LVGL: api-reference/display-lvgl/index.md
+          - lvgl.align: api-reference/display-lvgl/lvgl-align.md
+          - lvgl.arc: api-reference/display-lvgl/lvgl-arc.md
+          - lvgl.box: api-reference/display-lvgl/lvgl-box.md
+          - lvgl.build: api-reference/display-lvgl/lvgl-build.md
+          - lvgl.button: api-reference/display-lvgl/lvgl-button.md
+          - lvgl.choice: api-reference/display-lvgl/lvgl-choice.md
+          - lvgl.circle: api-reference/display-lvgl/lvgl-circle.md
+          - lvgl.clear: api-reference/display-lvgl/lvgl-clear.md
+          - lvgl.close: api-reference/display-lvgl/lvgl-close.md
+          - lvgl.color: api-reference/display-lvgl/lvgl-color.md
+          - lvgl.confirm: api-reference/display-lvgl/lvgl-confirm.md
+          - lvgl.dialog: api-reference/display-lvgl/lvgl-dialog.md
+          - lvgl.disable: api-reference/display-lvgl/lvgl-disable.md
+          - lvgl.enable: api-reference/display-lvgl/lvgl-enable.md
+          - lvgl.exitFullScreen: api-reference/display-lvgl/lvgl-exit-full-screen.md
+          - lvgl.file: api-reference/display-lvgl/lvgl-file.md
+          - lvgl.font: api-reference/display-lvgl/lvgl-font.md
+          - lvgl.getContext: api-reference/display-lvgl/lvgl-get-context.md
+          - lvgl.getScrollPos: api-reference/display-lvgl/lvgl-get-scroll-pos.md
+          - lvgl.hide: api-reference/display-lvgl/lvgl-hide.md
+          - lvgl.hline: api-reference/display-lvgl/lvgl-hline.md
+          - lvgl.image: api-reference/display-lvgl/lvgl-image.md
+          - lvgl.isAppMode: api-reference/display-lvgl/lvgl-is-app-mode.md
+          - lvgl.isFullScreen: api-reference/display-lvgl/lvgl-is-full-screen.md
+          - lvgl.label: api-reference/display-lvgl/lvgl-label.md
+          - lvgl.line: api-reference/display-lvgl/lvgl-line.md
+          - lvgl.menu: api-reference/display-lvgl/lvgl-menu.md
+          - lvgl.message: api-reference/display-lvgl/lvgl-message.md
+          - lvgl.momentaryButton: api-reference/display-lvgl/lvgl-momentary-button.md
+          - lvgl.numberEdit: api-reference/display-lvgl/lvgl-number-edit.md
+          - lvgl.page: api-reference/display-lvgl/lvgl-page.md
+          - lvgl.qrcode: api-reference/display-lvgl/lvgl-qrcode.md
+          - lvgl.rectangle: api-reference/display-lvgl/lvgl-rectangle.md
+          - lvgl.set: api-reference/display-lvgl/lvgl-set.md
+          - lvgl.setting: api-reference/display-lvgl/lvgl-setting.md
+          - lvgl.show: api-reference/display-lvgl/lvgl-show.md
+          - lvgl.slider: api-reference/display-lvgl/lvgl-slider.md
+          - lvgl.source: api-reference/display-lvgl/lvgl-source.md
+          - lvgl.switch: api-reference/display-lvgl/lvgl-switch.md
+          - lvgl.textEdit: api-reference/display-lvgl/lvgl-text-edit.md
+          - lvgl.timer: api-reference/display-lvgl/lvgl-timer.md
+          - lvgl.toggle: api-reference/display-lvgl/lvgl-toggle.md
+          - lvgl.triangle: api-reference/display-lvgl/lvgl-triangle.md
+          - lvgl.verticalSlider: api-reference/display-lvgl/lvgl-vertical-slider.md
+          - lvgl.vline: api-reference/display-lvgl/lvgl-vline.md
+      - Filesystem:
+          - Filesystem: api-reference/filesystem/index.md
+          - chdir: api-reference/filesystem/chdir.md
+          - del: api-reference/filesystem/del.md
+          - dir: api-reference/filesystem/dir.md
+          - fstat: api-reference/filesystem/fstat.md
+          - mkdir: api-reference/filesystem/mkdir.md
+          - rename: api-reference/filesystem/rename.md
+      - Inputs:
+          - Inputs: api-reference/key-inputs/index.md
+          - defaultChannel: api-reference/key-inputs/default-channel.md
+          - defaultStick: api-reference/key-inputs/default-stick.md
+          - getRotEncMode: api-reference/key-inputs/get-rot-enc-mode.md
+          - getRotEncSpeed: api-reference/key-inputs/get-rot-enc-speed.md
+          - killEvents: api-reference/key-inputs/kill-events.md
+      - Lua Scripts:
+          - Lua Scripts: api-reference/lua-scripts/index.md
+          - loadScript: api-reference/lua-scripts/load-script.md
+      - Model Functions:
+          - Model Functions: api-reference/model-functions/index.md
+          - getFlightMode: api-reference/model-functions/get-flight-mode.md
+          - getOutputValue: api-reference/model-functions/get-output-value.md
+          - model.defaultInputs: api-reference/model-functions/model-default-inputs.md
+          - model.deleteFlightModes: api-reference/model-functions/model-delete-flight-modes.md
+          - model.deleteInput: api-reference/model-functions/model-delete-input.md
+          - model.deleteInputs: api-reference/model-functions/model-delete-inputs.md
+          - model.deleteMix: api-reference/model-functions/model-delete-mix.md
+          - model.deleteMixes: api-reference/model-functions/model-delete-mixes.md
+          - model.getCurve: api-reference/model-functions/model-get-curve.md
+          - model.getCustomFunction: api-reference/model-functions/model-get-custom-function.md
+          - model.getFlightMode: api-reference/model-functions/model-get-flight-mode.md
+          - model.getGlobalVariable: api-reference/model-functions/model-get-global-variable.md
+          - model.getGlobalVariableDetails: api-reference/model-functions/model-get-global-variable-details.md
+          - model.getInfo: api-reference/model-functions/model-get-info.md
+          - model.getInput: api-reference/model-functions/model-get-input.md
+          - model.getInputsCount: api-reference/model-functions/model-get-inputs-count.md
+          - model.getLogicalSwitch: api-reference/model-functions/model-get-logical-switch.md
+          - model.getMix: api-reference/model-functions/model-get-mix.md
+          - model.getMixesCount: api-reference/model-functions/model-get-mixes-count.md
+          - model.getModule: api-reference/model-functions/model-get-module.md
+          - model.getOutput: api-reference/model-functions/model-get-output.md
+          - model.getSensor: api-reference/model-functions/model-get-sensor.md
+          - model.getSwashRing: api-reference/model-functions/model-get-swash-ring.md
+          - model.getTimer: api-reference/model-functions/model-get-timer.md
+          - model.insertInput: api-reference/model-functions/model-insert-input.md
+          - model.insertMix: api-reference/model-functions/model-insert-mix.md
+          - model.resetSensor: api-reference/model-functions/model-reset-sensor.md
+          - model.resetTimer: api-reference/model-functions/model-reset-timer.md
+          - model.setCurve: api-reference/model-functions/model-set-curve.md
+          - model.setCustomFunction: api-reference/model-functions/model-set-custom-function.md
+          - model.setFlightMode: api-reference/model-functions/model-set-flight-mode.md
+          - model.setGlobalVariable: api-reference/model-functions/model-set-global-variable.md
+          - model.setGlobalVariableDetails: api-reference/model-functions/model-set-global-variable-details.md
+          - model.setInfo: api-reference/model-functions/model-set-info.md
+          - model.setLogicalSwitch: api-reference/model-functions/model-set-logical-switch.md
+          - model.setModule: api-reference/model-functions/model-set-module.md
+          - model.setOutput: api-reference/model-functions/model-set-output.md
+          - model.setSwashRing: api-reference/model-functions/model-set-swash-ring.md
+          - model.setTimer: api-reference/model-functions/model-set-timer.md
+      - RF module:
+          - RF module: api-reference/rf-module/index.md
+          - accessTelemetryPush: api-reference/rf-module/access-telemetry-push.md
+          - crossfireTelemetryPush: api-reference/rf-module/crossfire-telemetry-push.md
+          - ghostTelemetryPush: api-reference/rf-module/ghost-telemetry-push.md
+          - multiBuffer: api-reference/rf-module/multi-buffer.md
+          - sportTelemetryPush: api-reference/rf-module/sport-telemetry-push.md
+      - Radio Hardware:
+          - Radio Hardware: api-reference/radio-hardware/index.md
+          - applyRGBLedColors: api-reference/radio-hardware/apply-rgbled-colors.md
+          - getStickMode: api-reference/radio-hardware/get-stick-mode.md
+          - getTxGPS: api-reference/radio-hardware/get-tx-gps.md
+          - setCFSLedColor: api-reference/radio-hardware/set-cfsled-color.md
+          - setIMU_X: api-reference/radio-hardware/set-imu-x.md
+          - setIMU_Y: api-reference/radio-hardware/set-imu-y.md
+          - setRGBLedColor: api-reference/radio-hardware/set-rgbled-color.md
+      - Serial Ports:
+          - Serial Ports: api-reference/serial-ports/index.md
+          - serialGetPower: api-reference/serial-ports/serial-get-power.md
+          - serialRead: api-reference/serial-ports/serial-read.md
+          - serialSetPower: api-reference/serial-ports/serial-set-power.md
+          - serialWrite: api-reference/serial-ports/serial-write.md
+          - setSerialBaudrate: api-reference/serial-ports/set-serial-baudrate.md
+      - Sources:
+          - Sources: api-reference/sources/index.md
+          - getFieldInfo: api-reference/sources/get-field-info.md
+          - getSourceIndex: api-reference/sources/get-source-index.md
+          - getSourceName: api-reference/sources/get-source-name.md
+          - getSourceValue: api-reference/sources/get-source-value.md
+          - getValue: api-reference/sources/get-value.md
+          - sources: api-reference/sources/sources.md
+      - Switches:
+          - Switches: api-reference/switches/index.md
+          - getLogicalSwitchValue: api-reference/switches/get-logical-switch-value.md
+          - getSwitchIndex: api-reference/switches/get-switch-index.md
+          - getSwitchInfo: api-reference/switches/get-switch-info.md
+          - getSwitchName: api-reference/switches/get-switch-name.md
+          - getSwitchValue: api-reference/switches/get-switch-value.md
+          - setStickySwitch: api-reference/switches/set-sticky-switch.md
+          - switches: api-reference/switches/switches.md
+      - System:
+          - System: api-reference/system/index.md
+          - getAvailableMemory: api-reference/system/get-available-memory.md
+          - getGeneralSettings: api-reference/system/get-general-settings.md
+          - getUsage: api-reference/system/get-usage.md
+          - getVersion: api-reference/system/get-version.md
+          - screenshot: api-reference/system/screenshot.md
+      - Telemetry:
+          - Telemetry: api-reference/telemetry/index.md
+          - crossfireTelemetryPop: api-reference/telemetry/crossfire-telemetry-pop.md
+          - getRAS: api-reference/telemetry/get-ras.md
+          - getRSSI: api-reference/telemetry/get-rssi.md
+          - getTrainerStatus: api-reference/telemetry/get-trainer-status.md
+          - ghostTelemetryPop: api-reference/telemetry/ghost-telemetry-pop.md
+          - setTelemetryValue: api-reference/telemetry/set-telemetry-value.md
+          - sportTelemetryPop: api-reference/telemetry/sport-telemetry-pop.md
+      - Time:
+          - Time: api-reference/time/index.md
+          - getDateTime: api-reference/time/get-date-time.md
+          - getGlobalTimer: api-reference/time/get-global-timer.md
+          - getRtcTime: api-reference/time/get-rtc-time.md
+          - getTime: api-reference/time/get-time.md
+          - resetGlobalTimer: api-reference/time/reset-global-timer.md
+      - Variables:
+          - Variables: api-reference/variables/index.md
+          - getShmVar: api-reference/variables/get-shm-var.md
+          - setShmVar: api-reference/variables/set-shm-var.md
+      # END GENERATED
+  - Programming:
+      - Programming: programming/README.md
+      - Basics:
+          - Lua Basics: api-overview/lua-basics.md
+          - Editor: programming/basics/editor.md
+          - Files and Organization: programming/basics/files-and-organization.md
+          - Naming: programming/basics/naming.md
+          - Practicing: programming/basics/practicing.md
+          - Testing: programming/basics/testing.md
+          - Troubleshooting: programming/basics/troubleshooting.md
+          - Memory: programming/basics/memory.md
+          - Performance: programming/basics/performance.md
+      - Core Concepts:
+          - Using Flags and Colors: programming/core-concepts/drawing-flags-and-colors.md
+          - Using LVGL Library: programming/core-concepts/lvgl-for-lua.md
+          - Using Key and Touch Events: programming/core-concepts/using-key-and-touch-events.md
+          - Data Exchange with the EdgeTX Model Setup: programming/core-concepts/data-exchange-with-the-edgetx-model-setup.md
+      - Advanced Topics:
+          - Debugging techniques: programming/advanced-topics/debugging-techniques.md
+          - Loading Code Modules Dynamically: programming/core-concepts/loading-code-modules-dynamically.md
+          - Lua data sharing across scripts: programming/advanced-topics/lua-data-sharing-across-scripts.md
+          - Saving Memory: programming/core-concepts/saving-memory.md
+          - Speed/memory optimizaton tricks: programming/advanced-topics/optimization-tricks.md
+  - Radios:
+      - radios/README.md
+      - BetaFPV:
+          - radios/betafpv/README.md
+          - LiteRadio3 Pro: radios/betafpv/betafpv-literadio3-pro.md
+      - FatFish:
+          - radios/fatfish/README.md
+          - F16: radios/fatfish/fatfish-f16.md
+      - FlySky:
+          - radios/flysky/README.md
+          - EL18: radios/flysky/flysky-el18.md
+          - NB4+: radios/flysky/flysky-nb4-plus.md
+          - NV14: radios/flysky/flysky-nv14.md
+          - PA01: radios/flysky/flysky-pa01.md
+          - PL18 / PL18EV: radios/flysky/flysky-pl18-pl18ev.md
+          - PL18U: radios/flysky/flysky-pl18u.md
+          - ST16: radios/flysky/flysky-st16.md
+      - FrSky:
+          - radios/frsky/README.md
+          - QX7 / QX7S / QX7 ACCESS / QX7S ACCESS: radios/frsky/frsky-qx7-qx7s.md
+          - X-Lite / X-Lite S / X-Lite Pro: radios/frsky/frsky-x-lite-x-lite-s-x-lite-pro.md
+          - X9 Lite / X9 Lite S: radios/frsky/frsky-x9-lite-x9-lite-s.md
+          - X9D / X9D+ / X9D SE: radios/frsky/frsky-x9d-x9d-plus-x9d-plus-se.md
+          - X9D+ 2019 / X9D+ 2019 SE: radios/frsky/frsky-x9dp2019.md
+          - X9E / X9E Hall: radios/frsky/frsky-x9e-x9e-hall.md
+          - X10 / X10S / X10 Express / X10S Express: radios/frsky/frsky-x10express.md
+          - X12S / X12S IRSM: radios/frsky/frsky-x12s-x12s-irsm.md
+      - HelloRadioSky:
+          - radios/helloradiosky/README.md
+          - V12: radios/helloradiosky/helloradiosky-v12.md
+          - V14: radios/helloradiosky/helloradiosky-v14.md
+          - V16: radios/helloradiosky/helloradiosky-v16.md
+      - iFlight:
+          - radios/iflight/README.md
+          - Commando8: radios/iflight/iflight-commando8.md
+          - Commando14: radios/iflight/iflight-commando14.md
+      - Jumper:
+          - radios/jumper/README.md
+          - Bumblebee: radios/jumper/jumper-bumblebee.md
+          - T-Lite / T-Lite v2: radios/jumper/jumper-t-lite-t-lite-v2.md
+          - T-Pro: radios/jumper/jumper-t-pro.md
+          - T-12 / T12 Plus / T12 Pro Hall: radios/jumper/jumper-t12-t12-plus-t12-pro-hall.md
+          - T-14: radios/jumper/jumper-t14.md
+          - T-20: radios/jumper/jumper-t20.md
+          - T15: radios/jumper/jumper-t15.md
+          - T15 Pro: radios/jumper/jumper-t15-pro.md
+          - T16 / T16 Plus / T16 Pro Hall: radios/jumper/jumper-t16-t16-plus-t16-pro-hall.md
+          - T18 / T18 Lite / T18 Pro: radios/jumper/jumper-t18-t18-lite-t18-pro.md
+          - T20 V2: radios/jumper/jumper-t20-v2.md
+      - RadioMaster:
+          - radios/radiomaster/README.md
+          - Boxer: radios/radiomaster/radiomaster-boxer.md
+          - GX12: radios/radiomaster/radiomaster-gx12.md
+          - MT12: radios/radiomaster/radiomaster-mt12.md
+          - Pocket: radios/radiomaster/radiomaster-pocket.md
+          - T8 Pro: radios/radiomaster/radiomaster-t8-pro.md
+          - TX12: radios/radiomaster/radiomaster-tx12.md
+          - TX12 Mark II: radios/radiomaster/radiomaster-tx12-mark-ii.md
+          - Zorro: radios/radiomaster/radiomaster-zorro.md
+          - TX15: radios/radiomaster/radiomaster-tx15.md
+          - TX16S / TX16S MAX / TX16S Mark II: radios/radiomaster/radiomaster-tx16s.md
+          - TX16S MK3 / TX16S MK3 MAX: radios/radiomaster/radiomaster-tx16smk3.md
+      # - TBS:
+      #     - radios/tbs/README.md
+  - Migration:
+      - Overview: migration/overview.md
+      - Pipeline:
+          - Overview: migration/pipeline/index.md
+          - Annotation Contract: migration/pipeline/annotation-contract.md
+          - Overlay Contract: migration/pipeline/overlay-contract.md
+          - API Schema: migration/pipeline/api-schema.md
+          - LVGL Migration Notes: migration/pipeline/lvgl-migration.md
+          - Real Extraction Notes: migration/pipeline/real-extraction-notes.md
+      - Internal Review Tools:
+          - API Review Dashboard: api-reference/review.md
+          - Developer Questions: migration/internal-review-tools/developer-questions.md

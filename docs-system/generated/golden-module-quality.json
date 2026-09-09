@@ -1,0 +1,494 @@
+{
+  "modules": {
+    "lcd": {
+      "items": 39,
+      "unknown_param_types": 7,
+      "unknown_return_types": 0,
+      "suspicious_items": [
+        {
+          "id": "lcd.clear",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "lcd.drawBitmapPatternPie",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "lcd.drawLine",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "lcd.drawNumber",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "lcd.drawText",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "lcd.drawTimer",
+          "issues": [
+            "unknown_param_type"
+          ]
+        }
+      ]
+    },
+    "model": {
+      "items": 37,
+      "unknown_param_types": 5,
+      "unknown_return_types": 1,
+      "suspicious_items": [
+        {
+          "id": "model.setFlightMode",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "model.setGlobalVariable",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "model.setGlobalVariableDetails",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "model.setInfo",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "model.setModule",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "model.setTimer",
+          "issues": [
+            "unknown_param_type"
+          ]
+        }
+      ]
+    },
+    "runtime": {
+      "items": 73,
+      "unknown_param_types": 19,
+      "unknown_return_types": 16,
+      "suspicious_items": [
+        {
+          "id": "accessTelemetryPush",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "crossfireTelemetryPush",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "getRSSI",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "getSourceValue",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "ghostTelemetryPush",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "multiBuffer",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "playDuration",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "playFile",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "playNumber",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "playTone",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "popupConfirmation",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "popupInput",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "popupWarning",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "resetGlobalTimer",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "screenshot",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "serialRead",
+          "issues": [
+            "unknown_return_type"
+          ]
+        },
+        {
+          "id": "setSerialBaudrate",
+          "issues": [
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "setTelemetryValue",
+          "issues": [
+            "unknown_return_type",
+            "unknown_param_type"
+          ]
+        },
+        {
+          "id": "sportTelemetryPush",
+          "issues": [
+            "unknown_param_type"
+          ]
+        }
+      ]
+    }
+  },
+  "backlog": [
+    {
+      "id": "accessTelemetryPush",
+      "doc_id": "runtime.access-telemetry-push",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "crossfireTelemetryPush",
+      "doc_id": "runtime.crossfire-telemetry-push",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "getRSSI",
+      "doc_id": "runtime.get-rssi",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "getSourceValue",
+      "doc_id": "runtime.get-source-value",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "ghostTelemetryPush",
+      "doc_id": "runtime.ghost-telemetry-push",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.clear",
+      "doc_id": "lcd.clear",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.drawBitmapPatternPie",
+      "doc_id": "lcd.draw-bitmap-pattern-pie",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.drawLine",
+      "doc_id": "lcd.draw-line",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.drawNumber",
+      "doc_id": "lcd.draw-number",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.drawText",
+      "doc_id": "lcd.draw-text",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "lcd.drawTimer",
+      "doc_id": "lcd.draw-timer",
+      "module": "lcd",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "model.setFlightMode",
+      "doc_id": "model.set-flight-mode",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "model.setGlobalVariable",
+      "doc_id": "model.set-global-variable",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "model.setGlobalVariableDetails",
+      "doc_id": "model.set-global-variable-details",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "model.setInfo",
+      "doc_id": "model.set-info",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "model.setModule",
+      "doc_id": "model.set-module",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "model.setTimer",
+      "doc_id": "model.set-timer",
+      "module": "model",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "multiBuffer",
+      "doc_id": "runtime.multi-buffer",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "playDuration",
+      "doc_id": "runtime.play-duration",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "playFile",
+      "doc_id": "runtime.play-file",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "playNumber",
+      "doc_id": "runtime.play-number",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "playTone",
+      "doc_id": "runtime.play-tone",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "popupConfirmation",
+      "doc_id": "runtime.popup-confirmation",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "popupInput",
+      "doc_id": "runtime.popup-input",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "popupWarning",
+      "doc_id": "runtime.popup-warning",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "resetGlobalTimer",
+      "doc_id": "runtime.reset-global-timer",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "screenshot",
+      "doc_id": "runtime.screenshot",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "serialRead",
+      "doc_id": "runtime.serial-read",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type"
+      ]
+    },
+    {
+      "id": "setSerialBaudrate",
+      "doc_id": "runtime.set-serial-baudrate",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "setTelemetryValue",
+      "doc_id": "runtime.set-telemetry-value",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_return_type",
+        "unknown_param_type"
+      ]
+    },
+    {
+      "id": "sportTelemetryPush",
+      "doc_id": "runtime.sport-telemetry-push",
+      "module": "runtime",
+      "parser_fixable": [],
+      "upstream_fix_likely": [
+        "unknown_param_type"
+      ]
+    }
+  ]
+}

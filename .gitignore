@@ -1,0 +1,9 @@
+/_book/
+/node_modules/
+/book.pdf
+/site/
+/.site-legacy-generated/
+/site-legacy/
+.tmp/
+.venv/
+__pycache__/

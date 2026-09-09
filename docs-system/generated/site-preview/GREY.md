@@ -1,0 +1,28 @@
+# GREY
+
+`GREY()`
+
+Returns gray value which can be used in LCD functions
+
+## Parameters
+
+None.
+
+## Returns
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `-` | `integer` | a value that represents amount of *greyness* (from 0 to 15) |
+
+## Availability
+
+- Since: `2.0.13`
+- Radio support: `all`
+
+## Notes
+
+- Only available on Taranis
+
+## Source
+
+`radio/src/lua/api_general.cpp`

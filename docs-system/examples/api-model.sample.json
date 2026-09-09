@@ -1,0 +1,83 @@
+{
+  "docs_version": "2.12",
+  "upstream_ref": "edgetx-2.12",
+  "generated_at": "2026-03-23T00:00:00Z",
+  "items": [
+    {
+      "id": "lcd.drawBitmap",
+      "doc_id": "lcd.draw-bitmap",
+      "symbol": "lcd.drawBitmap",
+      "aliases": [],
+      "deprecated_aliases": [],
+      "module": "lcd",
+      "kind": "function",
+      "syntax": "lcd.drawBitmap(bitmap, x, y [, scale])",
+      "summary": "Display a previously opened bitmap at coordinates and optionally scale it.",
+      "parameters": [
+        {
+          "name": "bitmap",
+          "type": "bitmapPointer",
+          "required": true,
+          "description": "Pointer returned by Bitmap.open()."
+        },
+        {
+          "name": "x",
+          "type": "integer",
+          "required": true,
+          "description": "Top coordinate."
+        },
+        {
+          "name": "y",
+          "type": "integer",
+          "required": true,
+          "description": "Left coordinate."
+        },
+        {
+          "name": "scale",
+          "type": "integer",
+          "required": false,
+          "description": "Scale percent where 100 keeps original size."
+        }
+      ],
+      "returns": [],
+      "availability": {
+        "since": "2.3.0",
+        "radios": ["color-lcd"]
+      },
+      "notes": [
+        "Only available on radios with color display."
+      ],
+      "source_location": "radio/src/lua/api_colorlcd.cpp"
+    },
+    {
+      "id": "getVersionInfo",
+      "doc_id": "runtime.get-version",
+      "symbol": "getVersionInfo",
+      "aliases": ["getVersion"],
+      "deprecated_aliases": ["getVersion"],
+      "module": "runtime",
+      "kind": "function",
+      "syntax": "getVersionInfo()",
+      "summary": "Return the firmware version and platform details.",
+      "parameters": [],
+      "returns": [
+        {
+          "name": "version",
+          "type": "string",
+          "description": "Version string."
+        },
+        {
+          "name": "radio",
+          "type": "string",
+          "description": "Radio or simulator identifier."
+        }
+      ],
+      "availability": {
+        "since": "2.4.0",
+        "radios": ["all"]
+      },
+      "notes": [],
+      "source_location": "radio/src/lua/api_general.cpp"
+    }
+  ]
+}
