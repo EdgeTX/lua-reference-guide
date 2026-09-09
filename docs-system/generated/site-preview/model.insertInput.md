@@ -1,0 +1,26 @@
+# model.insertInput
+
+`model.insertInput(input, line, value)`
+
+Insert an Input at specified line
+
+## Parameters
+
+| Name | Req | Type | Description |
+| --- | --- | --- | --- |
+| `input` | yes | `integer` | input number (use 0 for Input1) |
+| `line` | yes | `integer` | input line (use 0 for first line) |
+| `value` | yes | `table` | input data, see model.getInput() |
+
+## Returns
+
+None.
+
+## Availability
+
+- Since: `2.0.0`
+- Radio support: `all`
+
+## Source
+
+`radio/src/lua/api_model.cpp`

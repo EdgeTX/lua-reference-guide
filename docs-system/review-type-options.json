@@ -1,0 +1,29 @@
+{
+  "common_types": [
+    "TODO",
+    "integer",
+    "number",
+    "string",
+    "boolean",
+    "table",
+    "function",
+    "pointer",
+    "nil",
+    "integer|string",
+    "table|nil",
+    "function|nil",
+    "string|nil"
+  ],
+  "custom_types": [
+    "pen_type",
+    "text_flags",
+    "lcd_font_size",
+    "lcd_text_flags",
+    "lcd_text_format",
+    "lcd_color_RGB565",
+    "source_range_1024",
+    "timer_type",
+    "unit_type",
+    "prec_type"
+  ]
+}

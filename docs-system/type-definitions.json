@@ -1,0 +1,52 @@
+{
+  "pen_type": {
+    "luals_alias_of": "integer",
+    "description": "LCD line pattern selector such as SOLID or DOTTED."
+  },
+  "text_flags": {
+    "luals_alias_of": "integer",
+    "description": "Text rendering flags used by legacy LCD number APIs."
+  },
+  "lcd_color_RGB565": {
+    "luals_alias_of": "integer",
+    "description": "Packed 16-bit RGB color value for color LCD APIs."
+  },
+  "lcd_font_size": {
+    "luals_alias_of": "integer",
+    "description": "Font size selector such as XXLSIZE, DBLSIZE, MIDSIZE, or SMLSIZE."
+  },
+  "lcd_text_flags": {
+    "luals_alias_of": "integer",
+    "description": "Bitmask of LCD text rendering flags such as INVERS, BLINK, and SHADOWED.",
+    "examples": [
+      "INVERS",
+      "BLINK",
+      "SHADOWED"
+    ]
+  },
+  "lcd_text_format": {
+    "luals_alias_of": "integer",
+    "description": "Combined LCD text formatting bitmask covering font size and text flags.",
+    "examples": [
+      "MIDSIZE",
+      "INVERS + BLINK",
+      "DBLSIZE + SHADOWED"
+    ]
+  },
+  "source_range_1024": {
+    "luals_alias_of": "integer",
+    "description": "Signed EdgeTX source value in the normalized range from -1024 to 1024."
+  },
+  "timer_type": {
+    "luals_alias_of": "string",
+    "description": "Global timer selector such as all, total, session, throttle, or throttlepct."
+  },
+  "unit_type": {
+    "luals_alias_of": "integer",
+    "description": "Telemetry unit identifier from the EdgeTX unit list."
+  },
+  "prec_type": {
+    "luals_alias_of": "integer",
+    "description": "Telemetry precision selector controlling decimal places."
+  }
+}

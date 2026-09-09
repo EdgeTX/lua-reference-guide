@@ -1,0 +1,15 @@
+[project]
+name = "lua-reference-guide-docs"
+version = "0.1.0"
+description = "Docs tooling for the EdgeTX Lua Reference Guide migration"
+requires-python = ">=3.11"
+dependencies = [
+  "mkdocs>=1.6,<2.0",
+  "mkdocs-material>=9.5,<10.0",
+  "mike>=2,<3",
+  "mkdocs-minify-plugin>=0.8,<1.0",
+  "markdown>=3.6,<4.0",
+]
+
+[tool.uv]
+package = false
