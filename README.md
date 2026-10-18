@@ -1,42 +1,52 @@
----
-metaLinks:
-  alternates:
-    - https://app.gitbook.com/s/Ly8RKETivxoHMb7Zzqkb/
----
+# EdgeTX Lua Reference Guide
 
-# EdgeTX LUA Reference Guide
+This repository contains the EdgeTX Lua documentation site.
 
-This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX operating system with Lua support. Readers should be familiar with EdgeTX, the EdgeTX Companion, and know how to transfer files the SD card in the transmitter.
+The live documentation source for the current site is in [website](website).
 
-{% hint style="info" %}
-The latest version of this guide will always be available [here](https://luadoc.edgetx.org). At the top of the left sidebar there is a version option if you are running an older version of EdgeTX and need the docs for that specific version.
-{% endhint %}
+## Repo Layout
 
-## Sections
+- `website/`: MkDocs content, theme assets, and navigation for the current docs site
+- `docs-system/`: extraction contracts, overlays, generated artifacts, and pipeline notes
+- `tools/`: local build and generation helpers
 
-| Chapter                                     | Content                                                                       |
-| ------------------------------------------- | ----------------------------------------------------------------------------- |
-| [Overview](overview/)                       | Covers various topics of LUA implementation in EdgeTX operating system system |
-| [LUA API Reference](lua-api-reference/)     | Reference of all constants and functions available in EdgeTX LUA API          |
-| [LUA API Programming](lua-api-programming/) | EdgeTX LUA programming guide that covers coding techniques with examples.     |
-| [Appendixes](appendix/)                     |                                                                               |
+## Local Preview
 
-## EdgeTX LUA development support
+```sh
+uv run mkdocs serve -a 127.0.0.1:8014
+```
 
-Quickest way to get support from seasoned EdgeTX LUA developers is to join our Discord server and ask on dedicated #lua channel
+This uses `mkdocs.yml`, the public/production config. It excludes the
+Migration section, the API Review Dashboard, and the per-module
+extraction dashboards, matching what actually ships on the published
+site.
 
-[Join the chat on Discord](https://discord.gg/DrHkAn28sq)
+## Internal Preview (Migration docs + Review Workbench)
 
-## LUA Reference guide collaboration
+To see the Migration section, the per-module dashboards, and the API
+review pages, serve the internal config instead:
 
-Please feel free to make suggestions or corrections to the documentation.
+```sh
+uv run mkdocs serve -f mkdocs.dev.yml -a 127.0.0.1:8014
+```
 
-* Preferred method of editing is to use [GitBook](https://www.gitbook.com), as it uses WYSWIG editor allowing two-stage publication. If you want to change or add whole page or become collaborator _<mark style="color:purple;">\<decribe what to do></mark>_.
+`mkdocs.dev.yml` inherits from `mkdocs.yml` and un-excludes everything
+dropped from the public build. Keep only one preview server active on
+`8014` at a time — switch configs by stopping one and starting the
+other.
 
-## Project support
+## Review Workbench
 
-The EdgeTX team has no intention of making a profit from their work - EdgeTX is free and open source and will remain free and open source. However, the project is more expensive to maintain than most open source projects. This in mainly because there is a never ending flood of hardware to integrate and maintain code for. Hardware that costs. In addition, in order to develop for this hardware, certain specalised test and measurement equipment is also required.
+For live API review pages with saved type decisions, run the local decision server in a second terminal:
 
-In order to support this, EdgeTX has chosen to use OpenCollective to allow for donations from the community, as well as funding from manufacturers who choose to partner with and sponsor the project. This also allows for transparent accounting of what the funds are spent on.
+```sh
+uv run python3 tools/review_decision_server.py
+```
 
-Please visit [our OpenCollective page](https://opencollective.com/edgetx) if you would like to financially help support the project!
+Then open the internal preview (see above) at `http://127.0.0.1:8014/` and use the API review dashboard under the site navigation.
+
+## Contributing
+
+- Edit the current docs under `website/`
+- Keep generated or pipeline-specific notes under `docs-system/`
+- Use the internal preview at `http://127.0.0.1:8014/` for review during local work

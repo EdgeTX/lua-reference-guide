@@ -1,0 +1,26 @@
+# rename
+
+`rename(from_path, to_path)`
+
+Rename a file or directory
+  If the file or directory is being moved to a new parent directory, then the new parent
+  directory must already exist.
+
+## Parameters
+
+| Name | Req | Type | Description |
+| --- | --- | --- | --- |
+| `from_path` | yes | `string` | Current path to rename @param to_path (string) Path to rename to |
+
+## Returns
+
+None.
+
+## Availability
+
+- Since: `2.11.0`
+- Radio support: `all`
+
+## Source
+
+`radio/src/lua/api_filesystem.cpp`

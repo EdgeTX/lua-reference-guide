@@ -1,0 +1,207 @@
+{
+  "crossfireTelemetryPush": {
+    "params": {
+      "command": "integer"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:02:19.598966Z"
+  },
+  "getRSSI": {
+    "params": {},
+    "returns": {
+      "rssi": "integer",
+      "alarm_low": "integer",
+      "alarm_crit": "integer"
+    },
+    "updated_at": "2026-03-23T11:54:46.884698Z"
+  },
+  "getSourceValue": {
+    "params": {
+      "source": "string"
+    },
+    "returns": {
+      "-": "integer",
+      "isCurrent": "boolean",
+      "isFresh": "boolean"
+    },
+    "updated_at": "2026-03-23T11:55:03.700845Z"
+  },
+  "getStickMode": {
+    "params": {},
+    "returns": {
+      "-": "integer"
+    },
+    "updated_at": "2026-03-23T10:58:18.012896Z"
+  },
+  "ghostTelemetryPush": {
+    "params": {
+      "command": "integer"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:05:01.958812Z"
+  },
+  "lcd.clear": {
+    "params": {
+      "color": "lcd_color_RGB565"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:58:31.883283Z"
+  },
+  "lcd.drawBitmapPatternPie": {
+    "params": {
+      "startAngle": "number",
+      "endAngle": "number"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:14:09.212270Z"
+  },
+  "lcd.drawLine": {
+    "params": {
+      "pattern": "pen_type"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:18:24.247064Z"
+  },
+  "lcd.drawNumber": {
+    "params": {
+      "inversColor": "text_flags"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:22:58.185744Z"
+  },
+  "lcd.drawText": {
+    "params": {
+      "inversColor": "lcd_text_flags"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:35:56.488913Z"
+  },
+  "lcd.drawTimer": {
+    "params": {
+      "inversColor": "lcd_text_flags"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:37:02.496078Z"
+  },
+  "model.setFlightMode": {
+    "params": {
+      "params": "table|nil"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:37:50.476973Z"
+  },
+  "model.setGlobalVariable": {
+    "params": {
+      "value": "source_range_1024"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:39:17.241194Z"
+  },
+  "model.setInfo": {
+    "params": {
+      "value": "table"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:40:07.014503Z"
+  },
+  "model.setModule": {
+    "params": {
+      "index": "integer",
+      "value": "table"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T11:55:17.006779Z"
+  },
+  "model.setTimer": {
+    "params": {
+      "value": "table"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:41:44.156685Z"
+  },
+  "playDuration": {
+    "params": {},
+    "returns": {
+      "none": "nil"
+    },
+    "updated_at": "2026-03-23T10:43:10.209312Z"
+  },
+  "playFile": {
+    "params": {},
+    "returns": {
+      "none": "nil"
+    },
+    "updated_at": "2026-03-23T10:43:27.421213Z"
+  },
+  "playNumber": {
+    "params": {},
+    "returns": {
+      "none": "nil"
+    },
+    "updated_at": "2026-03-23T10:43:56.140304Z"
+  },
+  "playTone": {
+    "params": {},
+    "returns": {
+      "none": "nil"
+    },
+    "updated_at": "2026-03-23T10:44:10.001111Z"
+  },
+  "popupConfirmation": {
+    "params": {},
+    "returns": {
+      "\"CANCEL\"": "string"
+    },
+    "updated_at": "2026-03-23T10:45:15.847558Z"
+  },
+  "popupInput": {
+    "params": {},
+    "returns": {
+      "\"OK\"": "string",
+      "\"CANCEL\"": "string"
+    },
+    "updated_at": "2026-03-23T10:58:41.158564Z"
+  },
+  "popupWarning": {
+    "params": {},
+    "returns": {
+      "\"CANCEL\"": "string"
+    },
+    "updated_at": "2026-03-23T10:58:47.706841Z"
+  },
+  "resetGlobalTimer": {
+    "params": {
+      "type": "timer_type"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:58:56.856594Z"
+  },
+  "serialRead": {
+    "params": {},
+    "returns": {
+      "str": "string"
+    },
+    "updated_at": "2026-03-23T10:47:32.219058Z"
+  },
+  "setSerialBaudrate": {
+    "params": {
+      "baudrate": "integer"
+    },
+    "returns": {},
+    "updated_at": "2026-03-23T10:48:10.606542Z"
+  },
+  "setTelemetryValue": {
+    "params": {
+      "id": "integer",
+      "subID": "integer",
+      "instance": "number",
+      "value": "number",
+      "unit": "unit_type",
+      "precision": "prec_type"
+    },
+    "returns": {
+      "true,": "boolean"
+    },
+    "updated_at": "2026-03-23T10:50:17.174214Z"
+  }
+}

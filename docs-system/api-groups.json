@@ -1,0 +1,143 @@
+{
+  "groups": [
+    {
+      "name": "Display LCD",
+      "slug": "display-lcd",
+      "description": "Drawing, layout, color, and display helpers for LCD rendering.",
+      "modules": ["lcd", "Bitmap"],
+      "ids": ["GREY", "lcd.RGB", "popupConfirmation", "popupInput", "popupWarning"]
+    },
+    {
+      "name": "Display LVGL",
+      "slug": "display-lvgl",
+      "description": "LVGL bindings and UI helpers for display-oriented Lua scripts.",
+      "modules": ["lvgl"],
+      "ids": []
+    },
+    {
+      "name": "Model Functions",
+      "slug": "model-functions",
+      "description": "Model data access and editing APIs.",
+      "modules": ["model"],
+      "ids": ["getFlightMode", "getOutputValue"]
+    },
+    {
+      "name": "Filesystem",
+      "slug": "filesystem",
+      "description": "File and directory access for scripts.",
+      "ids": ["chdir", "del", "dir", "fstat", "mkdir", "rename"]
+    },
+    {
+      "name": "Serial Ports",
+      "slug": "serial-ports",
+      "description": "Serial transport configuration and I/O.",
+      "ids": ["serialGetPower", "serialRead", "serialSetPower", "serialWrite", "setSerialBaudrate"]
+    },
+    {
+      "name": "Radio Hardware",
+      "slug": "radio-hardware",
+      "description": "Hardware-facing APIs and low-level device controls.",
+      "ids": ["applyRGBLedColors", "setIMU_X", "setIMU_Y", "setRGBLedColor", "setCFSLedColor", "getTxGPS", "getStickMode"]
+    },
+    {
+      "name": "System",
+      "slug": "system",
+      "description": "General runtime, device, and system-level helpers.",
+      "ids": [
+        "getAvailableMemory",
+        "getGeneralSettings",
+        "getUsage",
+        "getVersion",
+        "screenshot"
+      ]
+    },
+    {
+      "name": "Inputs",
+      "slug": "key-inputs",
+      "description": "Key and stick related helpers for interactive scripts.",
+      "ids": ["defaultChannel", "defaultStick", "getRotEncMode", "getRotEncSpeed", "killEvents"]
+    },
+    {
+      "name": "Lua Scripts",
+      "slug": "lua-scripts",
+      "description": "Script lifecycle helpers and interactive popups.",
+      "ids": ["loadScript"]
+    },
+    {
+      "name": "Time",
+      "slug": "time",
+      "description": "Date, clock, and timer helpers.",
+      "ids": ["getDateTime", "getGlobalTimer", "getRtcTime", "getTime", "resetGlobalTimer"]
+    },
+    {
+      "name": "Audio-Sound",
+      "slug": "audio-sound",
+      "description": "Audio playback and haptic feedback helpers.",
+      "ids": ["flushAudio", "playDuration", "playFile", "playHaptic", "playNumber", "playTone"]
+    },
+    {
+      "name": "Telemetry",
+      "slug": "telemetry",
+      "description": "Telemetry value access, injection, and protocol helpers.",
+      "ids": [
+        "crossfireTelemetryPop",
+        "getRAS",
+        "getRSSI",
+        "getTrainerStatus",
+        "ghostTelemetryPop",
+        "setTelemetryValue",
+        "sportTelemetryPop"
+      ]
+    },
+    {
+      "name": "RF module",
+      "slug": "rf-module",
+      "description": "RF link and module transport helpers.",
+      "ids": [
+        "accessTelemetryPush",
+        "crossfireTelemetryPush",
+        "ghostTelemetryPush",
+        "multiBuffer",
+        "serialGetPower",
+        "serialSetPower",
+        "sportTelemetryPush"
+      ]
+    },
+    {
+      "name": "Sources",
+      "slug": "sources",
+      "description": "Source identification and value lookup for telemetry and other data sources.",
+      "ids": [
+        "sources",
+        "getFieldInfo",
+        "getSourceIndex",
+        "getSourceName",
+        "getSourceValue",
+        "getValue"
+      ]
+    },
+    {
+      "name": "Switches",
+      "slug": "switches",
+      "description": "Switch identification, value lookup, and sticky-switch helpers.",
+      "ids": [
+        "switches",
+        "getLogicalSwitchValue",
+        "getSwitchIndex",
+        "getSwitchInfo",
+        "getSwitchName",
+        "getSwitchValue",
+        "setStickySwitch"
+      ]
+    },
+    {
+      "name": "Variables",
+      "slug": "variables",
+      "description": "Shared-memory variables exposed to scripts.",
+      "ids": [
+        "getShmVar",
+        "setShmVar"
+      ]
+    }
+  ]
+}
