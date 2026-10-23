@@ -1,0 +1,121 @@
+# Builds a preview of the docs for each pull request and uploads it to
+# Cloudflare as a Worker *version* with a preview alias. Production keeps
+# serving the deployed version; the preview is only reachable at
+#   https://pr-<number>-edgetx-lua-reference-guide.edgetx.workers.dev/
+#
+# The PR is built as the version its base branch publishes (main -> "dev",
+# edgetx_<x.y> -> "<x.y>", plus "latest" for the latest release branch) on
+# top of the current gh-pages tree, so the preview is the whole site with
+# that one version replaced. Nothing is pushed to gh-pages.
+#
+# Only runs for PRs from branches in this repo: fork PRs don't get the
+# Cloudflare secrets, and building untrusted code with them available
+# would be unsafe anyway.
+name: Preview Docs
+
+on:
+  pull_request:
+    branches:
+      - main
+      - "edgetx_*"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: preview-docs-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve version metadata
+        id: version
+        shell: bash
+        env:
+          LATEST_BRANCH: ${{ vars.DOCS_LATEST_BRANCH || 'edgetx_2.12' }}
+        run: |
+          case "${GITHUB_BASE_REF}" in
+            main)
+              version_id="dev"
+              title="Dev"
+              ;;
+            edgetx_[0-9]*.[0-9]*)
+              version_id="${GITHUB_BASE_REF#edgetx_}"
+              title="${version_id}"
+              ;;
+            *)
+              echo "Unsupported base branch: ${GITHUB_BASE_REF}" >&2
+              exit 1
+              ;;
+          esac
+
+          if [[ "${GITHUB_BASE_REF}" == "${LATEST_BRANCH}" ]]; then
+            aliases="${version_id} latest"
+          else
+            aliases="${version_id}"
+          fi
+
+          {
+            echo "version_id=${version_id}"
+            echo "title=${title}"
+            echo "aliases=${aliases}"
+            echo "alias=pr-${{ github.event.pull_request.number }}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Sync docs dependencies
+        run: uv sync
+
+      - name: Configure git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Build preview into local gh-pages
+        env:
+          DOCS_EDIT_URI: edit/${{ github.head_ref }}/website/md-docs/
+        run: |
+          git branch -f gh-pages origin/gh-pages
+          uv run mike deploy --update-aliases --title "${{ steps.version.outputs.title }}" ${{ steps.version.outputs.aliases }}
+
+      - name: Export gh-pages tree for Cloudflare
+        run: |
+          rm -rf .site-publish
+          mkdir .site-publish
+          git archive gh-pages | tar -x -C .site-publish
+
+      - name: Upload preview version to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: versions upload --preview-alias ${{ steps.version.outputs.alias }} --message "PR #${{ github.event.pull_request.number }} @ ${{ github.event.pull_request.head.sha }}"
+
+      - name: Comment preview link on the PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          url="https://${{ steps.version.outputs.alias }}-edgetx-lua-reference-guide.edgetx.workers.dev/${{ steps.version.outputs.version_id }}/"
+          body="📖 **Docs preview:** ${url}
+
+          Built from ${HEAD_SHA::7} as the \`${{ steps.version.outputs.version_id }}\` version, on top of the currently published site."
+          gh pr comment "${PR_NUMBER}" --edit-last --create-if-none --body "${body}"
