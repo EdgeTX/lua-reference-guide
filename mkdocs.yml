@@ -3,7 +3,9 @@ site_description: Next-generation Lua API docs generated from EdgeTX source anno
 site_url: https://luadoc.edgetx.org/
 repo_url: https://github.com/EdgeTX/lua-reference-guide
 repo_name: EdgeTX/lua-reference-guide
-edit_uri: edit/edgetx_2.12/website/md-docs/
+# The publish workflow sets DOCS_EDIT_URI to the branch being built, so
+# "Edit this page" on /dev/ points at main and on /2.12/ at edgetx_2.12.
+edit_uri: !ENV [DOCS_EDIT_URI, "edit/edgetx_2.12/website/md-docs/"]
 docs_dir: website/md-docs
 site_dir: site
 exclude_docs: |
@@ -40,6 +42,7 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
 plugins:
   - search:
       # Default separator only splits on whitespace/hyphens ([\s\-]+), so a
@@ -60,10 +63,6 @@ extra:
     provider: mike
     default: latest
     alias: true
-  legacy_version:
-    enabled: false
-    label: Legacy version
-    message: This documentation version is preserved for reference and may not include later corrections or the newest docs structure.
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/EdgeTX/lua-reference-guide

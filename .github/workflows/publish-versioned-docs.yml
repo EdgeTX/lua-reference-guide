@@ -124,6 +124,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Publish docs with mike
+        env:
+          # "Edit this page" should open the branch this version is built from.
+          DOCS_EDIT_URI: edit/${{ github.ref_name }}/website/md-docs/
         run: uv run mike deploy --push --update-aliases --title "${{ steps.version.outputs.title }}" ${{ steps.version.outputs.aliases }}
 
       - name: Set default docs version
