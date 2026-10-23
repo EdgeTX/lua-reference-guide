@@ -1,20 +1,18 @@
 # EdgeTX 2.4 Lua Reference Guide
 
-[Join the chat on Discord](https://discord.gg/CZCwVx2)
+Source for the EdgeTX 2.4 version of the Lua Reference Guide, published at
+<https://luadoc.edgetx.org/2.4/>.
 
-The latest version of this guide will always be available [here](https://luadoc.edgetx.org). At the top of the left sidebar there is a version option if you are running an older version of EdgeTX or OpenTX and need the docs for that specific version. 
+This content was converted from the original GitBook branch to MkDocs. It is
+kept for reference, so it may not include corrections made in later versions.
+The page content lives in `website/md-docs/`; edit it there.
 
-This guide covers the development of user-written scripts for R/C transmitters running the EdgeTX 2.4 operating system with Lua support. Readers should be familiar with EdgeTX/OpenTX, the OpenTX Companion, and know how to transfer files the SD card in the transmitter.
+## Local preview
 
-Part I of the guide shows how to enable Lua support for Taranis and includes basic examples of each types of script.
+```sh
+uv run mkdocs serve -a 127.0.0.1:8014
+```
 
-Part II is a programming guide that introduces the types of EdgeTX Lua scripts and how to use them.
-
-Part III is the EdgeTX Lua API Reference
-
-Part IV addresses common issues in converting Lua scripts that were originally written for OpenTX 2.0
-
-Part V addresses common issues in converting Lua scripts that were originally written for OpenTX 2.1
-
-Part VI covers advanced topics with examples
-
+Pushes to `edgetx_2.4` are published automatically by
+`.github/workflows/publish-versioned-docs.yml`, and pull requests get a
+preview deployment from `.github/workflows/preview-docs.yml`.
