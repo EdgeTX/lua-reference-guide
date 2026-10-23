@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EdgeTX Lua API Model v1",
+  "type": "object",
+  "required": ["docs_version", "upstream_ref", "generated_at", "items"],
+  "properties": {
+    "docs_version": {
+      "type": "string"
+    },
+    "upstream_ref": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "doc_id",
+          "symbol",
+          "module",
+          "kind",
+          "syntax",
+          "summary",
+          "parameters",
+          "returns",
+          "availability",
+          "notes",
+          "source_location"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "doc_id": { "type": "string" },
+          "symbol": { "type": "string" },
+          "aliases": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "deprecated_aliases": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "module": { "type": "string" },
+          "kind": { "type": "string" },
+          "syntax": { "type": "string" },
+          "summary": { "type": "string" },
+          "parameters": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "type", "required", "description"],
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "type": "string" },
+                "required": { "type": "boolean" },
+                "description": { "type": "string" }
+              }
+            }
+          },
+          "returns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "description"],
+              "properties": {
+                "name": { "type": "string" },
+                "type": { "type": "string" },
+                "description": { "type": "string" }
+              }
+            }
+          },
+          "availability": {
+            "type": "object",
+            "required": ["since"],
+            "properties": {
+              "since": { "type": "string" },
+              "radios": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "source_location": {
+            "type": "string"
+          },
+          "raw_luadoc": {
+            "type": "string"
+          },
+          "source_line": {
+            "type": ["integer", "null"]
+          }
+        }
+      }
+    }
+  }
+}

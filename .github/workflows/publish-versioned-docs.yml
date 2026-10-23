@@ -1,0 +1,148 @@
+# Publishes each docs branch via `mike deploy` on every push:
+#   main         -> "dev"
+#   edgetx_<x.y> -> "<x.y>", plus "latest" for the latest release branch
+#
+# Every branch carries its own MkDocs site (mkdocs.yml + website/md-docs/)
+# and an identical copy of this workflow, so a push builds the branch it
+# came from. The latest release branch comes from the DOCS_LATEST_BRANCH
+# repository variable (falling back to edgetx_2.12), so moving "latest" to
+# a new release is a settings change rather than an edit on every branch.
+#
+# mike keeps the accumulated versioned site on the gh-pages branch; after
+# each deploy, the full gh-pages tree is published to Cloudflare Workers
+# (static assets, see wrangler.jsonc). Requires the CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID repository secrets.
+name: Publish Versioned Docs
+
+on:
+  push:
+    branches:
+      - main
+      - "edgetx_*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    # One group per branch. GitHub keeps at most one pending run per group
+    # and cancels older pending ones, which is harmless here: the newest
+    # push to a branch already contains the older ones. Different branches
+    # publish in parallel and retry if another one updates gh-pages first.
+    concurrency:
+      group: publish-versioned-docs-${{ github.ref_name }}
+      cancel-in-progress: false
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.3.2
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+
+      - name: Resolve version metadata
+        id: version
+        shell: bash
+        env:
+          LATEST_BRANCH: ${{ vars.DOCS_LATEST_BRANCH || 'edgetx_2.12' }}
+        run: |
+          branch="${GITHUB_REF_NAME}"
+
+          case "${branch}" in
+            main)
+              version_id="dev"
+              title="Dev"
+              ;;
+            edgetx_[0-9]*.[0-9]*)
+              version_id="${branch#edgetx_}"
+              title="${version_id}"
+              ;;
+            *)
+              echo "Unsupported branch: ${branch}" >&2
+              exit 1
+              ;;
+          esac
+
+          if [[ "${branch}" == "${LATEST_BRANCH}" ]]; then
+            aliases="${version_id} latest"
+            is_latest="true"
+          else
+            aliases="${version_id}"
+            is_latest="false"
+          fi
+
+          {
+            echo "version_id=${version_id}"
+            echo "title=${title}"
+            echo "aliases=${aliases}"
+            echo "is_latest=${is_latest}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Sync docs dependencies
+        run: uv sync
+
+      - name: Configure git author
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Publish docs with mike
+        env:
+          # "Edit this page" should open the branch this version is built from.
+          DOCS_EDIT_URI: edit/${{ github.ref_name }}/website/md-docs/
+          IS_LATEST: ${{ steps.version.outputs.is_latest }}
+        run: |
+          # Other branches may push to gh-pages while this one builds. mike's
+          # push is then rejected as non-fast-forward, so rebuild on top of
+          # the new tip and try again.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin gh-pages
+            git branch -f gh-pages origin/gh-pages
+            if uv run mike deploy --push --update-aliases --title "${{ steps.version.outputs.title }}" ${{ steps.version.outputs.aliases }} \
+              && { [[ "${IS_LATEST}" != "true" ]] || uv run mike set-default --push latest; }; then
+              exit 0
+            fi
+            echo "gh-pages push failed (attempt ${attempt}), retrying" >&2
+            sleep $((attempt * 10))
+          done
+          exit 1
+
+  deploy:
+    needs: publish
+    runs-on: ubuntu-latest
+
+    # One group across all branches, so uploads never overlap. If several
+    # are queued, GitHub keeps only the newest; that's fine because it
+    # exports gh-pages when it starts, which already includes every
+    # earlier publish. The last upload is therefore always the newest tree.
+    concurrency:
+      group: publish-versioned-docs-cloudflare
+      cancel-in-progress: false
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v7
+
+      - name: Export gh-pages tree for Cloudflare
+        run: |
+          git fetch --depth 1 origin gh-pages
+          rm -rf .site-publish
+          mkdir .site-publish
+          git archive FETCH_HEAD | tar -x -C .site-publish
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy
