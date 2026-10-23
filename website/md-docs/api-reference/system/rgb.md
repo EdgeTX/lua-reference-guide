@@ -1,0 +1,40 @@
+# screenshot()
+
+Takes a screenshot, which is saved to the SCREENSHOTS folder on the radio SD card.
+
+### Syntax
+
+#### **`screenshot()`**
+
+### Returns
+
+* `None`
+
+### Notes
+
+This command is currently not rate limited, so repeated frequent calls will slow down the UI and can even freeze the entire radio, so should be used with care.
+
+### Available on
+
+* [x] [B\&W LCD radios](../../overview/radios/index.md#radios-with-b-and-w-lcd-screen)
+* [x] [Grayscale LCD radios](../../overview/radios/index.md#radios-with-grayscale-lcd-screen)
+* [x] [Color LCD radios](../../overview/radios/index.md#radios-with-color-lcd-screen)
+
+### API status
+
+<table><thead><tr><th width="166">EdgeTX version</th><th width="573">Action</th></tr></thead><tbody><tr><td>2.11.0</td><td>Introduced</td></tr></tbody></table>
+
+### Examples
+
+#### Example 1
+
+```lua
+-- Take a screenshot
+screenshot()
+```
+
+
+### Related topics
+
+* [Drawing flag](../../programming/drawing-flags-and-colors.md)
+* [Color constants](../constants/color-constants.md)
