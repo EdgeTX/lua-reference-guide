@@ -4,7 +4,7 @@ description: This section describes various constants that are provided for Lua 
 
 # Constants
 
-* [Key Events](https://github.com/EdgeTX/lua-reference-guide/blob/main/lua-api-reference/constants/broken-reference/README.md)
+* [Key Events](key-event-constants.md)
 * [Touch Events](touch-event-constants.md)
 * [Flags and Patterns](flags-and-pattern-constants.md)
 * [Colors](color-constants.md)
