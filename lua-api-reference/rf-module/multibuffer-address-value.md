@@ -1,2 +1,0 @@
-# multiBuffer(address\[,value])
-

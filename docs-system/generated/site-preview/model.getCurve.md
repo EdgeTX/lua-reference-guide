@@ -1,0 +1,27 @@
+# model.getCurve
+
+`model.getCurve(curve)`
+
+Get Curve parameters
+
+## Parameters
+
+| Name | Req | Type | Description |
+| --- | --- | --- | --- |
+| `curve` | yes | `integer` | curve number (use 0 for Curve1) |
+
+## Returns
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `-` | `nil` | requested curve does not exist |
+| `-` | `table` | curve data: * `name` (string) name  * `type` (number) type  * `smooth` (boolean) smooth  * `points` (number) number of points  * `y` (table) table of Y values:    * `key` is point number (zero based)    * `value` is y value  * `x` (table) **only included for custom curve type**:    * `key` is point number (zero based)    * `value` is x value |
+
+## Availability
+
+- Since: `2.0.12`
+- Radio support: `all`
+
+## Source
+
+`radio/src/lua/api_model.cpp`
