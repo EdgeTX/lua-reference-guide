@@ -37,7 +37,7 @@ end
 
 *   **Input parameters:**
 
-    The _key-event_ parameter indicates which transmitter button has been pressed (see [Key Events](https://github.com/EdgeTX/lua-reference-guide/blob/main/lua-api-programming/broken-reference/README.md))
+    The _key-event_ parameter indicates which transmitter button has been pressed (see [Key Events](../api-reference/constants/key-event-constants.md))
 *   **Return values:**
 
     A non-zero return value will halt the script
