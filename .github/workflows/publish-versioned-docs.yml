@@ -1,0 +1,20 @@
+# edgetx_2.11 is GitBook content with no MkDocs tooling of its own, and a
+# push here can only run workflows committed on this branch. This hands off
+# to the shared publish workflow on the latest release branch, which imports
+# this branch's content and deploys it as the "2.11" docs version.
+# When a newer release branch becomes latest, update the ref below.
+name: Publish Versioned Docs
+
+on:
+  push:
+    branches:
+      - edgetx_2.11
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: EdgeTX/lua-reference-guide/.github/workflows/publish-versioned-docs.yml@edgetx_2.12
+    secrets: inherit
