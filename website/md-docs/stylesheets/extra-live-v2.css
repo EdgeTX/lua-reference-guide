@@ -1,0 +1,1031 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+:root {
+  --md-text-font: "Roboto";
+  --md-primary-fg-color: #0c7bcd;
+  --md-primary-fg-color--light: #38c0f7;
+  --md-primary-fg-color--dark: #095f9e;
+  --md-accent-fg-color: #38c0f7;
+}
+
+/* Brand-specific colors used throughout this stylesheet that Material has no
+   equivalent semantic variable for (sidebar branding, migration/legacy amber
+   callouts, the api-card quality badge). Defined once per color scheme here
+   instead of duplicating every selector under [data-md-color-scheme="slate"]
+   -- anywhere a hardcoded color below was just "readable default text/
+   background" it uses Material's own theme-aware variables
+   (--md-default-fg-color, --md-default-bg-color, --md-default-fg-color--lightest)
+   instead of one of these, since those already adapt correctly on their own. */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0c7bcd;
+  --md-primary-fg-color--light: #38c0f7;
+  --md-primary-fg-color--dark: #095f9e;
+  --md-accent-fg-color: #38c0f7;
+
+  --lua-sidebar-text: #35556f;
+  --lua-sidebar-hover-text: #095f9e;
+  --lua-sidebar-active-text: #084c7f;
+  --lua-sidebar-icon: rgba(12, 123, 205, 0.72);
+
+  --lua-migration-bg: rgba(255, 247, 237, 0.92);
+  --lua-migration-border: rgba(245, 158, 11, 0.28);
+  --lua-migration-border-strong: rgba(217, 119, 6, 0.78);
+  --lua-migration-hover-bg: rgba(245, 158, 11, 0.12);
+  --lua-migration-active-bg: rgba(245, 158, 11, 0.18);
+  --lua-migration-text: #9a3412;
+  --lua-migration-text-alt: #7c3e12;
+  --lua-migration-text-active: #7c2d12;
+  --lua-migration-icon: rgba(180, 83, 9, 0.78);
+
+  --lua-legacy-banner-bg: linear-gradient(135deg, rgba(255, 248, 225, 0.98), rgba(255, 243, 205, 0.94));
+  --lua-legacy-banner-border: rgba(217, 119, 6, 0.3);
+  --lua-legacy-banner-shadow: rgba(120, 53, 15, 0.08);
+  --lua-legacy-banner-label: #9a3412;
+  --lua-legacy-banner-message: #7c2d12;
+
+  --lua-badge-bg: rgba(255, 152, 0, 0.12);
+  --lua-badge-border: rgba(255, 152, 0, 0.28);
+  --lua-badge-text: rgb(191, 107, 0);
+
+  --lua-decision-btn-text: rgb(33, 110, 190);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0c7bcd;
+  --md-primary-fg-color--light: #38c0f7;
+  --md-primary-fg-color--dark: #38c0f7;
+  --md-accent-fg-color: #38c0f7;
+
+  --lua-sidebar-text: #a9c9e6;
+  --lua-sidebar-hover-text: #7fd0ff;
+  --lua-sidebar-active-text: #bfe4ff;
+  --lua-sidebar-icon: rgba(127, 208, 255, 0.85);
+
+  --lua-migration-bg: rgba(72, 44, 16, 0.6);
+  --lua-migration-border: rgba(245, 158, 11, 0.4);
+  --lua-migration-border-strong: rgba(251, 191, 36, 0.8);
+  --lua-migration-hover-bg: rgba(245, 158, 11, 0.22);
+  --lua-migration-active-bg: rgba(245, 158, 11, 0.3);
+  --lua-migration-text: #fdba74;
+  --lua-migration-text-alt: #fed7aa;
+  --lua-migration-text-active: #ffedd5;
+  --lua-migration-icon: rgba(251, 191, 36, 0.85);
+
+  --lua-legacy-banner-bg: linear-gradient(135deg, rgba(69, 45, 10, 0.65), rgba(56, 35, 8, 0.6));
+  --lua-legacy-banner-border: rgba(245, 158, 11, 0.4);
+  --lua-legacy-banner-shadow: rgba(0, 0, 0, 0.35);
+  --lua-legacy-banner-label: #fdba74;
+  --lua-legacy-banner-message: #fed7aa;
+
+  --lua-badge-bg: rgba(255, 152, 0, 0.2);
+  --lua-badge-border: rgba(255, 152, 0, 0.4);
+  --lua-badge-text: rgb(255, 179, 92);
+
+  --lua-decision-btn-text: #7fd0ff;
+}
+
+.md-header {
+  background-color: #0c7bcd;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+  width: auto;
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+/* Material swaps the header title from the site name to the current
+   heading's text once you scroll past it: .md-header__title--active fades
+   BOTH .md-header__topic elements to opacity 0 first, then a more specific
+   sibling-combinator rule fades the second (page-title) one back to 1 --
+   the first (site-title) one only stays visible because that second rule
+   doesn't touch it. Hiding just the second one (display: none) still left
+   the first one caught by the blanket opacity: 0, so the header went blank
+   on scroll instead of keeping the site title. Fix: re-pin the first one's
+   opacity back to 1 under --active too (:first-child gives this higher
+   specificity than Material's plain .md-header__topic rule, so it wins
+   without !important), and keep permanently hiding the second one so its
+   JS-updated page-title text never shows either. */
+.md-header__title--active .md-header__topic:first-child {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  z-index: 0;
+}
+
+.md-header__topic + .md-header__topic {
+  display: none;
+}
+
+.api-function-breadcrumb {
+  align-items: center;
+  color: var(--md-default-fg-color--light);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  gap: 0.35rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.85rem;
+  text-transform: none;
+}
+
+.api-function-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.api-function-breadcrumb a:hover,
+.api-function-breadcrumb a:focus {
+  color: var(--md-accent-fg-color);
+}
+
+.md-typeset a {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.md-typeset a:hover,
+.md-typeset a:focus {
+  text-decoration-thickness: 2px;
+}
+
+.api-function-breadcrumb__separator {
+  color: var(--md-default-fg-color--lighter);
+}
+
+.api-function-breadcrumb__current {
+  color: var(--md-default-fg-color);
+  font-weight: 600;
+}
+
+/* toc.integrate is off (folding the per-page TOC into the left nav wasn't
+   wanted either), and Material's default behaviour without it is to show
+   a separate right-hand "on this page" TOC sidebar -- not wanted here at
+   all, so hide it outright rather than styling it. The `toc` markdown
+   extension itself stays on (mkdocs.yml's markdown_extensions) purely for
+   its permalink anchors on headings, which is unrelated to this sidebar.
+   Plain .md-sidebar--secondary alone doesn't win: Material's own
+   `.md-sidebar--secondary:not([hidden]){display:block}` has higher
+   specificity (a class plus a :not() pseudo-class beats a lone class) and
+   is exactly the rule that applies on any page with enough headings for
+   Material to want to show a TOC -- precisely the pages this needs to
+   actually hide it on. Matching that selector shape ties the specificity;
+   this stylesheet loading after Material's own settles the tie in our
+   favor via source order, no !important needed. */
+.md-sidebar--secondary,
+.md-sidebar--secondary:not([hidden]) {
+  display: none;
+}
+
+.legacy-version-banner {
+  background: var(--lua-legacy-banner-bg);
+  border: 1px solid var(--lua-legacy-banner-border);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px var(--lua-legacy-banner-shadow);
+  margin: 0 0 1.15rem;
+  padding: 0.9rem 1rem;
+}
+
+.legacy-version-banner__label,
+.legacy-version-banner__message {
+  margin: 0;
+}
+
+.legacy-version-banner__label {
+  color: var(--lua-legacy-banner-label);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.legacy-version-banner__message {
+  color: var(--lua-legacy-banner-message);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin-top: 0.32rem;
+}
+
+.md-typeset mark {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  font-size: 1.55rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+.md-typeset h2 {
+  color: var(--md-default-fg-color);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 1.8rem 0 0.7rem;
+}
+
+.md-typeset h3 {
+  color: var(--md-default-fg-color);
+  font-size: 0.92rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 1.35rem 0 0.55rem;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid rgba(12, 123, 205, 0.18);
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100% !important;
+}
+
+.md-typeset .radio-list-table {
+  border: 1px solid rgba(12, 123, 205, 0.18);
+  border-radius: 12px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  width: 100% !important;
+}
+
+.md-typeset__table {
+  display: block;
+  margin: 1em 0;
+  width: 100%;
+}
+
+.md-typeset__table table:not([class]) {
+  display: table;
+  min-width: 100%;
+  table-layout: fixed;
+  width: 100% !important;
+}
+
+.md-typeset table:not([class]) thead,
+.md-typeset table:not([class]) tbody {
+  width: 100%;
+}
+
+.md-typeset table:not([class]) tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.md-typeset table:not([class]) thead {
+  background: rgba(12, 123, 205, 0.12);
+}
+
+.md-typeset .radio-list-table thead {
+  background: rgba(12, 123, 205, 0.12);
+}
+
+.md-typeset table:not([class]) thead tr {
+  background: transparent;
+}
+
+.md-typeset .radio-list-table thead tr {
+  background: transparent;
+}
+
+.md-typeset table:not([class]) th {
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.md-typeset .radio-list-table th {
+  background: transparent;
+  color: var(--md-default-fg-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset .radio-list-table td {
+  font-size: 0.8rem;
+}
+
+.md-typeset table:not([class]) tbody td:first-child a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.md-typeset table:not([class]) tbody td:first-child a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* A `table`-typed parameter's own sub-fields (e.g. lvgl.arc's `params`)
+   render as a full-width row spanning every column, directly under that
+   parameter's own row -- see render_field_html_table in
+   tools/docs_pipeline.py. A slightly tinted background sets the spanning
+   row apart from the plain rows above it, and tighter padding keeps the
+   nested table from picking up the same roomy padding as a normal cell. */
+.md-typeset .lua-nested-field-row > td {
+  background: rgba(12, 123, 205, 0.03);
+  padding: 0.5rem 0.7rem 0.65rem;
+}
+
+/* Deliberately lighter than the outer table (tighter padding, no rounded
+   corners/overflow clip) so it reads as a sub-table contained within the
+   spanning row, not a second independent table competing with the page's
+   other tables. */
+.md-typeset .lua-nested-field-table {
+  border: 1px solid rgba(12, 123, 205, 0.18);
+  border-collapse: collapse;
+  font-size: 0.78rem;
+  margin: 0.35rem 0 0.15rem;
+  width: 100%;
+}
+
+.md-typeset .lua-nested-field-table th,
+.md-typeset .lua-nested-field-table td {
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding: 0.3rem 0.55rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-typeset .lua-nested-field-table thead {
+  background: rgba(12, 123, 205, 0.08);
+}
+
+.md-typeset .lua-nested-field-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* A caveat bullet that doesn't name a specific field (e.g. lvgl.build's
+   "any other key accepted by the constructor...") -- see
+   render_nested_field_table. Sits right under the field table it
+   qualifies, so it reads as a footnote on the table rather than a floating
+   list. */
+.md-typeset .lua-nested-field-notes {
+  font-size: 0.78rem;
+  margin: 0.3rem 0 0.15rem;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.8rem;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-size: 0.8rem;
+}
+
+.api-grid {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+
+.api-card {
+  border: 1px solid rgba(33, 150, 243, 0.25);
+  border-radius: 12px;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-height: 0;
+  padding: 0.8rem 0.95rem;
+  text-decoration: none;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.md-typeset .api-card,
+.md-typeset .api-card:hover,
+.md-typeset .api-card:focus,
+.md-typeset .api-card:visited,
+.md-typeset .api-card * {
+  text-decoration: none !important;
+}
+
+.api-card:hover {
+  border-color: rgba(33, 150, 243, 0.55);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.api-card-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.api-card-summary {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-decoration: none !important;
+}
+
+.api-card-summary + .api-card-summary {
+  margin-top: 0.1rem;
+}
+
+.api-card-badge {
+  align-self: flex-start;
+  background: var(--lua-badge-bg);
+  border: 1px solid var(--lua-badge-border);
+  border-radius: 999px;
+  color: var(--lua-badge-text);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: auto;
+  padding: 0.22rem 0.55rem;
+}
+
+.review-workbench {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin: 1.25rem 0 1.5rem;
+}
+
+.review-panel {
+  border: 1px solid rgba(33, 150, 243, 0.18);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  background: rgba(33, 150, 243, 0.03);
+}
+
+.review-panel > :first-child {
+  margin-top: 0;
+}
+
+.decision-panel {
+  border: 1px solid rgba(33, 150, 243, 0.18);
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  background: rgba(33, 150, 243, 0.03);
+  margin: 1rem 0 1.25rem;
+}
+
+.decision-status {
+  font-size: 0.8rem;
+  margin-bottom: 0.85rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-nav {
+  font-size: 0.8rem;
+}
+
+.md-path {
+  font-size: 0.8rem;
+}
+
+.md-search__input {
+  font-size: 0.8rem;
+}
+
+.decision-table {
+  width: 100%;
+}
+
+.decision-table select {
+  min-width: 11rem;
+}
+
+.decision-table td > select,
+.decision-table td > input[data-custom-type="true"] {
+  display: block;
+  margin-bottom: 0.45rem;
+}
+
+.decision-table td > input[data-custom-type="true"] {
+  min-width: 11rem;
+}
+
+.decision-actions {
+  margin-top: 0.9rem;
+}
+
+.decision-actions button {
+  border: 1px solid rgba(33, 150, 243, 0.35);
+  border-radius: 999px;
+  background: var(--md-default-bg-color);
+  color: var(--lua-decision-btn-text);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.4rem 0.8rem;
+}
+
+.decision-actions button:hover {
+  border-color: rgba(33, 150, 243, 0.6);
+}
+
+.radio-overview {
+  align-items: flex-start;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: minmax(180px, 28%) minmax(0, 1fr);
+  margin: 1rem 0 1.5rem;
+}
+
+.radio-overview-image {
+  text-align: left;
+}
+
+.radio-overview-image img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.radio-overview-table {
+  min-width: 0;
+  width: 100%;
+}
+
+.radio-overview-table .md-typeset__table,
+.radio-overview-table table:not([class]) {
+  margin-top: 0;
+  width: 100% !important;
+}
+
+.radio-overview-table table {
+  display: table;
+  table-layout: fixed;
+  width: 100% !important;
+}
+
+.radio-overview-table thead,
+.radio-overview-table tbody {
+  width: 100%;
+}
+
+.radio-overview-table tr {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.radio-overview-table th:first-child,
+.radio-overview-table td:first-child {
+  width: 32%;
+}
+
+.radio-overview-table th:last-child,
+.radio-overview-table td:last-child {
+  width: 68%;
+}
+
+.radio-overview-table th,
+.radio-overview-table td {
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+}
+
+@media screen and (max-width: 76.234375em) {
+  [dir="ltr"] .md-sidebar--primary {
+    left: -16.5rem !important;
+  }
+
+  [dir="rtl"] .md-sidebar--primary {
+    right: -16.5rem !important;
+  }
+
+  .md-sidebar--primary {
+    background: var(--md-default-bg-color) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: 16.5rem !important;
+    max-width: 88vw !important;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap,
+  .md-sidebar--primary .md-sidebar__inner {
+    background: var(--md-default-bg-color) !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    height: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    width: 100%;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    box-shadow: var(--md-shadow-z3) !important;
+    transform: translateX(16.5rem) !important;
+  }
+
+  [dir="rtl"] [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(-16.5rem) !important;
+  }
+
+  .radio-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-overview-image img {
+    max-width: 68%;
+  }
+
+  .mobile-desktop-nav-active .md-sidebar--primary .md-nav--primary {
+    display: none !important;
+  }
+
+  .mobile-desktop-nav-shell {
+    background: var(--md-default-bg-color);
+    box-sizing: border-box;
+    display: block;
+    height: 100%;
+    max-height: 100vh;
+    min-height: 100vh;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .mobile-desktop-nav {
+    border-left: 4px solid rgba(12, 123, 205, 0.72);
+    box-sizing: border-box;
+    display: block;
+    font-size: 0.8rem;
+    min-height: 100%;
+    padding: 0.55rem 0 1rem 0;
+    width: 100%;
+  }
+
+  .mobile-desktop-nav__list {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .mobile-desktop-nav__list--nested {
+    padding-left: 0;
+  }
+
+  .mobile-desktop-nav__item {
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .mobile-desktop-nav__link,
+  .mobile-desktop-nav__toggle {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: var(--lua-sidebar-text);
+    cursor: pointer;
+    display: flex;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 400;
+    gap: 0.5rem;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0.45rem 1rem;
+    text-align: left;
+    text-decoration: none;
+    transition: background-color 140ms ease, color 140ms ease;
+    width: 100%;
+  }
+
+  /* A section with its own index page gets both a real link (navigates to
+     the hub page) and a toggle (expands/collapses the list) side by side,
+     instead of one full-width toggle button covering the whole row -- see
+     buildNestedItem's hubLink branch. The generic width:100% above assumes
+     a lone full-row child (true for a plain toggle-only section, or any
+     leaf item's <a>); override it here so the two share the row instead of
+     each trying to claim it. */
+  .mobile-desktop-nav__header {
+    display: flex;
+    width: 100%;
+  }
+
+  .mobile-desktop-nav__header > .mobile-desktop-nav__link {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+
+  .mobile-desktop-nav__header > .mobile-desktop-nav__toggle {
+    flex: 0 0 auto;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    width: auto;
+  }
+
+  .mobile-desktop-nav__link:hover,
+  .mobile-desktop-nav__link:focus,
+  .mobile-desktop-nav__toggle:hover,
+  .mobile-desktop-nav__toggle:focus {
+    background: rgba(56, 192, 247, 0.12);
+    box-shadow: none;
+    color: var(--lua-sidebar-hover-text);
+    outline: none;
+  }
+
+  .mobile-desktop-nav__item--active > .mobile-desktop-nav__link,
+  .mobile-desktop-nav__item--active > .mobile-desktop-nav__header > .mobile-desktop-nav__link,
+  .mobile-desktop-nav__item--expanded > .mobile-desktop-nav__toggle,
+  .mobile-desktop-nav__item--expanded > .mobile-desktop-nav__header > .mobile-desktop-nav__toggle {
+    background: rgba(12, 123, 205, 0.14);
+    color: var(--lua-sidebar-active-text);
+    font-weight: 700;
+  }
+
+  .mobile-desktop-nav__list--nested .mobile-desktop-nav__link,
+  .mobile-desktop-nav__list--nested .mobile-desktop-nav__toggle {
+    font-size: 0.8rem;
+    padding-left: 1.8rem;
+  }
+
+  .mobile-desktop-nav__list--nested .mobile-desktop-nav__header > .mobile-desktop-nav__toggle {
+    padding-left: 0.7rem;
+  }
+
+  .mobile-desktop-nav__item--migration > .mobile-desktop-nav__toggle,
+  .mobile-desktop-nav__item--migration > .mobile-desktop-nav__link,
+  .mobile-desktop-nav__item--migration > .mobile-desktop-nav__header > .mobile-desktop-nav__toggle,
+  .mobile-desktop-nav__item--migration > .mobile-desktop-nav__header > .mobile-desktop-nav__link {
+    color: var(--lua-migration-text);
+  }
+
+  .mobile-desktop-nav__icon {
+    flex: 0 0 auto;
+    height: 1rem;
+    margin-left: auto;
+    position: relative;
+    width: 1rem;
+  }
+
+  .mobile-desktop-nav__icon::before {
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    content: "";
+    display: block;
+    height: 0.42rem;
+    left: 0.18rem;
+    position: absolute;
+    top: 0.22rem;
+    transform: rotate(45deg);
+    width: 0.42rem;
+  }
+
+  .mobile-desktop-nav__item--expanded > .mobile-desktop-nav__toggle .mobile-desktop-nav__icon::before {
+    top: 0.13rem;
+    transform: rotate(135deg);
+  }
+}
+
+.radio-list-table {
+  width: 100% !important;
+}
+
+.radio-list-table th,
+.radio-list-table td {
+  vertical-align: middle;
+  padding-bottom: 0.8rem;
+  padding-top: 0.8rem;
+}
+
+.radio-list-table tbody tr {
+  border: 0;
+}
+
+.radio-list-table tbody td {
+  border: 0;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.radio-list-table tbody tr:first-child td {
+  border-top: 0;
+}
+
+.radio-list-table td:first-child,
+.radio-list-table th:first-child {
+  padding-left: 1.4rem;
+}
+
+.radio-list-model {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.radio-list-model img {
+  display: block;
+  flex: 0 0 auto;
+  height: 2.4rem;
+  object-fit: contain;
+  width: auto;
+}
+
+.md-nav--primary .md-nav__title {
+  display: none;
+}
+
+.md-sidebar--primary .md-nav--primary {
+  background: transparent;
+  border: 0;
+  border-left: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item:first-child > .md-nav__link {
+  color: var(--lua-sidebar-hover-text);
+  font-weight: 700;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__link,
+.md-sidebar--primary .md-nav--primary label.md-nav__link {
+  border-radius: 0;
+  color: var(--lua-sidebar-text);
+  margin: 0.08rem 0;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-bottom: 0.45rem;
+  padding-top: 0.45rem;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+/* navigation.indexes wraps a section's own link and its expand/collapse
+   label together in a shared <div class="md-nav__link md-nav__container">
+   instead of the label being a direct child of the <li>. The rule above
+   already styles that wrapping div (it also carries .md-nav__link), so
+   without this its two children would each additionally get their own
+   nested copy of the same padding/margin/background/color -- on top of
+   showing through the container's own copy of the same styling, two
+   overlapping semi-transparent backgrounds of the same color render
+   darker than either alone, so a state (hover, active, section-active)
+   applied to both container and child shows as a visibly different
+   shade right where the child sits, not one flat row color. Unconditionally
+   neutralize the children instead of chasing this per state -- the
+   container alone should ever paint a background or set its own color;
+   letting a state's rule also match a container child (as opposed to
+   just the container itself) is exactly what caused this. Specificity
+   is bumped one class above the plain-link hover rule below (via the
+   redundant-but-real .md-nav__list ancestor qualifier) so this wins
+   outright rather than relying on source order against a tie. */
+.md-sidebar--primary .md-nav--primary .md-nav__list .md-nav__container > .md-nav__link {
+  background: transparent;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary .md-nav__link:focus,
+.md-sidebar--primary .md-nav--primary label.md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary label.md-nav__link:focus {
+  background: rgba(56, 192, 247, 0.12);
+  color: var(--lua-sidebar-hover-text);
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__link--active,
+.md-sidebar--primary .md-nav--primary .md-nav__item--active > .md-nav__link,
+.md-sidebar--primary .md-nav--primary .md-nav__item--active > label.md-nav__link,
+.md-sidebar--primary .md-nav--primary .md-nav__item--section-active > label.md-nav__link,
+.md-sidebar--primary .md-nav--primary .md-nav__item--section-active > .md-nav__container {
+  background: rgba(12, 123, 205, 0.14);
+  color: var(--lua-sidebar-active-text);
+  font-weight: 700;
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__item--nested > label.md-nav__link .md-nav__icon,
+.md-sidebar--primary .md-nav--primary .md-nav__item--nested > .md-nav__container > label.md-nav__link .md-nav__icon {
+  color: var(--lua-sidebar-icon);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > .md-nav__link,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > label.md-nav__link {
+  background: var(--lua-migration-hover-bg);
+  color: var(--lua-migration-text);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration {
+  background: var(--lua-migration-bg);
+  border: 1px solid var(--lua-migration-border);
+  border-left: 4px solid var(--lua-migration-border-strong);
+  border-radius: 0;
+  margin: 0.85rem 0.1rem 0 0.1rem;
+  padding: 0.35rem 0.2rem 0.45rem;
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  margin: 0.2rem 0 0;
+  padding: 0 0 0.05rem;
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__link,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav label.md-nav__link {
+  color: var(--lua-migration-text-alt);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__link:focus,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav label.md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav label.md-nav__link:focus {
+  background: var(--lua-migration-hover-bg);
+  color: var(--lua-migration-text-active);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__link--active,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__item--active > .md-nav__link,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__item--active > label.md-nav__link,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > nav.md-nav .md-nav__item--section-active > label.md-nav__link {
+  background: var(--lua-migration-active-bg);
+  color: var(--lua-migration-text-active);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > .md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > .md-nav__link:focus,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > label.md-nav__link:hover,
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > label.md-nav__link:focus {
+  background: var(--lua-migration-active-bg);
+  color: var(--lua-migration-text-active);
+}
+
+.md-sidebar--primary .md-nav--primary > .md-nav__list > .md-nav__item--migration > label.md-nav__link .md-nav__icon {
+  color: var(--lua-migration-icon);
+}
+
+.md-sidebar--primary .md-nav--primary .md-nav__list,
+.md-sidebar--primary .md-nav--primary .md-nav__list .md-nav__list {
+  overflow: visible;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    width: 13.6rem;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    width: 13.6rem;
+  }
+
+  .md-sidebar--primary .md-sidebar__inner {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+  }
+
+  .md-main__inner {
+    grid-template-columns: 13.6rem minmax(0, 1fr);
+  }
+}
