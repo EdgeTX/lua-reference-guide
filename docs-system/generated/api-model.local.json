@@ -7074,7 +7074,7 @@
           "name": "filename",
           "type": "string",
           "required": true,
-          "description": "full path to wav file (i.e. \"/SOUNDS/en/system/tada.wav\") Introduced in 2.1.0: If you use a relative path, the current language is appended\nto the path (example: for English language: `/SOUNDS/en` is appended)"
+          "description": "full path to wav file (i.e. \"/SOUNDS/en/system/tada.wav\") Introduced in 2.1.0: If you use a relative path, the current language is prepended\nto the path (example: for English language: `/SOUNDS/en` is prepended)"
         },
         {
           "name": "volume",
@@ -7098,7 +7098,7 @@
       },
       "notes": [],
       "source_location": "radio/src/lua/api_general.cpp",
-      "raw_luadoc": "@function playFile(filename [, volume])\n\nPlay a file from the SD card\n\n@param filename (string) full path to wav file (i.e. \"/SOUNDS/en/system/tada.wav\")\nIntroduced in 2.1.0: If you use a relative path, the current language is appended\nto the path (example: for English language: `/SOUNDS/en` is appended)\n\n@param volume (number):\n - (1..5) override radio settings Wav volume for the duration of file\n - omitting the parameter uses radio settings Wav volume\n\n@retval none \n\n@status current Introduced in 2.0.0, changed in 2.1.0, changed in 2.10\n\n// targets: BW, COLOR\n//\n// EXAMPLES:\n// playFile(\"armed.wav\", 5) -- play file armed.wav, use Wav volume 2\n// playFile(\"armed.wav\", 1) -- play file armed.wav, use Wav volume 1\n// playFile(\"armed.wav\")\t\t-- play file armed.wav, use radio settings Wav volume",
+      "raw_luadoc": "@function playFile(filename [, volume])\n\nPlay a file from the SD card\n\n@param filename (string) full path to wav file (i.e. \"/SOUNDS/en/system/tada.wav\")\nIntroduced in 2.1.0: If you use a relative path, the current language is prepended\nto the path (example: for English language: `/SOUNDS/en` is prepended)\n\n@param volume (number):\n - (1..5) override radio settings Wav volume for the duration of file\n - omitting the parameter uses radio settings Wav volume\n\n@retval none \n\n@status current Introduced in 2.0.0, changed in 2.1.0, changed in 2.10\n\n// targets: BW, COLOR\n//\n// EXAMPLES:\n// playFile(\"armed.wav\", 5) -- play file armed.wav, use Wav volume 5\n// playFile(\"armed.wav\", 1) -- play file armed.wav, use Wav volume 1\n// playFile(\"armed.wav\")\t\t-- play file armed.wav, use radio settings Wav volume",
       "source_line": 1455
     },
     {
