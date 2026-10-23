@@ -590,12 +590,9 @@ def build_config(
             "javascripts/legacy-version-banner.js",
         ],
         "extra": {
+            # legacy-version-banner.js picks the notice from versions.json at
+            # runtime, so no per-version banner config is needed here.
             "version": {"provider": "mike", "default": "latest", "alias": True},
-            "legacy_version": {
-                "enabled": True,
-                "label": "Legacy version",
-                "message": f"This documentation version preserves the original {version_name} GitBook content and structure for reference.",
-            },
         },
         "markdown_extensions": [
             "tables",
