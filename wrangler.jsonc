@@ -1,0 +1,14 @@
+// Cloudflare Workers static-assets config for publishing the docs.
+// There is no Worker script: every request is served straight from the
+// assets directory. The publish workflow exports the mike-managed gh-pages
+// branch into .site-publish/ and runs `wrangler deploy` against it.
+{
+  "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
+  "name": "edgetx-lua-reference-guide",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./.site-publish",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
