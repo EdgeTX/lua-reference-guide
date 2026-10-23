@@ -358,6 +358,9 @@ def rewrite_link_target_with_map(
     mapped_target = path_map.get(source_relative)
     if mapped_target is None:
         return target
+    # README.md is also mirrored to index.md, and MkDocs drops README.md when
+    # both exist, so links have to point at the index.md copy.
+    mapped_target = Path(normalize_nav_path(mapped_target.as_posix()))
 
     current_output = path_map[source_file.relative_to(source_root)]
     relative_to_output = Path(
